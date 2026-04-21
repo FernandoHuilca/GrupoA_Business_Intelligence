@@ -27,6 +27,67 @@ Se aplicó un procesamiento matemático para generar valor agregado a los datos 
 #### 4.1.3. Carga (Excel Writer)
 Los datos procesados y enriquecidos se exportaron a un formato compatible con herramientas de análisis de oficina (Excel), facilitando su posterior visualización.
 
+---
+
+### 4.3. Ejemplo 03: Data Grid, Select Values y Concat Fields
+
+#### 4.3.1. Extracción (Data Grid)
+
+Se seleccionó el input "Data Grid" (Tabla simulada que se crea manualmente en Pentaho).
+
+ - Se hizo doble clic en el ícono del input.
+ 
+ - En la pestaña "Meta" se crearon las columnas anio, mes y numero_pedido con el "Type" Integer. 
+ 
+ ![](/Taller_01/images/EJ03/EJ03_IMG01.png)
+    
+  - En la pestaña "Data" se ingresaron los registros con valores numéricos para cada columna. Por ejemplo:
+
+  ![](/Taller_01/images/EJ03/EJ03_IMG02.png)
+
+#### 4.3.2. Transformación usando Select Values
+
+Se seleccionó el transform "Select Values" para corregir el formato de los números. 
+ 
+ - Se hizo doble clic en el ícono del transform.
+ 
+ - En la pestaña "Meta-data" se pulsó en "Get fields to change" para cargar las columnas del input.
+ 
+ - Se cambió el "Type" de las columnas a "String" y se colocó en "Format" a la estructura deseada para cada columna. Por ejemplo:
+ 
+ ![](/Taller_01/images/EJ03/EJ03_IMG03.png)
+
+#### 4.3.3. Transformación usando Concat Fields
+
+Se seleccionó el transform "Concat Fields" para concatenar las columnas y crear el ID único.
+
+  - Se hizo doble clic en el ícono del transform.
+    
+  - Se puso en "Target Field Name" el nombre del nuevo campo, por ejemplo "ID_Factura".
+
+  - En "Separator" se colocó el carácter que se desea usar para separar los valores, por ejemplo "-".
+  
+  ![](/Taller_01/images/EJ03/EJ03_IMG04.png)
+
+#### 4.3.4. Carga (Microsoft Excel Writer)
+
+Para un formato de salida más legible, se seleccionó el output "Microsoft Excel Writer" con el nombre y la ruta deseada para guardar el resultado.
+
+ ![](/Taller_01/images/EJ03/EJ03_IMG05.png)
+
+### 4.3.5. Resultados
+
+ Ejecución exitosa.
+
+ ![](/Taller_01/images/EJ03/EJ03_IMG06.png)
+
+ Archivo generado satisfactoriamente.
+
+ ![](/Taller_01/images/EJ03/EJ03_IMG07.png)
+
+
+---
+
 ### 4.4. Ejemplo 04: XML_Add sequence
 
 #### 4.4.1. Extracción (Get data from XML)
