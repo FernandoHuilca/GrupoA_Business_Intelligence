@@ -1,35 +1,29 @@
-# Informe de Práctica: Inteligencia de Negocios
-**Facultad de Ingeniería de Sistemas**
+# <center>**Escuela Politécnica Nacional**</center>
+## <center>**Business Intelligence**</center>
+### **Integrantes:**
+- Juan Cofre
+- Fernando Huilca
+- Sebastián León
+- Gregory Salazar
+- Mateo Simbaña
 
-## 1. Introducción
-[cite_start]En esta práctica se utilizó Pentaho Data Integration (PDI), una herramienta de la suite de Pentaho escrita en Java[cite: 1, 8]. [cite_start]Se empleó Spoon, que es la interfaz gráfica de usuario (GUI) diseñada para facilitar los procesos de ETL (Extracción, Transformación, Transporte y Carga de datos)[cite: 1, 9, 10, 11].
+------------
 
-## 2. Objetivos
-* [cite_start]Configurar el entorno de desarrollo para procesos ETL[cite: 5].
-* [cite_start]Implementar una "staging area" para la ingesta de datos externos[cite: 6].
-* Realizar transformaciones avanzadas sobre formatos de datos modernos (JSON).
-
-## 3. Herramientas Utilizadas
-* [cite_start]**Pentaho Community Edition (Spoon):** Diseñador gráfico de transformaciones y trabajos[cite: 9].
-* [cite_start]**Java JDK:** Motor de ejecución necesario para el funcionamiento de la suite[cite: 22].
-* **Formato JSON:** Origen de datos para el experimento de integración.
-
-## 4. Desarrollo del Experimento
-### 4.1 Ejemplo01_Json_Calculator
+## 1. Ejemplo01_Json_Calculator
 Se diseñó una transformación (.ktr) que consta de los siguientes pasos:
 
-#### 4.1.1. Extracción (JSON Input)
+### 1.1. Extracción (JSON Input)
 Se cargó un archivo `carrito.json` que contiene datos jerárquicos. Para su lectura, se configuró el "Loop Path" mediante la ruta `$.[*]`, permitiendo iterar sobre cada objeto del arreglo para extraer campos específicos como producto, precio y cantidad.
 
-#### 4.1.2. Transformación (Calculator)
+### 1.2. Transformación (Calculator)
 Se aplicó un procesamiento matemático para generar valor agregado a los datos originales. Se utilizó la operación `A * B` para calcular el campo `Subtotal`, multiplicando el precio unitario por la cantidad de unidades.
 
-#### 4.1.3. Carga (Excel Writer)
+### 1.3. Carga (Excel Writer)
 Los datos procesados y enriquecidos se exportaron a un formato compatible con herramientas de análisis de oficina (Excel), facilitando su posterior visualización.
 
-### 4.4. Ejemplo 04: XML_Add sequence
+## 4. Ejemplo 04: XML_Add sequence
 
-#### 4.4.1. Extracción (Get data from XML)
+### 4.1. Extracción (Get data from XML)
 Se cargó el archivo `plant_catalog.xml` que contiene datos en una estructura jerárquica en formato XML.
 
 ![](images/EJ04/EJ04_IMG01.png)
@@ -46,16 +40,15 @@ Se previsualizaron las filas para verificar que se estén leyendo correctamente 
 
  ![](images/EJ04/EJ04_IMG04.png)
 
-#### 4.4.2. Transformación (Add Sequence)
+### 4.2. Transformación (Add Sequence)
 Se utilizó el componente Add Sequence para generar un número secuencial de forma automática y añadirlo como una nueva columna a cada registro. En el campo Name of value se definió el nombre `id_planta`, para identificar de manera única a cada elemento extraído.
 
   ![](images/EJ04/EJ04_IMG05.png)
 
-#### 4.4.3. Carga (XML Output)
+### 4.3. Carga (XML Output)
 Se utilizó el componente XML Output para almacenar los datos transformados en un nuevo archivo en formato XML. Se configuró el nombre del archivo de salida como `output_plant_catalog.xml`.
 
  ![](images/EJ04/EJ04_IMG06.png)
-
  
 Se especificó el Parent XML element como `catalog` y el Row XML element como `plant`, esto para definir la estructura jerárquica del archivo de salida.
 
@@ -64,9 +57,8 @@ Se especificó el Parent XML element como `catalog` y el Row XML element como `p
 Se organizó el orden de los campos en el formato de salida. En caso de no especificar el Element name, el sistema utiliza por defecto el nombre del campo como etiqueta XML.
 
  ![](images/EJ04/EJ04_IMG08.png)
-
  
-#### 4.4.4. Resultados
+### 4.4. Resultados
 La ejecución fue exitosa.
 
  ![](images/EJ04/EJ04_IMG09.png)
@@ -75,9 +67,38 @@ En la siguiente imagen se puede visualizar el archivo de entrada (sección izqui
 
  ![](images/EJ04/EJ04_IMG10.png)
 
-## 5. Resultados
-La ejecución fue exitosa, logrando transformar datos crudos de una API simulada en información financiera calculada automáticamente. [cite_start]Este proceso demuestra cómo PDI facilita la construcción y mantenimiento de Data Warehouses[cite: 12].
+## 5. Ejemplo 05: CSV_Sort rows
 
-## 6. Conclusiones
-* [cite_start]La arquitectura de Pentaho permite manejar diversos orígenes de datos de forma eficiente a través de su interfaz Spoon[cite: 11].
-* El uso de rutas JSON (JSON Path) es fundamental para la correcta interpretación de estructuras de datos complejas en procesos de BI.
+### 5.1. Extracción (Get data from CSV)
+Primero, se cargó el archivo con extensión .csv, denominado Input FactSale.csv. Para su lectura, se configuró el componente "Delimiter" con el valor coma (,), dado que este carácter se utiliza en el archivo para separar los datos en columnas. Además, se marcó la casilla "Header row present?", puesto que el archivo contiene una fila inicial con los nombres de las columnas.
+
+![](images/EJ05/EJ05_IMG01.png)
+
+Luego, se obtuvieron los nombres de las columnas con el botón `GetFields`.
+
+ ![](images/EJ05/EJ05_IMG02.png)
+
+Después, se previsualizaron las filas para verificar que se estén leyendo correctamente los datos del archivo cargado.
+
+ ![](images/EJ05/EJ05_IMG03.png)
+
+### 5.2. Transformación (Sort rows)
+Se utilizó el componente Sort Rows con la finalidad de ordenar los registros de venta por las columnas `Invoice Date Key` y `Total Including Tax`. Se agregaron ambas columnas en el componente y en el campo "Ascending" se seleccionó "N" en los dos casos para lograr un orden descendente que muestre primero las fechas más recientes y, dentro de ellas, los valores de venta más altos.
+
+
+  ![](images/EJ05/EJ05_IMG04.png)
+
+### 5.3. Carga (Microsoft Excel writer)
+Se utilizó el componente Microsoft Excel writer para almacenar los datos transformados en un nuevo archivo con extensión .xls. Se configuró el nombre del archivo de salida como `Output FactSale.xls` y se especificó la ruta donde debe almacenarse.
+
+ ![](images/EJ05/EJ05_IMG05.png)
+
+Además, en la pestaña `Content`, se estableció el formato `m/d/yy` para los campos `Invoice Date Key` y `Delivery Date Key`.
+ 
+ ![](images/EJ05/EJ05_IMG06.png)
+
+### 5.4. Resultados
+
+En la siguiente imagen se muestra el archivo de entrada (lado izquierdo) y el archivo de salida (lado derecho), donde ahora los registros de venta están ordenados en forma descendente según la fecha de emisión de la factura y el valor total incluido impuestos.
+
+ ![](images/EJ05/EJ05_IMG07.png)
