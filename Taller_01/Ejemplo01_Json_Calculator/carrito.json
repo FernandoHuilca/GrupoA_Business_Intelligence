@@ -1,0 +1,14 @@
+[
+  {"producto": "Monitor Gamer", "precio": 250.50, "cantidad": 2},
+  {"producto": "Teclado Mecánico", "precio": 85.00, "cantidad": 5},
+  {"producto": "Mouse Inalámbrico", "precio": 45.99, "cantidad": 10},
+  {"producto": "Audífonos Bluetooth", "precio": 79.90, "cantidad": 4},
+  {"producto": "Webcam HD", "precio": 62.50, "cantidad": 3},
+  {"producto": "Silla Ergonómica", "precio": 199.99, "cantidad": 2},
+  {"producto": "Disco SSD 1TB", "precio": 120.00, "cantidad": 6},
+  {"producto": "Memoria RAM 16GB", "precio": 68.75, "cantidad": 8},
+  {"producto": "Micrófono USB", "precio": 54.30, "cantidad": 5},
+  {"producto": "Hub USB-C", "precio": 34.99, "cantidad": 7},
+  {"producto": "Base para Laptop", "precio": 27.40, "cantidad": 9},
+  {"producto": "Impresora Multifuncional", "precio": 210.00, "cantidad": 1}
+]
