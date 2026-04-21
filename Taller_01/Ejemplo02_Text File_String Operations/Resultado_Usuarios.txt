@@ -1,0 +1,11 @@
+id;nombre_completo;ciudad
+1;JUAN PEREZ      ;quito      
+2;MARIA LÓPEZ     ;guayaquil  
+3;CARLOS TERAN    ;cuenca     
+4;ANA MARIN       ;manta      
+5;LUIS ALVARADO   ;loja       
+6;FERNANDO HUILCA ;bolivar    
+7;MATEO SIMBAÑA   ;quito      
+8;JUAN COFRE      ;latacunga  
+9;GREGORY SALAZAR ;tulcan     
+10;SEBASTIÁN LEON  ;ambato     
