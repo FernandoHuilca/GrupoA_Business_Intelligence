@@ -104,10 +104,12 @@ Esta salida solo requiere colocar el nombre del archivo resultante y la ubicaci�
 
 ### 2.4 Resultados
 
-Ejecución exitos
+Ejecución exitosa
+
 ![](images/EJ02/EJ02_IMG07.png)
 
 Resultados de la transformación:
+
 ![](images/EJ02/EJ02_IMG08.png)
 
 ---
