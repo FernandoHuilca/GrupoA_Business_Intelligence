@@ -74,6 +74,43 @@ En la imagen final se observa el archivo de salida generado, donde se verifica q
 
 ---
 
+## 2. Ejemplo 02: Text File Input y String operations
+
+### 2.1 Extracción (File text)
+Para este ejemplo se utilizó la entrada de "File text input" la cual permite cargar un archivo de texto plano.
+
+  - Se configuró para leer un archivo de texto con datos sucios.
+  ![](images/EJ02/EJ02_IMG01.png)
+  - En la pestaña "Content" es importante verificar que el separador sea ";".
+  ![](images/EJ02/EJ02_IMG02.png)
+  - En la pestaña "fields" a través de la opción de "get fields" obtenemos el mapeo de las tres columnas: `id`, `nombre_ciudad`, `ciudad`.
+  ![](images/EJ02/EJ02_IMG03.png)
+  - Y con la opción de "Preview rows" se puede obtener una previsualización de los datos del archivo de entrada.
+  ![](images/EJ02/EJ02_IMG04.png)
+
+### 2.2 Transformación (String operations)
+La transformación utilizada fue la de String operations con la cual se aplicaron reglas específicas por columna para garantizar la uniformidad:
+  - `nombre_completo`: Se aplicó un Trim tipo "Both" para eliminar espacios accidentales en los extremos y se transformó a "Upper Case" (Mayúsculas) para estandarizar registros.
+  - `ciudad`: Se aplicó un Trim tipo "Both" y se transformó a "Lower Case" (Minúsculas) para facilitar agrupaciones de datos.
+
+![](images/EJ02/EJ02_IMG05.png)
+
+### 2.3 Carga (File text output)
+La transformación se carga también en un archivo de texto para lo cual se utiliza la salida de `File text output`.
+
+Esta salida solo requiere colocar el nombre del archivo resultante y la ubicación en donde se va a guardar.
+
+![](images/EJ02/EJ02_IMG06.png)
+
+### 2.4 Resultados
+
+Ejecución exitos
+![](images/EJ02/EJ02_IMG07.png)
+
+Resultados de la transformación:
+![](images/EJ02/EJ02_IMG08.png)
+
+---
 
 ## 3. Ejemplo 03: Data Grid, Select Values y Concat Fields
 
