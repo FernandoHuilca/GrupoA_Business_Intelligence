@@ -43,10 +43,13 @@ Cambiar el formato de la columna 'precio_unitario' a Number (Decimal).
 
 <img width="1349" height="654" alt="image" src="https://github.com/user-attachments/assets/99ed207d-f38d-42d2-aa8a-6a61c416c311" />
 
-Estandarización columna 'categoria'.
+### Estandarización columna 'categoria'
 
 <img width="1005" height="243" alt="image" src="https://github.com/user-attachments/assets/3f9e4262-324a-4b0e-b1e4-900a30cff03d" />
 
+Se utiliza el componente Value Mapper para estandarizar los valores de la columna "categoría". 
+
+<img width="598" height="426" alt="image" src="https://github.com/user-attachments/assets/5fd9901c-7889-47d0-ac42-94a01f91f093" />
 
 Estandarización columna 'unidad_medida'.
 
