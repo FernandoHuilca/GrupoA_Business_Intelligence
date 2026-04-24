@@ -25,7 +25,7 @@ Dentro del esquema 'staging', se generó una tabla 'productos_ferreteria_raw' y 
 
 <img width="1143" height="868" alt="Screenshot 2026-04-23 200852" src="https://github.com/user-attachments/assets/54f6294b-0eae-4598-bb15-0e3104305e35" />
 
-##Initial Load
+## Initial Load
 
 Se procedió con la carga inicial desde Pentaho.
 
