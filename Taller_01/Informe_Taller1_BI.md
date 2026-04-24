@@ -9,17 +9,168 @@
 
 ------------
 
-## 1. Ejemplo01_Json_Calculator
+## 1. Ejemplo 01: JSON y calculator
 Se diseñó una transformación (.ktr) que consta de los siguientes pasos:
 
 ### 1.1. Extracción (JSON Input)
-Se cargó un archivo `carrito.json` que contiene datos jerárquicos. Para su lectura, se configuró el "Loop Path" mediante la ruta `$.[*]`, permitiendo iterar sobre cada objeto del arreglo para extraer campos específicos como producto, precio y cantidad.
+
+Se cargó el archivo `carrito.json` que contiene una estructura jerárquica de datos representativa de una respuesta de API de comercio electrónico.
+
+| | |
+| :---: | :---: |
+| <img width="100%" alt="Archivo JSON original" src="https://github.com/user-attachments/assets/e9c60b89-8c4a-4369-a55f-7bd75e65cd9c" /> | <img width="100%" alt="Configuración de entrada en Spoon" src="https://github.com/user-attachments/assets/dd741ad5-0d8b-4027-acef-49e239d8d1f9" /> |
+
+<br>
+
+
+Para la lectura de los datos, se configuró el `"Source path"` en la pestaña `Fields` utilizando la `ruta $.[*].` Esto permite que Spoon, la interfaz gráfica de PDI, itere sobre cada objeto del arreglo para extraer los campos `producto`, `precio` y `cantidad`.
+
+Se definieron manualmente los campos en la tabla de mapeo, especificando el tipo de dato Number para el precio e Integer para la cantidad, asegurando la compatibilidad con pasos posteriores del flujo ETL.
+
+| | |
+| :---: | :---: |
+| <img width="100%" alt="Mapeo de campos JSON" src="https://github.com/user-attachments/assets/a43b66ad-dbbf-4235-87e4-5a3ede46baac" /> | <img width="100%" alt="Previsualización de datos" src="https://github.com/user-attachments/assets/25629c9a-c294-466c-9839-5e258b0b642e" /> |
+
+<br>
+
 
 ### 1.2. Transformación (Calculator)
-Se aplicó un procesamiento matemático para generar valor agregado a los datos originales. Se utilizó la operación `A * B` para calcular el campo `Subtotal`, multiplicando el precio unitario por la cantidad de unidades.
 
-### 1.3. Carga (Excel Writer)
-Los datos procesados y enriquecidos se exportaron a un formato compatible con herramientas de análisis de oficina (Excel), facilitando su posterior visualización.
+Se utilizó el componente Calculator, ubicado en la categoría Transform, para procesar los datos extraídos. Se configuró una operación aritmética de `tipo A * B` para calcular el valor total por producto.
+
+Se definió el campo de salida como Subtotal, asignando precio como el campo A y cantidad como el campo B, generando así información financiera de valor agregado para el análisis de negocio.
+
+| | |
+| :---: | :---: |
+| <img width="100%" alt="Configuración del cálculo" src="https://github.com/user-attachments/assets/ad42076b-6080-47d3-a65d-474d0d95feac" /> | <img width="100%" alt="Validación de la operación" src="https://github.com/user-attachments/assets/c3f9bffd-5d63-45c2-97bc-4fe79ca739a6" /> |
+
+<br>
+
+
+### 1.3. Carga (Microsoft Excel Writer)
+
+Para la etapa de carga, se empleó el componente Microsoft Excel writer, con el fin de exportar los resultados a un formato compatible con herramientas de oficina tradicionales.
+
+Se configuró el nombre del archivo de salida como Analisis_Carrito_API.xls y se utilizó la función Get Fields para organizar las columnas, incluyendo el nuevo campo calculado en la transformación anterior.
+
+| | |
+| :---: | :---: |
+| <img width="100%" alt="Configuración de salida Excel" src="https://github.com/user-attachments/assets/cf5be4a0-7285-4759-a3d1-73bdcdf25470" /> | <img width="100%" alt="Mapeo de columnas de salida" src="https://github.com/user-attachments/assets/de772b47-e40f-41d5-9a35-4bb462cdd2a8" /> |
+
+<br>
+
+### 1.4. Resultados 
+
+La ejecución del flujo se completó exitosamente, facilitando la actualización y mantenimiento de los datos procesados.
+
+En la imagen final se observa el archivo de salida generado, donde se verifica que el sistema procesó correctamente el archivo JSON original y añadió la columna de cálculo matemático para cada registro de forma automática.
+
+<p align="center">
+  <img width="80%" alt="Archivo de salida final" src="https://github.com/user-attachments/assets/d3389d77-765b-48e4-95bb-86691d88f0b8" />
+</p>
+
+<br>
+
+
+---
+
+## 2. Ejemplo 02: Text File Input y String operations
+
+### 2.1 Extracción (File text)
+Para este ejemplo se utilizó la entrada de "File text input" la cual permite cargar un archivo de texto plano.
+
+  - Se configuró para leer un archivo de texto con datos sucios.
+  ![](images/EJ02/EJ02_IMG01.png)
+  - En la pestaña "Content" es importante verificar que el separador sea ";".
+  ![](images/EJ02/EJ02_IMG02.png)
+  - En la pestaña "fields" a través de la opción de "get fields" obtenemos el mapeo de las tres columnas: `id`, `nombre_ciudad`, `ciudad`.
+  ![](images/EJ02/EJ02_IMG03.png)
+  - Y con la opción de "Preview rows" se puede obtener una previsualización de los datos del archivo de entrada.
+  ![](images/EJ02/EJ02_IMG04.png)
+
+### 2.2 Transformación (String operations)
+La transformación utilizada fue la de String operations con la cual se aplicaron reglas específicas por columna para garantizar la uniformidad:
+  - `nombre_completo`: Se aplicó un Trim tipo "Both" para eliminar espacios accidentales en los extremos y se transformó a "Upper Case" (Mayúsculas) para estandarizar registros.
+  - `ciudad`: Se aplicó un Trim tipo "Both" y se transformó a "Lower Case" (Minúsculas) para facilitar agrupaciones de datos.
+
+![](images/EJ02/EJ02_IMG05.png)
+
+### 2.3 Carga (File text output)
+La transformación se carga también en un archivo de texto para lo cual se utiliza la salida de `File text output`.
+
+Esta salida solo requiere colocar el nombre del archivo resultante y la ubicación en donde se va a guardar.
+
+![](images/EJ02/EJ02_IMG06.png)
+
+### 2.4 Resultados
+
+Ejecución exitosa
+
+![](images/EJ02/EJ02_IMG07.png)
+
+Resultados de la transformación:
+
+![](images/EJ02/EJ02_IMG08.png)
+
+---
+
+## 3. Ejemplo 03: Data Grid, Select Values y Concat Fields
+
+### 3.1. Extracción (Data Grid)
+
+Se seleccionó el input "Data Grid" (Tabla simulada que se crea manualmente en Pentaho).
+
+ - Se hizo doble clic en el ícono del input.
+ 
+ - En la pestaña "Meta" se crearon las columnas anio, mes y numero_pedido con el "Type" Integer. 
+ 
+ ![](/Taller_01/images/EJ03/EJ03_IMG01.png)
+    
+  - En la pestaña "Data" se ingresaron los registros con valores numéricos para cada columna. Por ejemplo:
+
+  ![](/Taller_01/images/EJ03/EJ03_IMG02.png)
+
+### 3.2. Transformación usando Select Values
+
+Se seleccionó el transform "Select Values" para corregir el formato de los números. 
+ 
+ - Se hizo doble clic en el ícono del transform.
+ 
+ - En la pestaña "Meta-data" se pulsó en "Get fields to change" para cargar las columnas del input.
+ 
+ - Se cambió el "Type" de las columnas a "String" y se colocó en "Format" a la estructura deseada para cada columna. Por ejemplo:
+ 
+ ![](/Taller_01/images/EJ03/EJ03_IMG03.png)
+
+### 3.3. Transformación usando Concat Fields
+
+Se seleccionó el transform "Concat Fields" para concatenar las columnas y crear el ID único.
+
+  - Se hizo doble clic en el ícono del transform.
+    
+  - Se puso en "Target Field Name" el nombre del nuevo campo, por ejemplo "ID_Factura".
+
+  - En "Separator" se colocó el carácter que se desea usar para separar los valores, por ejemplo "-".
+  
+  ![](/Taller_01/images/EJ03/EJ03_IMG04.png)
+
+### 3.4. Carga (Microsoft Excel Writer)
+
+Para un formato de salida más legible, se seleccionó el output "Microsoft Excel Writer" con el nombre y la ruta deseada para guardar el resultado.
+
+ ![](/Taller_01/images/EJ03/EJ03_IMG05.png)
+
+### 3.5. Resultados
+
+ Ejecución exitosa.
+
+ ![](/Taller_01/images/EJ03/EJ03_IMG06.png)
+
+ Archivo generado satisfactoriamente.
+
+ ![](/Taller_01/images/EJ03/EJ03_IMG07.png)
+
+---
 
 ## 4. Ejemplo 04: XML_Add sequence
 
