@@ -59,7 +59,7 @@ Para estandarizar las categorías, se utilizó el componente 'Value Mapper', don
 
 <img width="598" height="426" alt="image" src="https://github.com/user-attachments/assets/5fd9901c-7889-47d0-ac42-94a01f91f093" />
 
-### Estandarización columna 'unidad_medida'.
+### Estandarización columna 'unidad_medida'
 
 
 
