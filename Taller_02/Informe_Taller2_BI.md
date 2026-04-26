@@ -11,6 +11,18 @@
 
 # <center>**Caso de Estudio: Ferretería El Tornillo Feliz**</center>
 
+## **Índice de contenidos**
+1. [Initial Load](#initial-load)
+2. [Extracción](#extracción)
+3. [Transformación](#transformación)
+    * [Estandarización columna 'categoria'](#estandarización-columna-categoria)
+    * [Estandarización de la columna 'unidad_medida'](#estandarización-de-la-columna-unidad_medida)
+    * [Eliminación de símbolos y formato de precios](#eliminación-de-símbolos-innecesarios-y-cambio-de-formato-de-la-columna-precio_unitario)
+4. [Carga](#carga)
+5. [Resultados](#resultados)
+
+---
+
 Antes de empezar con el proceso ETL, se guardaron los datos entregados en una base de datos.
 
 Primero, se creó una base de datos 'TornilloFelizBD' en PostgreSQL.
@@ -59,10 +71,31 @@ Para estandarizar las categorías, se utilizó el componente 'Value Mapper', don
 
 <img width="598" height="426" alt="image" src="https://github.com/user-attachments/assets/5fd9901c-7889-47d0-ac42-94a01f91f093" />
 
-### Estandarización columna 'unidad_medida'
-<img width="1286" height="197" alt="image" src="https://github.com/user-attachments/assets/5ccb95db-724f-44f6-b825-7ac479e465b3" />
+### **Estandarización de la columna 'unidad_medida'**
 
+Tras realizar un análisis de calidad de datos sobre la tabla `staging.productos_ferreteria_raw`, se identificó una falta de consistencia y estandarización en los registros manuales. Se observaron múltiples variaciones para representar la misma unidad de medida, tales como "1 Lt", "1L" y "1 litro".
 
+#### **1. Diagnóstico de variaciones**
+Se extrajeron las variantes existentes en la base de datos para mapear su transformación hacia un formato estándar único:
+
+<img width="1286" height="197" alt="Variantes encontradas" src="https://github.com/user-attachments/assets/5ccb95db-724f-44f6-b825-7ac479e465b3" />
+
+#### **2. Implementación del flujo ETL**
+Para resolver esta inconsistencia, se integró el componente de transformación **Value Mapper** al flujo de datos, conectándolo de forma secuencial tras la estandarización de categorías.
+
+<img width="1234" height="1004" alt="Flujo con Value Mapper" src="https://github.com/user-attachments/assets/0f2c0b3a-cc48-4794-8c52-bce95d17c1ea" />
+
+#### **3. Configuración del mapeo de valores**
+Se definieron reglas de transformación para normalizar abreviaturas y términos informales. Se configuró el campo `unidad_medida` como la columna objetivo para el reemplazo de valores dentro del componente:
+
+<img width="639" height="504" alt="Configuración Value Mapper" src="https://github.com/user-attachments/assets/c09128f1-d291-464e-89c7-7fadc09afd6a" />
+
+#### **4. Validación y Verificación**
+Finalmente, se utilizó la herramienta de **Preview** en Pentaho para validar que la transformación se ejecutara correctamente sobre el flujo de salida, obteniendo un catálogo de productos normalizado.
+
+<img width="1467" height="975" alt="Verificación de resultados" src="https://github.com/user-attachments/assets/18144d38-388f-4da8-8cfd-0f3c6ffcd951" />
+
+> **Nota del grupo:** Durante el proceso de limpieza, se observó la presencia de datos mixtos que combinan magnitud y unidad en una misma cadena (ej. "4L", "1Lt"). Para cumplir con los requerimientos del taller de estandarización, se optó por unificar el formato de texto. No obstante, se recomienda para futuras fases separar la **cantidad numérica** de la **unidad de medida** para facilitar operaciones matemáticas directas en la base de datos.
 
 ### Eliminación de símbolos innecesarios y cambio de formato de la columna 'precio_unitario'
 
