@@ -9,6 +9,38 @@
 
 ------------
 
+# <center>**Taller 01: Procesos ETL con Pentaho**</center>
+
+## **Contenido (Indice)**
+1. [Ejemplo 01: JSON y calculator](#1-ejemplo-01-json-y-calculator)
+    * [1.1 Extracción](#11-extracción-json-input)
+    * [1.2 Transformación](#12-transformación-calculator)
+    * [1.3 Carga](#13-carga-microsoft-excel-writer)
+    * [1.4 Resultados](#14-resultados)
+2. [Ejemplo 02: Text File Input y String operations](#2-ejemplo-02-text-file-input-y-string-operations)
+    * [2.1 Extracción](#21-extracción-file-text)
+    * [2.2 Transformación](#22-transformación-string-operations)
+    * [2.3 Carga](#23-carga-file-text-output)
+    * [2.4 Resultados](#24-resultados)
+3. [Ejemplo 03: Data Grid, Select Values y Concat Fields](#3-ejemplo-03-data-grid-select-values-y-concat-fields)
+    * [3.1 Extracción](#31-extracción-data-grid)
+    * [3.2 Transformación - Select Values](#32-transformación-usando-select-values)
+    * [3.3 Transformación - Concat Fields](#33-transformación-usando-concat-fields)
+    * [3.4 Carga](#34-carga-microsoft-excel-writer)
+    * [3.5 Resultados](#35-resultados)
+4. [Ejemplo 04: XML_Add sequence](#4-ejemplo-04-xml_add-sequence)
+    * [4.1 Extracción](#41-extracción-get-data-from-xml)
+    * [4.2 Transformación](#42-transformación-add-sequence)
+    * [4.3 Carga](#43-carga-xml-output)
+    * [4.4 Resultados](#44-resultados)
+5. [Ejemplo 05: CSV_Sort rows](#5-ejemplo-05-csv_sort-rows)
+    * [5.1 Extracción](#51-extracción-get-data-from-csv)
+    * [5.2 Transformación](#52-transformación-sort-rows)
+    * [5.3 Carga](#53-carga-microsoft-excel-writer)
+    * [5.4 Resultados](#54-resultados)
+
+---
+
 ## 1. Ejemplo 01: JSON y calculator
 Se diseñó una transformación (.ktr) que consta de los siguientes pasos:
 
