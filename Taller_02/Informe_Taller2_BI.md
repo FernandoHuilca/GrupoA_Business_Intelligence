@@ -99,9 +99,17 @@ Finalmente, se utilizó la herramienta de **Preview** en Pentaho para validar qu
 
 ### Eliminación de símbolos innecesarios y cambio de formato de la columna 'precio_unitario'
 
-Precios incluyen el símbolo $.
+Precios incluyen el símbolo "$", además estos estan en formato de texto. Es necesario quitar el símbolo y cambiar el formato de texto a por un numérico que permita realizar operaciones matemáticas sobre esta columna.
 
-<img width="1749" height="533" alt="image" src="https://github.com/user-attachments/assets/2e6e5e81-631e-4e8c-a4fd-bab160e2ed94" />
+<img width="180" height="238" alt="image" src="https://github.com/user-attachments/assets/dc3d484c-3af8-4e9f-8338-22631db8c450" />
+
+Para realizar esto, se utilizó la transformación de ``Value mapper`` que permitirá eliminar el símbolo. 
+
+<img width="248" height="145" alt="image" src="https://github.com/user-attachments/assets/595062d3-6844-4cd6-89ea-c999eda75240" />
+
+<img width="1239" height="456" alt="Captura de pantalla 2026-04-30 154826" src="https://github.com/user-attachments/assets/a6f04b03-94a0-49d1-b4f7-9ff1923f8246" />
+
+
 
 Cambiar el formato de la columna 'precio_unitario' a Number (Decimal).
 
