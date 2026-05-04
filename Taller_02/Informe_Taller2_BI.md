@@ -99,19 +99,34 @@ Finalmente, se utilizó la herramienta de **Preview** en Pentaho para validar qu
 
 ### Eliminación de símbolos innecesarios y cambio de formato de la columna 'precio_unitario'
 
-Precios incluyen el símbolo $.
+Precios incluyen el símbolo "$", además estos estan en formato de texto. Es necesario quitar el símbolo y cambiar el formato de texto a por un numérico que permita realizar operaciones matemáticas sobre esta columna.
 
-<img width="1749" height="533" alt="image" src="https://github.com/user-attachments/assets/2e6e5e81-631e-4e8c-a4fd-bab160e2ed94" />
+<img width="180" height="238" alt="image" src="https://github.com/user-attachments/assets/dc3d484c-3af8-4e9f-8338-22631db8c450" />
 
-Cambiar el formato de la columna 'precio_unitario' a Number (Decimal).
+Para realizar esto, se utilizó la transformación de ``Value mapper`` que permitirá eliminar el símbolo. 
 
-<img width="1349" height="654" alt="image" src="https://github.com/user-attachments/assets/99ed207d-f38d-42d2-aa8a-6a61c416c311" />
+<img width="248" height="145" alt="image" src="https://github.com/user-attachments/assets/595062d3-6844-4cd6-89ea-c999eda75240" />
+
+<img width="1239" height="456" alt="Captura de pantalla 2026-04-30 154826" src="https://github.com/user-attachments/assets/a6f04b03-94a0-49d1-b4f7-9ff1923f8246" />
+
+Una vez eliminado el símbolo "$" fue necesario cambiar el formato de la columna del ``precio_unitario`` a un formato decimal.
+
+Se lo hizo con la transformación de ``select values``, uniendolo al flujo anterior.
+
+<img width="1446" height="750" alt="image" src="https://github.com/user-attachments/assets/46751537-a5c0-4aac-8aab-9a0a596938d3" />
+
+La configuración de esta transformación se la realiza editando las columnas de ``Type`` con "BigNumber" el cuál cambia el formato del número a uno decimal, estableciendo también una lóngitud de 10 y 2 en precisión, para mantener un valor entero y decimal adecuados. Y finalmente se indica en la columna ``decimal`` se coloca el "." que será el separador decimal a utilizar.
+
+<img width="727" height="477" alt="image" src="https://github.com/user-attachments/assets/e3214cfc-73e3-4dcf-9caf-a3564bbffd29" />
+
+<img width="731" height="477" alt="image" src="https://github.com/user-attachments/assets/16b2a0cd-2134-4ec4-9a0d-28451ceec552" />
+
 
 ## Carga
 
 Con el componente de salida 'Table output', se configuró la creación de una nueva tabla denominada 'productos_ferreteria_clean' para exportar los datos transformados. Para ello, se especificaron los campos que debía tener, los cuales fueron recuperados de la tabla de entrada.
 
-<img width="1394" height="805" alt="image" src="https://github.com/user-attachments/assets/9a54d2cb-bfbe-4c9c-89f3-f9ade301a34f" />
+<img width="1251" height="632" alt="image" src="https://github.com/user-attachments/assets/2175b522-01c6-4290-8b4b-9c76d4070a77" />
 
 Luego, se presionó el botón 'SQL' y, seguidamente, 'Execute' en la ventana posterior, obteniendo como resultado la creación exitosa de la nueva tabla.
 
@@ -119,12 +134,14 @@ Luego, se presionó el botón 'SQL' y, seguidamente, 'Execute' en la ventana pos
 
 Por último, se ejecutaron las transformaciones establecidas para cargar los datos modificados en la tabla 'productos_ferreteria_clean'.
 
-<img width="866" height="566" alt="image" src="https://github.com/user-attachments/assets/e73d94cf-c00e-4c4f-a8cd-1b2cfd62bc21" />
+<img width="1906" height="983" alt="image" src="https://github.com/user-attachments/assets/8e481700-9033-4dda-9c55-23979ca0d61d" />
+
 
 ## Resultados
 
 En la base de datos 'TornilloFelizBD', se observa que las categorías y unidades de medida han sido estandarizadas, así como también se eliminaron símbolos innecesarios y se corrigió el formato de la columna de precios. Por lo tanto, la información de los productos se encuentra ahora en una tabla limpia y normalizada dentro de una base de datos central en PostgreSQL, conforme a lo solicitado por el gerente de sistemas de la empresa.
 
+<img width="1077" height="546" alt="image" src="https://github.com/user-attachments/assets/06911e88-6eec-4dee-abce-cfa942500fc3" />
 
 
 

@@ -414,6 +414,7 @@
     <feedback_shown>Y</feedback_shown>
     <feedback_size>50000</feedback_size>
     <using_thread_priorities>Y</using_thread_priorities>
+    <shared_objects_file/>
     <capture_step_performance>N</capture_step_performance>
     <step_performance_capturing_delay>1000</step_performance_capturing_delay>
     <step_performance_capturing_size_limit>100</step_performance_capturing_size_limit>
@@ -434,6 +435,61 @@
   </info>
   <notepads>
   </notepads>
+  <connection>
+    <name>PostgreSQL Conexion</name>
+    <server>localhost</server>
+    <type>POSTGRESQL</type>
+    <access>Native</access>
+    <database>TornilloFelizBD</database>
+    <port>5432</port>
+    <username>postgres</username>
+    <password>Encrypted 2be98afc86aa7f2e4cb79ce71da9fa6d4</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>IS_CLUSTERED</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>PORT_NUMBER</code>
+        <attribute>5432</attribute>
+      </attribute>
+      <attribute>
+        <code>PRESERVE_RESERVED_WORD_CASE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>QUOTE_ALL_FIELDS</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>USE_POOLING</code>
+        <attribute>N</attribute>
+      </attribute>
+    </attributes>
+  </connection>
   <order>
     <hop>
       <from>Table input</from>
@@ -443,6 +499,21 @@
     <hop>
       <from>Value mapper-Categoria</from>
       <to>Value mapper - Unidad medida</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Value mapper - Unidad medida</from>
+      <to>Simbolos_precio</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Cambiar_formato_numerico</from>
+      <to>productos_ferreteria_clean</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Simbolos_precio</from>
+      <to>Cambiar_formato_numerico</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -764,8 +835,86 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>464</xloc>
-      <yloc>32</yloc>
+      <xloc>368</xloc>
+      <yloc>80</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Value mapper - Unidad medida</name>
+    <type>ValueMapper</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <field_to_use>unidad_medida</field_to_use>
+    <target_field/>
+    <non_match_default/>
+    <fields>
+      <field>
+        <source_value>1 und</source_value>
+        <target_value>1 unidad</target_value>
+      </field>
+      <field>
+        <source_value>1u</source_value>
+        <target_value>1 unidad</target_value>
+      </field>
+      <field>
+        <source_value>1 Unidad</source_value>
+        <target_value>1 unidad</target_value>
+      </field>
+      <field>
+        <source_value>1L</source_value>
+        <target_value>1 litro</target_value>
+      </field>
+      <field>
+        <source_value>1 Lt</source_value>
+        <target_value>1 litro</target_value>
+      </field>
+      <field>
+        <source_value>4L</source_value>
+        <target_value>4 litro</target_value>
+      </field>
+      <field>
+        <source_value>1 rl</source_value>
+        <target_value>1 rollo</target_value>
+      </field>
+      <field>
+        <source_value>Caja</source_value>
+        <target_value>caja</target_value>
+      </field>
+      <field>
+        <source_value>CJ</source_value>
+        <target_value>caja</target_value>
+      </field>
+      <field>
+        <source_value>CAJA</source_value>
+        <target_value>caja</target_value>
+      </field>
+      <field>
+        <source_value>1 m</source_value>
+        <target_value>1 metro</target_value>
+      </field>
+      <field>
+        <source_value>1 mt</source_value>
+        <target_value>1 metro</target_value>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>608</xloc>
+      <yloc>224</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -938,14 +1087,14 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>464</xloc>
-      <yloc>144</yloc>
+      <xloc>368</xloc>
+      <yloc>224</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Value mapper - Unidad medida</name>
-    <type>ValueMapper</type>
+    <name>Simbolos_precio</name>
+    <type>ReplaceString</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -954,57 +1103,78 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <field_to_use>unidad_medida</field_to_use>
-    <target_field/>
-    <non_match_default/>
     <fields>
       <field>
-        <source_value>1 und</source_value>
-        <target_value>1 unidad</target_value>
+        <in_stream_name>id_producto</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string/>
+        <replace_by_string/>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+        <is_unicode>no</is_unicode>
       </field>
       <field>
-        <source_value>1u</source_value>
-        <target_value>1 unidad</target_value>
+        <in_stream_name>nombre_producto</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string/>
+        <replace_by_string/>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+        <is_unicode>no</is_unicode>
       </field>
       <field>
-        <source_value>1 Unidad</source_value>
-        <target_value>1 unidad</target_value>
+        <in_stream_name>categoria</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string/>
+        <replace_by_string/>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+        <is_unicode>no</is_unicode>
       </field>
       <field>
-        <source_value>1L</source_value>
-        <target_value>1 litro</target_value>
+        <in_stream_name>unidad_medida</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string/>
+        <replace_by_string/>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+        <is_unicode>no</is_unicode>
       </field>
       <field>
-        <source_value>1 Lt</source_value>
-        <target_value>1 litro</target_value>
+        <in_stream_name>precio_unitario</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>$</replace_string>
+        <replace_by_string/>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+        <is_unicode>no</is_unicode>
       </field>
       <field>
-        <source_value>4L</source_value>
-        <target_value>4 litro</target_value>
-      </field>
-      <field>
-        <source_value>1 rl</source_value>
-        <target_value>1 rollo</target_value>
-      </field>
-      <field>
-        <source_value>Caja</source_value>
-        <target_value>caja</target_value>
-      </field>
-      <field>
-        <source_value>CJ</source_value>
-        <target_value>caja</target_value>
-      </field>
-      <field>
-        <source_value>CAJA</source_value>
-        <target_value>caja</target_value>
-      </field>
-      <field>
-        <source_value>1 m</source_value>
-        <target_value>1 metro</target_value>
-      </field>
-      <field>
-        <source_value>1 mt</source_value>
-        <target_value>1 metro</target_value>
+        <in_stream_name>proveedor</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string/>
+        <replace_by_string/>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+        <is_unicode>no</is_unicode>
       </field>
     </fields>
     <attributes/>
@@ -1016,8 +1186,230 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>640</xloc>
-      <yloc>144</yloc>
+      <xloc>608</xloc>
+      <yloc>384</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Cambiar_formato_numerico</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>id_producto</name>
+        <rename/>
+      </field>
+      <field>
+        <name>nombre_producto</name>
+        <rename/>
+      </field>
+      <field>
+        <name>categoria</name>
+        <rename/>
+      </field>
+      <field>
+        <name>unidad_medida</name>
+        <rename/>
+      </field>
+      <field>
+        <name>precio_unitario</name>
+        <rename/>
+      </field>
+      <field>
+        <name>proveedor</name>
+        <rename/>
+      </field>
+      <select_unspecified>N</select_unspecified>
+      <meta>
+        <name>id_producto</name>
+        <rename>id_producto</rename>
+        <type>None</type>
+        <length>10</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>
+      <meta>
+        <name>nombre_producto</name>
+        <rename>nombre_producto</rename>
+        <type>None</type>
+        <length>100</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>
+      <meta>
+        <name>categoria</name>
+        <rename>categoria</rename>
+        <type>None</type>
+        <length>50</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>
+      <meta>
+        <name>unidad_medida</name>
+        <rename>unidad_medida</rename>
+        <type>None</type>
+        <length>20</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>
+      <meta>
+        <name>precio_unitario</name>
+        <rename>precio_unitario</rename>
+        <type>BigNumber</type>
+        <length>10</length>
+        <precision>2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>
+      <meta>
+        <name>proveedor</name>
+        <rename>proveedor</rename>
+        <type>None</type>
+        <length>50</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>896</xloc>
+      <yloc>384</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>productos_ferreteria_clean</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>PostgreSQL Conexion</connection>
+    <schema>staging</schema>
+    <table>productos_ferreteria_clean</table>
+    <commit>1000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+      <field>
+        <column_name>id_producto</column_name>
+        <stream_name>id_producto</stream_name>
+      </field>
+      <field>
+        <column_name>nombre_producto</column_name>
+        <stream_name>nombre_producto</stream_name>
+      </field>
+      <field>
+        <column_name>categoria</column_name>
+        <stream_name>categoria</stream_name>
+      </field>
+      <field>
+        <column_name>unidad_medida</column_name>
+        <stream_name>unidad_medida</stream_name>
+      </field>
+      <field>
+        <column_name>precio_unitario</column_name>
+        <stream_name>precio_unitario</stream_name>
+      </field>
+      <field>
+        <column_name>proveedor</column_name>
+        <stream_name>proveedor</stream_name>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>896</xloc>
+      <yloc>544</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
