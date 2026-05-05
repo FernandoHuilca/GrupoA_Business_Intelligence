@@ -69,8 +69,9 @@ Colocación de datos a las tablas creadas
 
 
 ### Diagrama del modelo estrella
-hay que cambiar esta imagen xd
-<img width="1880" height="1340" alt="Diagrama_modelo_estrella_Sales" src="https://github.com/user-attachments/assets/3ccac118-e595-4ca0-b699-44b38607fbc5" />
+
+<img width="918" height="707" alt="image" src="https://github.com/user-attachments/assets/2ba0aeec-3633-46ff-8b24-65b948138640" />
+
 
 
 ### Preguntas contestadas en SQL
