@@ -104,6 +104,9 @@ Después de implementar el esquema estrella del archivo 'Tabla_Desnormalizada_Ve
 
 <img width="521" height="523" alt="image" src="https://github.com/user-attachments/assets/00b994a3-76a0-45dc-aced-eafc2ba1414c" />
 
+### 4. ¿Cuál fue la cantidad enviada por mes de envió?
+
+<img width="966" height="966" alt="Captura de pantalla 2026-05-05 182314" src="https://github.com/user-attachments/assets/c1ade080-87db-45fa-a37b-40e8990c5876" />
 
 
 
