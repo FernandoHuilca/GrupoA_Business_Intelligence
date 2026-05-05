@@ -81,6 +81,9 @@ Colocación de datos a las tablas creadas
 
 
 
+3. ¿Cuál es la cantidad total vendida por producto?
+<img width="521" height="523" alt="image" src="https://github.com/user-attachments/assets/00b994a3-76a0-45dc-aced-eafc2ba1414c" />
+
 
 
 
