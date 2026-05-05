@@ -23,6 +23,8 @@
 
 ## Archivo 'products.csv'
 
+### Diagrama del modelo estrella
+
 <img width="405" height="547" alt="image" src="https://github.com/user-attachments/assets/3e58c81b-3c53-438f-ab6b-89675f3da54d" />
 
 <img width="659" height="499" alt="image" src="https://github.com/user-attachments/assets/dd17ef23-59f5-4397-9a8c-11715fe5d466" />
@@ -32,9 +34,6 @@
 <img width="1457" height="767" alt="image" src="https://github.com/user-attachments/assets/6fe77805-d3ec-437d-819c-b797aac2005e" />
 
 <img width="962" height="548" alt="image" src="https://github.com/user-attachments/assets/daecb81f-a0e9-4a46-936f-240ff340e694" />
-
-
-### Diagrama del modelo estrella
 
 ## Archivo 'Tabla_Desnormalizada_Ventas.csv'
 
