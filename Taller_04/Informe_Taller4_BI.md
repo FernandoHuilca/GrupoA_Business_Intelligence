@@ -23,15 +23,61 @@
 
 ## Archivo 'products.csv'
 
+<img width="405" height="547" alt="image" src="https://github.com/user-attachments/assets/3e58c81b-3c53-438f-ab6b-89675f3da54d" />
+
+<img width="659" height="499" alt="image" src="https://github.com/user-attachments/assets/dd17ef23-59f5-4397-9a8c-11715fe5d466" />
+
+<img width="1070" height="524" alt="image" src="https://github.com/user-attachments/assets/9bf701c9-8876-410f-8184-7c4610ac0fc2" />
+
+<img width="1457" height="767" alt="image" src="https://github.com/user-attachments/assets/6fe77805-d3ec-437d-819c-b797aac2005e" />
+
+<img width="962" height="548" alt="image" src="https://github.com/user-attachments/assets/daecb81f-a0e9-4a46-936f-240ff340e694" />
+
+
 ### Diagrama del modelo estrella
 
 ## Archivo 'Tabla_Desnormalizada_Ventas.csv'
 
 ### Proceso de normalización
 
+<img width="810" height="726" alt="image" src="https://github.com/user-attachments/assets/a7bf639a-8950-4230-8262-d5364f8e57c4" />
+
+<img width="872" height="676" alt="image" src="https://github.com/user-attachments/assets/8ada7403-579a-498b-a517-5350ac012f30" />
+
+<img width="874" height="672" alt="image" src="https://github.com/user-attachments/assets/7c0fa71c-b142-489b-bc54-a39f3b8a9c36" />
+
+<img width="871" height="678" alt="image" src="https://github.com/user-attachments/assets/a4bdb480-f906-4e7a-87e8-aff0ee94b6a6" />
+
+<img width="1388" height="719" alt="image" src="https://github.com/user-attachments/assets/b536f1c2-8ce3-42e0-80c7-4f5b7ebdc495" />
+
+<img width="415" height="426" alt="image" src="https://github.com/user-attachments/assets/9ac987b3-0693-4d15-9897-af5d72be0dab" />
+
+<img width="419" height="387" alt="image" src="https://github.com/user-attachments/assets/f7016214-0386-4522-86a9-6118996881d9" />
+
+<img width="676" height="543" alt="image" src="https://github.com/user-attachments/assets/5d000a1c-ca76-452f-a542-e0467cfbd761" />
+
+Colocación de datos a las tablas creadas
+<img width="1076" height="557" alt="image" src="https://github.com/user-attachments/assets/9665dd16-cc92-4cc2-8d90-f3992f98d1cd" />
+
+<img width="952" height="545" alt="image" src="https://github.com/user-attachments/assets/4ec538a6-c234-4e4a-b1fe-bfb20d8f390b" />
+
+<img width="859" height="425" alt="image" src="https://github.com/user-attachments/assets/ab71cce2-d175-426a-883d-e254031ad59a" />
+
+<img width="857" height="409" alt="image" src="https://github.com/user-attachments/assets/ea9178c8-25f5-4c06-8ac3-b54f35f458b1" />
+
+<img width="924" height="650" alt="image" src="https://github.com/user-attachments/assets/47f2976d-024c-4e70-9876-cab0ec28eadc" />
+
+
 ### Diagrama del modelo estrella
+hay que cambiar esta imagen xd
+<img width="1880" height="1340" alt="Diagrama_modelo_estrella_Sales" src="https://github.com/user-attachments/assets/3ccac118-e595-4ca0-b699-44b38607fbc5" />
+
 
 ### Preguntas contestadas en SQL
+
+1. ¿Cuántas ventas se realizaron por categoría de producto y mes?
+<img width="755" height="893" alt="image" src="https://github.com/user-attachments/assets/cca5c1a4-9e55-4537-9f24-de09ae0d5ae1" />
+
 
 
 
