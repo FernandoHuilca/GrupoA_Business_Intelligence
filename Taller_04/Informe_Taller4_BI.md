@@ -109,7 +109,7 @@ Después de implementar el esquema estrella del archivo 'Tabla_Desnormalizada_Ve
 <img width="755" height="893" alt="image" src="https://github.com/user-attachments/assets/cca5c1a4-9e55-4537-9f24-de09ae0d5ae1" />
 
 #### 2. ¿Cuál es el ingreso total (ventas) por cliente y género? 
-
+<img width="642" height="690" alt="pregunta2_bi_taller4" src="https://github.com/user-attachments/assets/fafde4d8-c70b-473f-a5b2-f215ee879fcf" />
 
 #### 3. ¿Cuál es la cantidad total vendida por producto?
 
@@ -118,7 +118,6 @@ Después de implementar el esquema estrella del archivo 'Tabla_Desnormalizada_Ve
 ### 4. ¿Cuál fue la cantidad enviada por mes de envió?
 
 <img width="966" height="966" alt="Captura de pantalla 2026-05-05 182314" src="https://github.com/user-attachments/assets/c1ade080-87db-45fa-a37b-40e8990c5876" />
-
 
 ### 5. ¿Cuánto se vendió por tamaño de producto y por estado civil del cliente?
 
