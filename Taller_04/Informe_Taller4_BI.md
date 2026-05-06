@@ -120,8 +120,9 @@ Después de implementar el esquema estrella del archivo 'Tabla_Desnormalizada_Ve
 <img width="966" height="966" alt="Captura de pantalla 2026-05-05 182314" src="https://github.com/user-attachments/assets/c1ade080-87db-45fa-a37b-40e8990c5876" />
 
 
+### 5. ¿Cuánto se vendió por tamaño de producto y por estado civil del cliente?
 
-
+<img width="746" height="500" alt="image" src="https://github.com/user-attachments/assets/44ac24f4-ab7f-4171-a8ee-b02520994c37" />
 
 
 
