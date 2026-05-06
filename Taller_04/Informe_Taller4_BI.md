@@ -121,7 +121,8 @@ Después de implementar el esquema estrella del archivo 'Tabla_Desnormalizada_Ve
 
 ### 5. ¿Cuánto se vendió por tamaño de producto y por estado civil del cliente?
 
-<img width="746" height="500" alt="image" src="https://github.com/user-attachments/assets/44ac24f4-ab7f-4171-a8ee-b02520994c37" />
+<img width="920" height="583" alt="image" src="https://github.com/user-attachments/assets/f4a97559-5c1b-4a2a-bd27-9faabb0cb345" />
+
 
 
 
