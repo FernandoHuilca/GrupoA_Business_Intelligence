@@ -436,11 +436,6 @@
   </notepads>
   <order>
     <hop>
-      <from>Leer raw_sales</from>
-      <to>Select values</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
       <from>Select values</from>
       <to>Unique rows</to>
       <enabled>Y</enabled>
@@ -448,6 +443,11 @@
     <hop>
       <from>Unique rows</from>
       <to>Insertar dim_child</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Table input</from>
+      <to>Select values</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -503,110 +503,6 @@
     </remotesteps>
     <GUI>
       <xloc>768</xloc>
-      <yloc>96</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Leer raw_sales</name>
-    <type>TableInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>dim_child_connection</connection>
-    <sql>SELECT child_id, gender, age_months FROM raw_desnutricion_infantil</sql>
-    <limit>0</limit>
-    <lookup/>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-    <cached_row_meta_active>N</cached_row_meta_active>
-    <row-meta>
-      <value-meta>
-        <type>String</type>
-        <storagetype>normal</storagetype>
-        <name>child_id</name>
-        <length>10</length>
-        <precision>-1</precision>
-        <origin>Leer raw_sales</origin>
-        <comments>child_id</comments>
-        <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>America/Guayaquil</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>String</type>
-        <storagetype>normal</storagetype>
-        <name>gender</name>
-        <length>1</length>
-        <precision>-1</precision>
-        <origin>Leer raw_sales</origin>
-        <comments>gender</comments>
-        <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>America/Guayaquil</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>Integer</type>
-        <storagetype>normal</storagetype>
-        <name>age_months</name>
-        <length>9</length>
-        <precision>0</precision>
-        <origin>Leer raw_sales</origin>
-        <comments>age_months</comments>
-        <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>America/Guayaquil</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-    </row-meta>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>208</xloc>
       <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
@@ -679,6 +575,110 @@
     </remotesteps>
     <GUI>
       <xloc>568</xloc>
+      <yloc>96</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Table input</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>dim_child_connection</connection>
+    <sql>SELECT child_id, gender, age_months FROM raw_desnutricion_infantil</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cached_row_meta_active>N</cached_row_meta_active>
+    <row-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>child_id</name>
+        <length>10</length>
+        <precision>-1</precision>
+        <origin>Table input</origin>
+        <comments>child_id</comments>
+        <conversion_Mask/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>America/Guayaquil</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>gender</name>
+        <length>1</length>
+        <precision>-1</precision>
+        <origin>Table input</origin>
+        <comments>gender</comments>
+        <conversion_Mask/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>America/Guayaquil</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>Integer</type>
+        <storagetype>normal</storagetype>
+        <name>age_months</name>
+        <length>9</length>
+        <precision>0</precision>
+        <origin>Table input</origin>
+        <comments>age_months</comments>
+        <conversion_Mask>####0;-####0</conversion_Mask>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>America/Guayaquil</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+    </row-meta>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>176</xloc>
       <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
