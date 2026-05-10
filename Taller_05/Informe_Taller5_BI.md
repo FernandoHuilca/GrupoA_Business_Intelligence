@@ -44,7 +44,9 @@ Primero se creó la base de datos "practica_5". Luego, se creó la tabla de los 
 Luego del análisis de cómo agrupar los datos, se crearon las tablas de dimensiones "dim_child", "dim_status", "dim_health_center", "dim_date" y la tabla de hechos "fact_measurement".
 
 <img width="387" height="183" alt="image" src="https://github.com/user-attachments/assets/49a582cf-b7ce-42c7-8951-a393faed0459" />
-
+<br>
+<img width="338" height="105" alt="image" src="https://github.com/user-attachments/assets/0b8db23e-35a0-40fd-aeb5-e66dfee42ad6" />
+<br>
 
 ### 3. Carga de los datos desde Pentaho al Staging de PostgreSQL 
 
@@ -72,7 +74,7 @@ Al ejecutar, se observó una salida exitosa en Pentaho junto con la verificació
 
 ### 4. Transformación y carga de los datos crudos desde el Staging a las tablas de dimensiones y tabla de hechos
 
-#### 1. dim_child
+#### 4.1. dim_child
 
 - En una nueva transformación llamada "Load dim_child", se añadió el input "Table input" para obtener los datos de la tabla "raw_desnutricion_infantil". 
 
@@ -99,6 +101,38 @@ Al ejecutar, se observó una salida exitosa en Pentaho junto con la verificació
 <img width="761" height="393" alt="image" src="https://github.com/user-attachments/assets/20adde7c-ece6-4ad6-b610-bd63e17ca7c2" />
 <br>
 <img width="700" height="694" alt="image" src="https://github.com/user-attachments/assets/10b9b9cd-c880-4ad0-97a0-a4658ce38751" />
+
+#### 4.2. dim_status
+
+- En la transformación llamada “Load dim_status”, se utilizó el componente “Table Input” para obtener los datos de la columna "nutritional_status" de la tabla "raw_desnutricion_infantil" y cargarlos en la tabla "dim_status".
+
+<img width="905" height="617" alt="image" src="https://github.com/user-attachments/assets/833094d1-0dc4-43fe-a3e0-193f584090e3" />
+<br>
+
+- Después, se agregó el componente “Select Values” para seleccionar la columna "nutritional_status", dado que era la necesaria para la tabla "dim_status".
+
+<img width="892" height="243" alt="image" src="https://github.com/user-attachments/assets/755e1310-bf74-4d08-93c0-8898ae0e3ca2" />
+<br>
+
+- Luego, se añadió el componente "Sort rows" para ordenar los registros en orden ascendente según la columna "nutritional_status", con la finalidad de poder eliminar duplicados. 
+<img width="1057" height="328" alt="image" src="https://github.com/user-attachments/assets/5a131c25-4dac-4f04-bbad-51b11b20030e" />
+<br>
+
+- Como siguiente paso, se agregó el componente “Unique Rows” para eliminar los registros duplicados utilizando la columna "nutritional_status".
+
+<img width="867" height="267" alt="image" src="https://github.com/user-attachments/assets/7b801c19-29b9-4366-a961-a396a638de62" />
+<br>
+
+- Por último, se añadió el componente "Table output" para cargar los datos extraídos en la tabla de dimensiones "dim_status".
+
+<img width="685" height="437" alt="image" src="https://github.com/user-attachments/assets/88c2200f-3810-4ae9-b258-be314d394d6a" />
+<br>
+
+- Al ejecutar se observó una salida exitosa en Pentaho junto con la verificación de los datos en PostgreSQL.
+
+<img width="605" height="451" alt="image" src="https://github.com/user-attachments/assets/30914184-fb99-47fa-9a19-a99711c1e364" />
+<br>
+<img width="296" height="217" alt="image" src="https://github.com/user-attachments/assets/9839a75f-b504-4b8d-8741-f37bd8cace3e" />
 
 
 ## Preguntas contestadas en SQL
