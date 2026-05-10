@@ -129,6 +129,29 @@ Al ejecutar, se observó una salida exitosa en Pentaho junto con la verificació
 <br>
 <img width="296" height="217" alt="image" src="https://github.com/user-attachments/assets/9839a75f-b504-4b8d-8741-f37bd8cace3e" />
 
+
+##### 4.3. dim_location
+- En la transformación llamada “Load dim_location ”, se utilizó el componente “Table Input” para obtener los datos de las columnas "region" y "institution" de la tabla "raw_desnutricion_infantil".
+<img width="924" height="550" alt="image" src="https://github.com/user-attachments/assets/1b950789-b74e-480d-9bbe-ccccf28d9540" />
+
+
+- Después, se agregó el componente “Select Values” para seleccionar la columna "region" e "institution".
+<img width="902" height="731" alt="image" src="https://github.com/user-attachments/assets/85ca8829-fe46-45f7-afbc-4d9590cc8721" />
+
+- Luego, se añadió el componente "Sort rows" para ordenar los registros en orden ascendente esto con la intención de que la función luego implementada de "unique rows" se realice de manera eficaz.
+<img width="927" height="562" alt="image" src="https://github.com/user-attachments/assets/2d0986ab-779b-4a99-b81c-fa7d41eec9e3" />
+
+
+- Como siguiente paso, se agregó el componente “Unique Rows” para eliminar los registros duplicados.
+<img width="810" height="629" alt="image" src="https://github.com/user-attachments/assets/9251689f-5728-43a0-afec-9c02576124d2" />
+
+- Finalmente, se agrega el componente "Table output" para cargar los datos ya tratados hacía la tabla dim_location.
+<img width="889" height="788" alt="image" src="https://github.com/user-attachments/assets/6f110d15-77ea-4bcb-85b0-5245e4e9e5c5" />
+
+- Se observa que le ejecución fué exitosa.
+<img width="895" height="678" alt="image" src="https://github.com/user-attachments/assets/81c5d386-0da8-4ac0-ba6a-59da30e77269" />
+
+
 ### 5. Creación y ejecución de un job
 
 En Pentaho, se creó un job para ejecutar secuencialmente todas las transformaciones realizadas, desde la carga de datos crudos al staging hasta las transformaciones y cargas de registros en las tablas de dimensiones y la tabla de hechos, con el fin de construir automáticamente el modelo estrella en PostgreSQL.
