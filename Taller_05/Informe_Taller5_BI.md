@@ -73,7 +73,7 @@ Al ejecutar, se observó una salida exitosa en Pentaho junto con la verificació
 
 - En una nueva transformación llamada "Load dim_child", se añadió el input "Table input" para obtener los datos de la tabla "raw_desnutricion_infantil". 
 
-<img width="886" height="481" alt="image" src="https://github.com/user-attachments/assets/8581c0de-4949-476b-b7a3-f52f1affad5d" />
+<img width="1443" height="732" alt="image" src="https://github.com/user-attachments/assets/66653e62-43c7-465d-8473-9d8bb9d8ae29" />
 <br>
 
 - Después, se añadió el transformation "Select values" para seleccionar las columnas "child_id", "gender" y "age_months" que eran necesarias para la tabla "dim_child".
@@ -95,7 +95,7 @@ Al ejecutar, se observó una salida exitosa en Pentaho junto con la verificació
 
 <img width="761" height="393" alt="image" src="https://github.com/user-attachments/assets/20adde7c-ece6-4ad6-b610-bd63e17ca7c2" />
 <br>
-<img width="700" height="694" alt="image" src="https://github.com/user-attachments/assets/10b9b9cd-c880-4ad0-97a0-a4658ce38751" />
+<img width="560" height="428" alt="image" src="https://github.com/user-attachments/assets/6b365118-9b47-4f70-8b2a-159e1a65b9b0" />
 
 #### 4.2. dim_status
 
