@@ -43,12 +43,12 @@ Primero se creó la base de datos "practica_5". Luego, se creó la tabla de los 
 
 Luego del análisis de cómo agrupar los datos, se crearon las tablas de dimensiones "dim_child", "dim_status", "dim_health_center", "dim_date" y la tabla de hechos "fact_measurement".
 
-<img width="769" height="538" alt="image" src="https://github.com/user-attachments/assets/655b050f-21e7-40ac-b510-9174797a7e12" />
+<img width="387" height="183" alt="image" src="https://github.com/user-attachments/assets/49a582cf-b7ce-42c7-8951-a393faed0459" />
 
 
 ### 3. Carga de los datos desde Pentaho al Staging de PostgreSQL 
 
-En una nueva transformación en Pentaho llamda "Load staging_raw", se añadió el input "CSV file input" para obtener los datos del archivo "desnutricion_infantil.csv".
+En una nueva transformación en Pentaho llamada "Load staging_raw", se añadió el input "CSV file input" para obtener los datos del archivo "desnutricion_infantil.csv".
 
 <img width="886" height="631" alt="image" src="https://github.com/user-attachments/assets/85d557be-13d2-458e-93df-680767a79284" /> 
 <br>
@@ -107,6 +107,23 @@ Al ejecutar, se observó una salida exitosa en Pentaho junto con la verificació
 
 ### 1. ¿Cuál es el tipo de desnutrición más común por región?
 
+Por región, el tipo de desnutrición más común es:
+
+| Región | Tipo de desnutrición más común (casos) |
+|----------|-----------------------------|
+| Amazonía | Crónica y Global (57 casos) |
+| Costa | Global (69 casos) |
+| Sierra | Global (59 casos) |
+
+- Primero, se seleccionaron las columnas de región y tipo de desnutrición, junto con la cantidad de casos de la combinación región-diagnóstico.
+
+- Luego, usando como base a la tabla de hechos (facts_measurement), se hizo un JOIN para conectar con la tabla de centros de salud (dim_health_center) y con la tabla estados nutricionales (dim_status) a través de sus primary keys.
+
+- Se aplicó un GROUP BY por región y tipo de desnutrición para tener un solo grupo cada fila que comparta una misma ubicación y diagnóstico.
+
+- Adicionalmente, se usó un ORDER BY para organizar alfabéticamente por región y luego por total descendente por la cantidad de casos.
+
+<img width="962" height="510" alt="image" src="https://github.com/user-attachments/assets/3c90244b-0322-424b-ae8b-245f853d3947" />
 
 
 ### 2. ¿Cómo varía la desnutrición por edad y género?`
