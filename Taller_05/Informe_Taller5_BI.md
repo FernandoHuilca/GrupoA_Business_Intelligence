@@ -23,12 +23,7 @@
 
 ---
 
-## Modelo estrella en Power Pivot
-
-
-
 ## Pentaho y PostgreSQL
-
 
 ### 1. Creación de la tabla "raw_desnutricion_infantil" en PostgreSQL
 
@@ -37,7 +32,7 @@ Primero se creó la base de datos "practica_5". Luego, se creó la tabla de los 
 <img width="886" height="444" alt="image" src="https://github.com/user-attachments/assets/58580ad0-a171-44a9-81fe-44d8712c8455" />
 <br>
 <img width="886" height="303" alt="image" src="https://github.com/user-attachments/assets/0e44e84b-6bd5-47ef-bbf0-c825b3114e99" />
-
+<br>
 
 ### 2. Creación de tablas de dimensiones y tabla de hechos
 
@@ -134,10 +129,22 @@ Al ejecutar, se observó una salida exitosa en Pentaho junto con la verificació
 <br>
 <img width="296" height="217" alt="image" src="https://github.com/user-attachments/assets/9839a75f-b504-4b8d-8741-f37bd8cace3e" />
 
+### 5. Creación y ejecución de un job
+
+En Pentaho, se creó un job para ejecutar secuencialmente todas las transformaciones realizadas, desde la carga de datos crudos al staging hasta las transformaciones y cargas de registros en las tablas de dimensiones y la tabla de hechos, con el fin de construir automáticamente el modelo estrella en PostgreSQL.
+
+(falta la imagen)
+
+## Modelo estrella en Power Pivot
+
+
+
+
+
+
+
 
 ## Preguntas contestadas en SQL
-
-
 
 ### 1. ¿Cuál es el tipo de desnutrición más común por región?
 
