@@ -160,9 +160,35 @@ Por región, el tipo de desnutrición más común es:
 <img width="962" height="510" alt="image" src="https://github.com/user-attachments/assets/3c90244b-0322-424b-ae8b-245f853d3947" />
 
 
-### 2. ¿Cómo varía la desnutrición por edad y género?`
+### 2. ¿Cómo varía la desnutrición por edad y género?
 
+<img width="712" height="657" alt="image" src="https://github.com/user-attachments/assets/52cea673-d3f8-455c-a651-e55f81334cde" />
+<br>
 
+Del resultado de la consulta SQL y gráficas realizadas en Excel con ese resultado, se obtuvieron las siguientes observaciones:
+
+- Se registraron 500 casos en total, de los cuales 262 corresponden al género femenino y 238 al género masculino, mostrando una distribución relativamente equilibrada entre ambos géneros.
+
+- La desnutrición global fue el tipo más frecuente con 185 casos, seguida de la desnutrición crónica con 159 casos y la desnutrición aguda con 156 casos.
+
+- En el género femenino y masculino predominan los casos de desnutrición global con 92 registros y 93 casos respectivamente.
+- 
+<img width="1002" height="300" alt="image" src="https://github.com/user-attachments/assets/78e41eb3-6cb0-4f42-b717-b89b37e8591b" />
+<br>
+
+- Existen edades donde se presentan mayores cantidades de casos. Por ejemplo, en el género masculino a los 42 meses se registraron 11 casos en total, principalmente de desnutrición crónica.
+
+<img width="1267" height="532" alt="image" src="https://github.com/user-attachments/assets/600a3980-f3c6-4b06-94ed-83636ca9146a" />
+<br>
+
+- En el género femenino destacan edades como 11, 12 y 55 meses, donde se registran entre 9 y 10 casos totales de desnutrición.
+
+<img width="1268" height="533" alt="image" src="https://github.com/user-attachments/assets/ad085416-b2cd-4e82-a830-a20384bd3b25" />
+<br>
+
+- La desnutrición crónica presenta una presencia constante en distintas edades y géneros, lo que evidencia que este tipo de desnutrición afecta de manera recurrente a la población infantil analizada.
+
+- Los resultados muestran que los tres tipos de desnutrición están presentes en casi todas las edades estudiadas, indicando que el problema nutricional afecta a una gran cantidad de niños y niñas.
 
 ### 3. ¿Qué instituciones atienden más casos?
 
