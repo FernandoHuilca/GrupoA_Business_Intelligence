@@ -27,6 +27,12 @@ CREATE TABLE dim_status(
 	nutritional_status VARCHAR(10)
 );
 
+-- Tabla de dim_location
+CREATE TABLE dim_location (
+	location_key SERIAL PRIMARY KEY,
+	region VARCHAR(50),
+	institution VARCHAR(100)
+);
 
 
 
