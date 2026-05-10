@@ -101,31 +101,31 @@ Al ejecutar, se observó una salida exitosa en Pentaho junto con la verificació
 
 - En la transformación llamada “Load dim_status”, se utilizó el componente “Table Input” para obtener los datos de la columna "nutritional_status" de la tabla "raw_desnutricion_infantil" y cargarlos en la tabla "dim_status".
 
-<img width="905" height="617" alt="image" src="https://github.com/user-attachments/assets/833094d1-0dc4-43fe-a3e0-193f584090e3" />
+<img width="797" height="612" alt="image" src="https://github.com/user-attachments/assets/d1857ab2-3468-4821-9d8c-0350cbfce20f" />
 <br>
 
 - Después, se agregó el componente “Select Values” para seleccionar la columna "nutritional_status", dado que era la necesaria para la tabla "dim_status".
 
-<img width="892" height="243" alt="image" src="https://github.com/user-attachments/assets/755e1310-bf74-4d08-93c0-8898ae0e3ca2" />
+<img width="855" height="235" alt="image" src="https://github.com/user-attachments/assets/09ad6fae-2b1d-45cb-95e3-424834e6d749" />
 <br>
 
 - Luego, se añadió el componente "Sort rows" para ordenar los registros en orden ascendente según la columna "nutritional_status", con la finalidad de poder eliminar duplicados. 
-<img width="1057" height="328" alt="image" src="https://github.com/user-attachments/assets/5a131c25-4dac-4f04-bbad-51b11b20030e" />
+<img width="1047" height="332" alt="image" src="https://github.com/user-attachments/assets/3b215255-54bf-4739-874c-2d4583fa28f2" />
 <br>
 
 - Como siguiente paso, se agregó el componente “Unique Rows” para eliminar los registros duplicados utilizando la columna "nutritional_status".
 
-<img width="867" height="267" alt="image" src="https://github.com/user-attachments/assets/7b801c19-29b9-4366-a961-a396a638de62" />
+<img width="847" height="267" alt="image" src="https://github.com/user-attachments/assets/9b8d868a-0beb-41cb-ba15-725bc985c131" />
 <br>
 
 - Por último, se añadió el componente "Table output" para cargar los datos extraídos en la tabla de dimensiones "dim_status".
 
-<img width="685" height="437" alt="image" src="https://github.com/user-attachments/assets/88c2200f-3810-4ae9-b258-be314d394d6a" />
+<img width="696" height="432" alt="image" src="https://github.com/user-attachments/assets/133dba78-ad1d-4fd2-bc47-b6a039c9d988" />
 <br>
 
 - Al ejecutar se observó una salida exitosa en Pentaho junto con la verificación de los datos en PostgreSQL.
 
-<img width="605" height="451" alt="image" src="https://github.com/user-attachments/assets/30914184-fb99-47fa-9a19-a99711c1e364" />
+<img width="625" height="357" alt="image" src="https://github.com/user-attachments/assets/075cea6a-3586-45c8-9bd1-c9897d5865f6" />
 <br>
 <img width="296" height="217" alt="image" src="https://github.com/user-attachments/assets/9839a75f-b504-4b8d-8741-f37bd8cace3e" />
 
