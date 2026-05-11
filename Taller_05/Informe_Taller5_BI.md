@@ -38,7 +38,7 @@ Primero se creó la base de datos "practica_5". Luego, se creó la tabla de los 
 
 Luego del análisis de cómo agrupar los datos, se crearon las tablas de dimensiones "dim_child", "dim_status", "dim_health_center", "dim_date" y la tabla de hechos "fact_measurement".
 
-<img width="387" height="183" alt="image" src="https://github.com/user-attachments/assets/49a582cf-b7ce-42c7-8951-a393faed0459" />
+<img width="323" height="137" alt="image" src="https://github.com/user-attachments/assets/628b3bbd-5ab6-4cda-95a8-b681a8f1c4b6" />
 <br>
 <img width="338" height="105" alt="image" src="https://github.com/user-attachments/assets/0b8db23e-35a0-40fd-aeb5-e66dfee42ad6" />
 <br>
@@ -73,29 +73,34 @@ Al ejecutar, se observó una salida exitosa en Pentaho junto con la verificació
 
 - En una nueva transformación llamada "Load dim_child", se añadió el input "Table input" para obtener los datos de la tabla "raw_desnutricion_infantil". 
 
-<img width="1443" height="732" alt="image" src="https://github.com/user-attachments/assets/66653e62-43c7-465d-8473-9d8bb9d8ae29" />
+<img width="1482" height="738" alt="image" src="https://github.com/user-attachments/assets/a3e567ed-7254-4626-8a89-ee1c9f69086c" />
 <br>
 
-- Después, se añadió el transformation "Select values" para seleccionar las columnas "child_id", "gender" y "age_months" que eran necesarias para la tabla "dim_child".
+- Después, se añadió el transformation "Select values" para seleccionar las columnas "child_id" y "gender" que eran necesarias para la tabla "dim_child".
 
-<img width="886" height="235" alt="image" src="https://github.com/user-attachments/assets/79935127-d23b-43bc-8f70-e78870ff6ab4" />
+<img width="1435" height="498" alt="image" src="https://github.com/user-attachments/assets/306d42ec-fbda-4f26-a095-413673ecd916" />
 <br>
 
-- Además, se añadió el transformation "Unique rows" para eliminar los registros duplicados.
+- Fue necesario colocar adicionalmente el transformation "Sort rows" porque "unique rows" elimina únicamente duplicados consecutivos.
 
-<img width="886" height="302" alt="image" src="https://github.com/user-attachments/assets/884d1018-e273-404e-9dc6-2ddc10b03de8" />
+<img width="1421" height="441" alt="image" src="https://github.com/user-attachments/assets/5bb488eb-45ec-4de3-bcda-eca6a21e1e68" />
+<br>
+
+- De esta manera, se añadió el transformation "Unique rows" para eliminar los registros duplicados.
+
+<img width="1135" height="417" alt="image" src="https://github.com/user-attachments/assets/4611d0ba-9b29-485d-a5d8-2c57ebcc079a" />
 <br>
 
 - Luego, se añadió el output "Table output" para cargar los datos en la tabla de dimensiones "dim_child".
 
-<img width="886" height="782" alt="image" src="https://github.com/user-attachments/assets/18d81ad2-2226-4611-b5f9-c207c9dc418a" />
+<img width="1474" height="683" alt="image" src="https://github.com/user-attachments/assets/5a3556f8-ab00-4e78-8f5d-0b4f2f0b4cff" />
 <br>
 
 - Nuevamente, al ejecutar se observó una salida exitosa en Pentaho junto con la verificación de los datos en PostgreSQL.
 
-<img width="761" height="393" alt="image" src="https://github.com/user-attachments/assets/20adde7c-ece6-4ad6-b610-bd63e17ca7c2" />
+<img width="810" height="590" alt="image" src="https://github.com/user-attachments/assets/7a257fc6-3f4c-4dc3-972d-79ea3f961d7e" />
 <br>
-<img width="560" height="428" alt="image" src="https://github.com/user-attachments/assets/6b365118-9b47-4f70-8b2a-159e1a65b9b0" />
+<img width="424" height="421" alt="image" src="https://github.com/user-attachments/assets/2bb77712-fe1e-42fc-8a80-9e17c02e9b2c" />
 
 #### 4.2. dim_status
 
@@ -181,13 +186,22 @@ Por región, el tipo de desnutrición más común es:
 
 - Primero, se seleccionaron las columnas de región y tipo de desnutrición, junto con la cantidad de casos de la combinación región-diagnóstico.
 
-- Luego, usando como base a la tabla de hechos (facts_measurement), se hizo un JOIN para conectar con la tabla de centros de salud (dim_health_center) y con la tabla estados nutricionales (dim_status) a través de sus primary keys.
+- Luego, usando como base la tabla de hechos (facts_measurement), se hizo un JOIN para conectar con la tabla de centros de salud (dim_health_center) y con la tabla estados nutricionales (dim_status) a través de sus primary keys.
 
-- Se aplicó un GROUP BY por región y tipo de desnutrición para tener un solo grupo cada fila que comparta una misma ubicación y diagnóstico.
+- Se aplicó un GROUP BY por región y tipo de desnutrición para tener un solo grupo por cada fila que comparta una misma ubicación y diagnóstico.
 
 - Adicionalmente, se usó un ORDER BY para organizar alfabéticamente por región y luego por total descendente por la cantidad de casos.
 
-<img width="962" height="510" alt="image" src="https://github.com/user-attachments/assets/3c90244b-0322-424b-ae8b-245f853d3947" />
+<img width="792" height="536" alt="image" src="https://github.com/user-attachments/assets/e6c5059d-4656-4b20-9bd1-bad1f9609fff" />
+<br>
+
+Con el apoyo de la visualización de la consulta usando tablas dinámicas, se pudo establecer las siguientes reflexiones:
+
+- No existe ninguna región libre de desnutrición y sana debido a una falta de acceso oportuno y completo de servicios básicos (Salud y alimentación especialmente).
+
+- La región Amazónica es la más afectada. Esto puede deberse a que esta región sufre de la contaminación excesiva en ríos por minerías ilegales, enfermedades tropicales poco comunes, zonas de difícil acceso y poca infraestructura.
+
+<img width="1440" height="538" alt="image" src="https://github.com/user-attachments/assets/701ffe99-7227-45e2-9ea9-28d1f005987e" />
 
 
 ### 2. ¿Cómo varía la desnutrición por edad y género?
