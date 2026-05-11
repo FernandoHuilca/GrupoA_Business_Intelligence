@@ -18,7 +18,6 @@ CREATE TABLE dim_child (
 	child_key SERIAL PRIMARY KEY,
 	child_id VARCHAR(10),
 	gender CHAR(1),
-	age_months INT
 );
 
 -- Tabla dim_status
