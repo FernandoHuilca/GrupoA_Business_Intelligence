@@ -17,7 +17,7 @@ CREATE TABLE raw_desnutricion_infantil (
 CREATE TABLE dim_child (
 	child_key SERIAL PRIMARY KEY,
 	child_id VARCHAR(10),
-	gender CHAR(1),
+	gender CHAR(1)
 );
 
 -- Tabla dim_status
