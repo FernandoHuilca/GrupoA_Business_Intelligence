@@ -117,7 +117,7 @@ Después de implementar el esquema estrella del archivo 'Tabla_Desnormalizada_Ve
 
 #### 4. ¿Cuál fue la cantidad enviada por mes de envió?
 
-<img width="966" height="966" alt="Captura de pantalla 2026-05-05 182314" src="https://github.com/user-attachments/assets/c1ade080-87db-45fa-a37b-40e8990c5876" />
+<img width="751" height="903" alt="image" src="https://github.com/user-attachments/assets/9e660eda-cd64-4c07-b627-fd1ff27f2ba8" />
 
 #### 5. ¿Cuánto se vendió por tamaño de producto y por estado civil del cliente?
 
