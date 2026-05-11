@@ -34,8 +34,8 @@ CREATE TABLE dim_location (
 );
 
 
--- Tabla fact_desnutricion
-create table fact_desnutricion (
+-- Tabla fact_measurement
+create table fact_measurement (
   	record_key SERIAL PRIMARY KEY,
   	child_key int,
   	status_key int,
