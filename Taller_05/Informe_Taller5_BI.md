@@ -156,6 +156,42 @@ Al ejecutar, se observó una salida exitosa en Pentaho junto con la verificació
 - Se observa que le ejecución fué exitosa.
 <img width="895" height="678" alt="image" src="https://github.com/user-attachments/assets/81c5d386-0da8-4ac0-ba6a-59da30e77269" />
 
+##### 4.5. fact_measurement
+- En la transformación "Load fact_measurement", se utilizó el componente “Table Input” para obtener los datos de las columnas de la tabla "raw_desnutricion_infantil".
+<img width="883" height="445" alt="image" src="https://github.com/user-attachments/assets/a8d93a5c-fb4b-4eec-b33a-12df0b8d6aa8" />
+
+- Posteriormente, se utilizó el componente “Table Input” para obtener los datos de las columnas "child_key" y "child_id" de la tabla "dim_child".
+<img width="656" height="486" alt="image" src="https://github.com/user-attachments/assets/c7d819e6-6414-4f2b-bd39-96710586a442" />
+
+- Después, se agregó el componente Stream Lookup para buscar el child_key en la dimensión dim_child.
+<img width="488" height="377" alt="image" src="https://github.com/user-attachments/assets/81096877-79cc-4866-8b0c-9d50c9986fc2" />
+
+- A continuación, se utilizó el componente “Table Input” para obtener los datos de las columnas "status_key" y "nutritional_status" de la tabla "dim_status".
+<img width="558" height="377" alt="image" src="https://github.com/user-attachments/assets/052f0657-0526-4802-8610-7b0fc404f060" />
+
+- Como siguiente paso, se agregó el componente Stream Lookup para buscar el status_key en la dimensión dim_status.
+<img width="655" height="488" alt="image" src="https://github.com/user-attachments/assets/0d501d4c-142b-4177-8cd2-d8827ba32ab2" />
+
+- Se utilizó el componente “Table Input” para obtener los datos de las columnas "location_key", "region" e "institution" de la tabla "dim_location".
+<img width="561" height="379" alt="image" src="https://github.com/user-attachments/assets/553e2f4d-f28f-4305-a0e5-bfae87295e91" />
+
+- De igual manera, se agregó el componente Stream Lookup para buscar el location_key en la dimensión dim_location. En este caso, como region e institution forman un par lógico que identifica de manera única cada ubicación se configuró el Stream Lookup utilizando los dos campos como claves de búsqueda.   
+<img width="658" height="487" alt="image" src="https://github.com/user-attachments/assets/cdd88432-b26f-4402-8430-555c1dcacc0d" />
+
+- Después, se utilizó el componente “Table Input” para obtener los datos de la columna "date_key" de la tabla "dim_date".
+<img width="558" height="379" alt="image" src="https://github.com/user-attachments/assets/a9346132-0d16-46e4-b946-825bc470a08d" />
+
+- Así mismo, se agregó el componente Stream Lookup para buscar el date_key en la dimensión dim_date. En este caso comparando date_measured con date_key.
+<img width="537" height="482" alt="image" src="https://github.com/user-attachments/assets/5b6018bf-d0d5-461b-8a72-ac6b5a7c74a7" />
+
+- Se agregó el componente "Select values" para conservar únicamente los campos que forman parte de la tabla de hechos.
+<img width="690" height="365" alt="image" src="https://github.com/user-attachments/assets/55af779e-3ed2-462d-94d7-5e683afa3e1a" />
+
+- Por último, se agregó el componente "Table Output" especificando la tabla correspondiente "fact_measurement" y los campos respectivos. 
+<img width="667" height="576" alt="image" src="https://github.com/user-attachments/assets/097eafc9-f7bf-42c5-b8d3-ca77fbc67c04" />
+
+- Como se puede ver en la siguiente imagen la ejecución fue exitosa.
+<img width="831" height="781" alt="image" src="https://github.com/user-attachments/assets/5fba92f4-8578-4177-93b0-12d9eb266a64" />
 
 ### 5. Creación y ejecución de un job
 
