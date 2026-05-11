@@ -34,8 +34,17 @@ CREATE TABLE dim_location (
 );
 
 
-
-
+-- Tabla fact_desnutricion
+create table fact_desnutricion (
+  	record_key SERIAL PRIMARY KEY,
+  	child_key int,
+  	status_key int,
+  	location_key int,
+  	date_key date,
+	age_months int,
+	weight_kg numeric(10,2),
+	height_cm numeric(10,2)
+)
 
 
 
