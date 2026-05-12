@@ -33,6 +33,14 @@ CREATE TABLE dim_location (
 	institution VARCHAR(100)
 );
 
+-- Tabla dim_date
+CREATE TABLE dim_date (
+	date_key INT PRIMARY KEY,
+	year int,
+	month varchar(20),
+	day int
+)
+
 -- Tabla fact_measurement
 create table fact_measurement (
   	record_key SERIAL PRIMARY KEY,
