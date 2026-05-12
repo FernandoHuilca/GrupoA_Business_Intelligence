@@ -37,7 +37,7 @@ CREATE TABLE dim_location (
 CREATE TABLE dim_date (
 	date_key INT PRIMARY KEY,
 	year int,
-	month varchar(20),
+	month int,
 	day int
 )
 
