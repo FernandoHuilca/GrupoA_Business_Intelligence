@@ -11,16 +11,6 @@
 
 # <center>**Práctica 5: Creación Data warehouse**</center>
 
-## **Índice de contenidos**
-1. [Initial Load](#initial-load)
-2. [Extracción](#extracción)
-3. [Transformación](#transformación)
-    * [Estandarización columna 'categoria'](#estandarización-columna-categoria)
-    * [Estandarización de la columna 'unidad_medida'](#estandarización-de-la-columna-unidad_medida)
-    * [Eliminación de símbolos y formato de precios](#eliminación-de-símbolos-innecesarios-y-cambio-de-formato-de-la-columna-precio_unitario)
-4. [Carga](#carga)
-5. [Resultados](#resultados)
-
 ---
 
 ## Pentaho y PostgreSQL
@@ -36,11 +26,15 @@ Primero se creó la base de datos "practica_5". Luego, se creó la tabla de los 
 
 ### 2. Creación de tablas de dimensiones y tabla de hechos
 
-Luego del análisis de cómo agrupar los datos, se crearon las tablas de dimensiones "dim_child", "dim_status", "dim_health_center", "dim_date" y la tabla de hechos "fact_measurement".
+Luego del análisis de cómo agrupar los datos, se crearon las tablas de dimensiones "dim_child", "dim_status", "dim_location", "dim_date" y la tabla de hechos "fact_measurement".
 
 <img width="323" height="137" alt="image" src="https://github.com/user-attachments/assets/628b3bbd-5ab6-4cda-95a8-b681a8f1c4b6" />
 <br>
 <img width="338" height="105" alt="image" src="https://github.com/user-attachments/assets/0b8db23e-35a0-40fd-aeb5-e66dfee42ad6" />
+<br>
+<img width="316" height="122" alt="image" src="https://github.com/user-attachments/assets/469f2983-3e61-493a-ae09-0de5f2d5809d" />
+<br>
+<img width="293" height="218" alt="image" src="https://github.com/user-attachments/assets/589b92b0-0d31-4cda-8cba-865a35bd5059" />
 <br>
 
 ### 3. Carga de los datos desde Pentaho al Staging de PostgreSQL 
@@ -135,7 +129,7 @@ Al ejecutar, se observó una salida exitosa en Pentaho junto con la verificació
 <img width="296" height="217" alt="image" src="https://github.com/user-attachments/assets/9839a75f-b504-4b8d-8741-f37bd8cace3e" />
 
 
-##### 4.3. dim_location
+#### 4.3. dim_location
 - En la transformación llamada “Load dim_location ”, se utilizó el componente “Table Input” para obtener los datos de las columnas "region" y "institution" de la tabla "raw_desnutricion_infantil".
 <img width="924" height="550" alt="image" src="https://github.com/user-attachments/assets/1b950789-b74e-480d-9bbe-ccccf28d9540" />
 
@@ -156,7 +150,7 @@ Al ejecutar, se observó una salida exitosa en Pentaho junto con la verificació
 - Se observa que le ejecución fué exitosa.
 <img width="895" height="678" alt="image" src="https://github.com/user-attachments/assets/81c5d386-0da8-4ac0-ba6a-59da30e77269" />
 
-##### 4.5. fact_measurement
+#### 4.5. fact_measurement
 - En la transformación "Load fact_measurement", se utilizó el componente “Table Input” para obtener los datos de las columnas de la tabla "raw_desnutricion_infantil".
 <img width="883" height="445" alt="image" src="https://github.com/user-attachments/assets/a8d93a5c-fb4b-4eec-b33a-12df0b8d6aa8" />
 
@@ -242,7 +236,7 @@ Con el apoyo de la visualización de la consulta usando tablas dinámicas, se pu
 
 ### 2. ¿Cómo varía la desnutrición por edad y género?
 
-<img width="712" height="657" alt="image" src="https://github.com/user-attachments/assets/52cea673-d3f8-455c-a651-e55f81334cde" />
+<img width="716" height="681" alt="image" src="https://github.com/user-attachments/assets/6c63eab8-887a-455d-b2d3-1b10450ec8eb" />
 <br>
 
 Del resultado de la consulta SQL y gráficas realizadas en Excel con ese resultado, se obtuvieron las siguientes observaciones:
@@ -252,7 +246,7 @@ Del resultado de la consulta SQL y gráficas realizadas en Excel con ese resulta
 - La desnutrición global fue el tipo más frecuente con 185 casos, seguida de la desnutrición crónica con 159 casos y la desnutrición aguda con 156 casos.
 
 - En el género femenino y masculino predominan los casos de desnutrición global con 92 registros y 93 casos respectivamente.
-- 
+
 <img width="1002" height="300" alt="image" src="https://github.com/user-attachments/assets/78e41eb3-6cb0-4f42-b717-b89b37e8591b" />
 <br>
 
