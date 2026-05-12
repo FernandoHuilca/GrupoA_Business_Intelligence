@@ -1,4 +1,4 @@
-<img width="1238" height="793" alt="image" src="https://github.com/user-attachments/assets/b0cc70be-2254-4699-a6d9-7f4fe5b9b20c" /># <center>**Escuela Politécnica Nacional**</center>
+# <center>**Escuela Politécnica Nacional**</center>
 ## <center>**Business Intelligence**</center>
 ### **Integrantes:**
 - Juan Cofre
