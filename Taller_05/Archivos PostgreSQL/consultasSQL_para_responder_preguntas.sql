@@ -11,14 +11,14 @@ GROUP BY dim_health_center.region, dim_status.nutritional_status
 ORDER BY dim_health_center.region, total_casos DESC;
 
 -- 2. ¿Cómo varía la desnutrición por edad y género?
-SELECT dc.age_months, dc.gender, ds.nutritional_status, COUNT(*) AS total_cases
+SELECT fm.age_months, dc.gender, ds.nutritional_status, COUNT(*) AS total_cases
 FROM fact_measurement fm
 JOIN dim_status ds
 ON fm.status_key = ds.status_key
 JOIN dim_child dc
 ON fm.child_key = dc.child_key
-GROUP BY dc.age_months, dc.gender, ds.nutritional_status
-ORDER BY dc.age_months, dc.gender, total_cases;
+GROUP BY fm.age_months, dc.gender, ds.nutritional_status
+ORDER BY fm.age_months, dc.gender, total_cases;
 
 
 

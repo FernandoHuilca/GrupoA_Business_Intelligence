@@ -33,7 +33,6 @@ CREATE TABLE dim_location (
 	institution VARCHAR(100)
 );
 
-
 -- Tabla fact_measurement
 create table fact_measurement (
   	record_key SERIAL PRIMARY KEY,
