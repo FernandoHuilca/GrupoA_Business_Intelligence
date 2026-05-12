@@ -1,4 +1,4 @@
-# <center>**Escuela Politécnica Nacional**</center>
+<img width="1238" height="793" alt="image" src="https://github.com/user-attachments/assets/b0cc70be-2254-4699-a6d9-7f4fe5b9b20c" /># <center>**Escuela Politécnica Nacional**</center>
 ## <center>**Business Intelligence**</center>
 ### **Integrantes:**
 - Juan Cofre
@@ -149,6 +149,27 @@ Al ejecutar, se observó una salida exitosa en Pentaho junto con la verificació
 
 - Se observa que le ejecución fué exitosa.
 <img width="895" height="678" alt="image" src="https://github.com/user-attachments/assets/81c5d386-0da8-4ac0-ba6a-59da30e77269" />
+
+#### 4.4. dim_date
+- En la transformación llamada "Load dim_date", se utilizó el componente "Table Input" para obtener la fecha de la tabla "raw_desnutricion_infantil". Se utilizó la siguiente consulta SQL: ``SELECT DISTINCT date_measured FROM raw_desnutricion_infantil;`` con el fin de no traer datos repetidos.
+<img width="1238" height="793" alt="image" src="https://github.com/user-attachments/assets/19268fcb-0311-4dc1-83a2-66be172e81cb" />
+
+- Luego, se colocó un paso de "Add constants", este paso sirvió para realizar un calculo con el fin de obtener un valor para que la Primary key de la fecha sea más reconocible.
+<img width="1123" height="327" alt="image" src="https://github.com/user-attachments/assets/b2e436d1-ba52-43e1-b299-1dd526540250" />
+
+- A continuación, se utilizó el componente de "Calculator", en el cual se extrajó lo valores de fecha para separarlos en ``year``, ``month``, y ``day``. Además se realizó el calculo utilizando las constantes definidas anteriormente para que el campo de "date_key" tenga un formato númerico "yyyymmdd".
+<img width="1439" height="668" alt="image" src="https://github.com/user-attachments/assets/cea139d5-ef51-4bcd-a3cb-1170ac322f3c" />
+
+- Posteriormete, a través del componente "Select values", se eliminaron los campos temporales creados y se dejó pasar solamente los que formarán parte de la tabla de dimensión fecha.
+<img width="733" height="482" alt="image" src="https://github.com/user-attachments/assets/b8874d1c-1f08-45d2-91f3-58bbb8493f5a" />
+
+- Finalmente, se utilizó el componente "Table output" para cargar los datos transformados hacía la tabla dim_date.
+<img width="915" height="878" alt="image" src="https://github.com/user-attachments/assets/84ef83c6-3095-45cb-af86-b7c6f5fad25f" />
+
+- Y como se puede observar la ejecución fue correcta.
+<img width="869" height="495" alt="image" src="https://github.com/user-attachments/assets/42ce768e-44d7-4540-a923-e93217384e18" />
+<img width="434" height="480" alt="image" src="https://github.com/user-attachments/assets/ce5de28d-0ee1-4f48-afc2-9f9304ee678e" />
+
 
 #### 4.5. fact_measurement
 - En la transformación "Load fact_measurement", se utilizó el componente “Table Input” para obtener los datos de las columnas de la tabla "raw_desnutricion_infantil".
