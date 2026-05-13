@@ -154,22 +154,17 @@ Al ejecutar, se observó una salida exitosa en Pentaho junto con la verificació
 - En la transformación llamada "Load dim_date", se utilizó el componente "Table Input" para obtener la fecha de la tabla "raw_desnutricion_infantil". Se utilizó la siguiente consulta SQL: ``SELECT DISTINCT date_measured FROM raw_desnutricion_infantil;`` con el fin de no traer datos repetidos.
 <img width="1238" height="793" alt="image" src="https://github.com/user-attachments/assets/19268fcb-0311-4dc1-83a2-66be172e81cb" />
 
-- Luego, se colocó un paso de "Add constants", este paso sirvió para realizar un calculo con el fin de obtener un valor para que la Primary key de la fecha sea más reconocible.
-<img width="1123" height="327" alt="image" src="https://github.com/user-attachments/assets/b2e436d1-ba52-43e1-b299-1dd526540250" />
+- A continuación, se utilizó el componente de "Calculator", en el cual se extrajó lo valores de fecha para separarlos en ``year``, ``month``, y ``day``.
+<img width="995" height="698" alt="Captura de pantalla 2026-05-13 060738" src="https://github.com/user-attachments/assets/e17289fa-a4e1-4f02-8c59-774f50507e19" />
 
-- A continuación, se utilizó el componente de "Calculator", en el cual se extrajó lo valores de fecha para separarlos en ``year``, ``month``, y ``day``. Además se realizó el calculo utilizando las constantes definidas anteriormente para que el campo de "date_key" tenga un formato númerico "yyyymmdd".
-<img width="1439" height="668" alt="image" src="https://github.com/user-attachments/assets/cea139d5-ef51-4bcd-a3cb-1170ac322f3c" />
-
-- Posteriormete, a través del componente "Select values", se eliminaron los campos temporales creados y se dejó pasar solamente los que formarán parte de la tabla de dimensión fecha.
-<img width="733" height="482" alt="image" src="https://github.com/user-attachments/assets/b8874d1c-1f08-45d2-91f3-58bbb8493f5a" />
+- Posteriormete, a través del componente "Select values", se obtuvo los campos formarán parte de la tabla de dimensión fecha además de renombrar el campo de "date_measured" por "date_key".
+<img width="899" height="521" alt="Captura de pantalla 2026-05-13 060752" src="https://github.com/user-attachments/assets/24fb1be4-1b8e-44e6-beb9-79f2b8174e65" />
 
 - Finalmente, se utilizó el componente "Table output" para cargar los datos transformados hacía la tabla dim_date.
-<img width="915" height="878" alt="image" src="https://github.com/user-attachments/assets/84ef83c6-3095-45cb-af86-b7c6f5fad25f" />
+<img width="833" height="574" alt="Captura de pantalla 2026-05-13 060801" src="https://github.com/user-attachments/assets/ee0912a9-ae9b-47d4-888b-8cdb739bffb5" />
 
 - Y como se puede observar la ejecución fue correcta.
-<img width="869" height="495" alt="image" src="https://github.com/user-attachments/assets/42ce768e-44d7-4540-a923-e93217384e18" />
-<img width="434" height="480" alt="image" src="https://github.com/user-attachments/assets/ce5de28d-0ee1-4f48-afc2-9f9304ee678e" />
-
+<img width="823" height="681" alt="Captura de pantalla 2026-05-13 061216" src="https://github.com/user-attachments/assets/c5ed7fb1-0041-4ec5-b35f-bba510fad0a5" />
 
 #### 4.5. fact_measurement
 - En la transformación "Load fact_measurement", se utilizó el componente “Table Input” para obtener los datos de las columnas de la tabla "raw_desnutricion_infantil".
@@ -286,11 +281,17 @@ Del resultado de la consulta SQL y gráficas realizadas en Excel con ese resulta
 - Los resultados muestran que los tres tipos de desnutrición están presentes en casi todas las edades estudiadas, indicando que el problema nutricional afecta a una gran cantidad de niños y niñas.
 
 ### 3. ¿Qué instituciones atienden más casos?
+- Del resultado de la consulta SQL se obtuvieron los siguientes resultados:
+<img width="589" height="420" alt="Captura de pantalla 2026-05-13 112944" src="https://github.com/user-attachments/assets/5c0e8bbf-bb7a-4fca-8dad-1389e33cdd0f" />
 
+- De los 500 resultados análizados se puede apreciar como el Centro B es el que mayor carga de pacientes tiene con un registro de 182 casos.
+- La Clinica C registro 163 casos.
+- El centro con el menor registro fue Hospital A con 155 casos.
 
+<img width="943" height="363" alt="image" src="https://github.com/user-attachments/assets/3484d8d5-44c2-4854-92ac-4b2091122353" />
 
-
-
+- A través del gráfico de barras se puede ver una pequeña diferencia de casos entre el Centro B del los otros dos. Al tener una mayor carga de pacientes se debería asignar los recursos necesarios para manejar adecuadamente el volumen de pacientes.
+- Con respecto a la Clinica C y el Hospital A se puede notar una distribución de pacientes más uniforme.
 
 
 
