@@ -35,7 +35,7 @@ CREATE TABLE dim_location (
 
 -- Tabla dim_date
 CREATE TABLE dim_date (
-	date_key INT PRIMARY KEY,
+	date_key DATE PRIMARY KEY,
 	year int,
 	month int,
 	day int

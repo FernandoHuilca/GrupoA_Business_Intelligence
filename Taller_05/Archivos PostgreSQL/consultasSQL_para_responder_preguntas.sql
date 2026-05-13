@@ -20,6 +20,13 @@ ON fm.child_key = dc.child_key
 GROUP BY fm.age_months, dc.gender, ds.nutritional_status
 ORDER BY fm.age_months, dc.gender, total_cases;
 
+-- 3. ¿Qué instituciones atienden más casos?
+SELECT dl.institution, COUNT(*) AS total_cases
+FROM fact_measurement fm
+JOIN dim_location dl
+ON fm.location_key = dl.location_key
+GROUP BY dl.institution
+ORDER BY total_cases DESC;
 
 
 
