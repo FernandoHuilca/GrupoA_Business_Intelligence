@@ -39,7 +39,7 @@ CREATE TABLE dim_date (
 	year int,
 	month int,
 	day int
-)
+);
 
 -- Tabla fact_measurement
 create table fact_measurement (
@@ -51,7 +51,7 @@ create table fact_measurement (
 	age_months int,
 	weight_kg numeric(10,2),
 	height_cm numeric(10,2)
-)
+);
 
 
 

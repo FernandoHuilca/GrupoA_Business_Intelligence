@@ -1,14 +1,14 @@
 -- Consultas SQL ocupadas para responder a las preguntas
 
 -- 1. ¿Cuál es el tipo de desnutrición más común por región?
-SELECT dim_health_center.region, dim_status.nutritional_status, COUNT(*) AS total_casos
+SELECT dim_location.region, dim_status.nutritional_status, COUNT(*) AS total_casos
 FROM fact_measurement
-JOIN dim_status 
+JOIN dim_status
 ON fact_measurement.status_key = dim_status.status_key
-JOIN dim_health_center 
-ON fact_measurement.health_center_key = dim_health_center.health_center_key
-GROUP BY dim_health_center.region, dim_status.nutritional_status
-ORDER BY dim_health_center.region, total_casos DESC;
+JOIN dim_location
+ON fact_measurement.location_key = dim_location.location_key
+GROUP BY dim_location.region, dim_status.nutritional_status
+ORDER BY dim_location.region, total_casos DESC;
 
 -- 2. ¿Cómo varía la desnutrición por edad y género?
 SELECT fm.age_months, dc.gender, ds.nutritional_status, COUNT(*) AS total_cases

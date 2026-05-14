@@ -467,7 +467,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>dim_child_connection</connection>
+    <connection>Conexion practica 5</connection>
     <schema>public</schema>
     <table>dim_child</table>
     <commit>1000</commit>
@@ -509,42 +509,6 @@
     </GUI>
   </step>
   <step>
-    <name>Select values</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <fields>
-      <field>
-        <name>child_id</name>
-        <rename/>
-      </field>
-      <field>
-        <name>gender</name>
-        <rename/>
-      </field>
-      <select_unspecified>N</select_unspecified>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>288</xloc>
-      <yloc>96</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
     <name>Leer raw_desnutricion_infantil</name>
     <type>TableInput</type>
     <description/>
@@ -555,7 +519,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>dim_child_connection</connection>
+    <connection>Conexion practica 5</connection>
     <sql>SELECT child_id, gender FROM raw_desnutricion_infantil</sql>
     <limit>0</limit>
     <lookup/>
@@ -573,8 +537,8 @@
         <origin>Leer raw_desnutricion_infantil</origin>
         <comments>child_id</comments>
         <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -596,8 +560,8 @@
         <origin>Leer raw_desnutricion_infantil</origin>
         <comments>gender</comments>
         <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -626,8 +590,8 @@
     </GUI>
   </step>
   <step>
-    <name>Unique rows</name>
-    <type>Unique</type>
+    <name>Select values</name>
+    <type>SelectValues</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -636,15 +600,14 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <count_rows>N</count_rows>
-    <count_field/>
-    <reject_duplicate_row>N</reject_duplicate_row>
-    <error_description/>
     <fields>
       <field>
         <name>child_id</name>
-        <case_insensitive>N</case_insensitive>
       </field>
+      <field>
+        <name>gender</name>
+      </field>
+      <select_unspecified>N</select_unspecified>
     </fields>
     <attributes/>
     <cluster_schema/>
@@ -655,7 +618,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>544</xloc>
+      <xloc>288</xloc>
       <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
@@ -706,6 +669,41 @@
     </remotesteps>
     <GUI>
       <xloc>432</xloc>
+      <yloc>96</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Unique rows</name>
+    <type>Unique</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <count_rows>N</count_rows>
+    <count_field/>
+    <reject_duplicate_row>N</reject_duplicate_row>
+    <error_description/>
+    <fields>
+      <field>
+        <name>child_id</name>
+        <case_insensitive>N</case_insensitive>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>544</xloc>
       <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
