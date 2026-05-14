@@ -34,6 +34,8 @@ Luego del análisis de cómo agrupar los datos, se crearon las tablas de dimensi
 <br>
 <img width="316" height="122" alt="image" src="https://github.com/user-attachments/assets/469f2983-3e61-493a-ae09-0de5f2d5809d" />
 <br>
+<img width="257" height="138" alt="image" src="https://github.com/user-attachments/assets/a976c54c-8bb2-4c47-a100-a031d62b4f28" />
+<br>
 <img width="293" height="218" alt="image" src="https://github.com/user-attachments/assets/589b92b0-0d31-4cda-8cba-865a35bd5059" />
 <br>
 
@@ -207,7 +209,8 @@ Al ejecutar, se observó una salida exitosa en Pentaho junto con la verificació
 
 En Pentaho, se creó un job para ejecutar secuencialmente todas las transformaciones realizadas, desde la carga de datos crudos al staging hasta las transformaciones y cargas de registros en las tablas de dimensiones y la tabla de hechos, con el fin de construir automáticamente el modelo estrella en PostgreSQL.
 
-(falta la imagen)
+<img width="802" height="147" alt="image" src="https://github.com/user-attachments/assets/e9879121-d6dc-4e4c-9fef-423c4f72a1e6" />
+<br>
 
 ## Modelo estrella en Power Pivot
 
