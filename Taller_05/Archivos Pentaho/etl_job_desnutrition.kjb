@@ -292,7 +292,7 @@
       <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>C:\Users\mateo\Source\Repos\GrupoA_Business_Intelligence\Taller_05\Archivos Pentaho\Load staging_raw.ktr</filename>
+      <filename>${Internal.Entry.Current.Directory}/Load staging_raw.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -331,7 +331,7 @@
       <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>C:\Users\mateo\Source\Repos\GrupoA_Business_Intelligence\Taller_05\Archivos Pentaho\Load dim_child.ktr</filename>
+      <filename>${Internal.Entry.Current.Directory}/Load dim_child.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -370,7 +370,7 @@
       <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>C:\Users\mateo\Source\Repos\GrupoA_Business_Intelligence\Taller_05\Archivos Pentaho\Load dim_status.ktr</filename>
+      <filename>${Internal.Entry.Current.Directory}/Load dim_status.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -409,7 +409,7 @@
       <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>C:\Users\mateo\Source\Repos\GrupoA_Business_Intelligence\Taller_05\Archivos Pentaho\Load dim_location.ktr</filename>
+      <filename>${Internal.Entry.Current.Directory}/Load dim_location.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -448,7 +448,7 @@
       <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>C:\Users\mateo\Source\Repos\GrupoA_Business_Intelligence\Taller_05\Archivos Pentaho\Load dim_date.ktr</filename>
+      <filename>${Internal.Entry.Current.Directory}/Load dim_date.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -487,7 +487,7 @@
       <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>C:\Users\mateo\Source\Repos\GrupoA_Business_Intelligence\Taller_05\Archivos Pentaho\Load fact_measurement.ktr</filename>
+      <filename>${Internal.Entry.Current.Directory}/Load fact_measurement.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>

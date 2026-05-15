@@ -533,7 +533,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>Conexion practica 5</connection>
+    <connection>Practica5</connection>
     <sql>SELECT DISTINCT date_measured FROM raw_desnutricion_infantil;</sql>
     <limit>0</limit>
     <lookup/>
@@ -632,7 +632,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>Conexion practica 5</connection>
+    <connection>Practica5</connection>
     <schema>public</schema>
     <table>dim_date</table>
     <commit>1000</commit>

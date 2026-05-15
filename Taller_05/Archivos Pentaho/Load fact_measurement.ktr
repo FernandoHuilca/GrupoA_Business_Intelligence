@@ -719,7 +719,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>Conexion practica 5</connection>
+    <connection>Practica5</connection>
     <sql>SELECT child_id, nutritional_status, region, institution, date_measured, age_months, weight_kg, height_cm 
 FROM raw_desnutricion_infantil</sql>
     <limit>0</limit>
@@ -939,7 +939,7 @@ FROM raw_desnutricion_infantil</sql>
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>Conexion practica 5</connection>
+    <connection>Practica5</connection>
     <schema>public</schema>
     <table>fact_measurement</table>
     <commit>1000</commit>
@@ -1011,7 +1011,7 @@ FROM raw_desnutricion_infantil</sql>
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>Conexion practica 5</connection>
+    <connection>Practica5</connection>
     <sql>SELECT child_key, child_id FROM  dim_child</sql>
     <limit>0</limit>
     <lookup/>
@@ -1092,7 +1092,7 @@ FROM raw_desnutricion_infantil</sql>
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>Conexion practica 5</connection>
+    <connection>Practica5</connection>
     <sql>SELECT date_key FROM dim_date </sql>
     <limit>0</limit>
     <lookup/>
@@ -1150,7 +1150,7 @@ FROM raw_desnutricion_infantil</sql>
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>Conexion practica 5</connection>
+    <connection>Practica5</connection>
     <sql>SELECT location_key, region, institution FROM dim_location </sql>
     <limit>0</limit>
     <lookup/>
@@ -1254,7 +1254,7 @@ FROM raw_desnutricion_infantil</sql>
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>Conexion practica 5</connection>
+    <connection>Practica5</connection>
     <sql>SELECT status_key, nutritional_status FROM dim_status</sql>
     <limit>0</limit>
     <lookup/>
