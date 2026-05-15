@@ -9,17 +9,25 @@
 
 ------------
 
+## **Índice de Contenidos**
+
+1. [Archivo 'products.csv'](#archivo-productscsv)
+   - [Diagrama del modelo estrella](#diagrama-del-modelo-estrella)
+2. [Archivo 'Tabla_Desnormalizada_Ventas.csv'](#archivo-tabla_desnormalizada_ventascsv)
+   - [Proceso de normalización](#proceso-de-normalización)
+   - [Diagrama del modelo estrella](#diagrama-del-modelo-estrella-1)
+   - [Preguntas contestadas en SQL](#preguntas-contestadas-en-sql)
+     - [1. ¿Cuántas ventas se realizaron por categoría de producto y mes?](#1-cuántas-ventas-se-realizaron-por-categoría-de-producto-y-mes)
+     - [2. ¿Cuál es el ingreso total (ventas) por cliente y género?](#2-cuál-es-el-ingreso-total-ventas-por-cliente-y-género)
+     - [3. ¿Cuál es la cantidad total vendida por producto?](#3-cuál-es-la-cantidad-total-vendida-por-producto)
+     - [4. ¿Cuál fue la cantidad enviada por mes de envió?](#4-cuál-fue-la-cantidad-enviada-por-mes-de-envió)
+     - [5. ¿Cuánto se vendió por tamaño de producto y por estado civil del cliente?](#5-cuánto-se-vendió-por-tamaño-de-producto-y-por-estado-civil-del-cliente)
+
+------------
+
 # <center>**Caso de Estudio: Modelo conceptual lógico físico estrella**</center>
 
-## **Índice de contenidos**
-1. [Archivo 'products.csv'](#archivo-products)
-    * [Diagrama del modelo estrella](#diagrama-modelo-estrella-1)
-2. [Archivo 'Tabla_Desnormalizada_Ventas.csv'](#archivo-tabla-ventas)
-    * [Proceso de normalización](#proceso-normalizacion)
-    * [Diagrama del modelo estrella](#diagrama-modelo-estrella-2)
-    * [Preguntas contestadas en SQL](#preguntas-contestadas-SQL)
 
----
 
 ## Archivo 'products.csv'
 
