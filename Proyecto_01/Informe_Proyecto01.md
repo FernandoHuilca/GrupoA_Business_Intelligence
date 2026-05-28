@@ -180,7 +180,7 @@ Finalmente, se verificó que la transformación y carga de los datos se ejecutar
 
 | Paso 1 | Paso 2 | Paso 3 |
 |:---:|:---:|:---:|
-| <img width="260" alt="Paso 1" src="https://github.com/user-attachments/assets/74280ce6-5833-42bb-8be7-ff309e271007" /> | <img width="260" alt="Paso 2" src="https://github.com/user-attachments/assets/9941e0ca-d237-44c9-8f29-3526c3253b14" /> | <img width="260" alt="Paso 3" src="https://github.com/user-attachments/assets/6d6c5946-dfa9-47ec-a74e-b04bf63228d6" /> |
+| <img width="360" alt="Paso 1" src="https://github.com/user-attachments/assets/74280ce6-5833-42bb-8be7-ff309e271007" /> | <img width="360" alt="Paso 2" src="https://github.com/user-attachments/assets/9941e0ca-d237-44c9-8f29-3526c3253b14" /> | <img width="360" alt="Paso 3" src="https://github.com/user-attachments/assets/6d6c5946-dfa9-47ec-a74e-b04bf63228d6" /> |
 
 #### 3.2.7. fact_desaparacion
 
