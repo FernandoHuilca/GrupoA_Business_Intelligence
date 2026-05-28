@@ -482,7 +482,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>${Internal.Entry.Current.Directory}\mdi_personasdesaparecidas_pm_2017_2025.csv</filename>
+    <filename>C:\Users\ferna\Documents\GrupoA_Business_Intelligence\Proyecto_01\Excel\mdi_personasdesaparecidas_pm_2017_2025.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>

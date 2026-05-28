@@ -32,3 +32,41 @@ CREATE TABLE raw_personas_desaparecidas (
 );
 
 
+select * from raw_personas_desaparecidas
+
+-- Tabla dim_estado
+CREATE TABLE dim_estado(
+	estado_key serial primary key,
+	situacion_actual VARCHAR(30),
+	estado_desaparecido VARCHAR(50)
+)
+
+-- Tabla dim_motivo
+CREATE TABLE dim_motivo(
+	motivo_key serial primary key,
+	motivo_desaparicion VARCHAR(100),
+	motivacion_desaparicion_observada VARCHAR(100)
+)
+
+
+
+-- Creacion de la tabla: dim_ubicacion_desaparicion
+CREATE TABLE dim_ubicacion_desaparicion (
+    ubicacion_desaparicion_key SERIAL PRIMARY KEY,
+    zona VARCHAR(50),
+    distrito VARCHAR(100),
+    circuito VARCHAR(100),
+    subcircuito VARCHAR(100),
+    provincia VARCHAR(100),
+    canton VARCHAR(100)
+);
+select * from dim_ubicacion_desaparicion
+
+
+--Creacion de la tabla: dim_ubicacion_localizacion
+CREATE TABLE dim_ubicacion_localizacion (
+    ubicacion_localizacion_key SERIAL PRIMARY KEY,
+    provincia_localizacion VARCHAR(100)
+);
+
+select * from dim_ubicacion_localizacion
