@@ -109,6 +109,31 @@ Finalmente, se verificó que la transformación y carga de los datos se ejecutar
 | <img src="https://github.com/user-attachments/assets/9468f8e4-ad6c-447e-be28-add1d51e7590" alt="transformacion" width="360" /> | <img src="https://github.com/user-attachments/assets/43b94a32-f4fe-4bf2-990a-444424a42a15" alt="salida" width="360" /> | <img src="https://github.com/user-attachments/assets/87819eff-a8d3-4aee-8a28-80b35c2d6c8d" alt="verificacion" width="360" /> |
 
 
+#### 3.2.3 fact_desaparacion
+
+- Se creó la tabla `fact_desaparacion` en la base de datos `Proyecto01` dentro de PostgreSQL. 
+	- Se definieron las foreign keys hacia cada una de las dimensiones (dim_estado, dim_motivo, dim_ubicacion_desaparicion, dim_ubicacion_localizacion, cada una de las fechas de dim_fecha y dim_persona) junto con las medidas edad y dias_solucion.
+
+- Luego, en la transformación `carga_fact_desapariciones`, a diferencia de anteriores prácticas donde existía un ID único por registro, aquí las dimensiones se identificaron por la combinación de varias columnas. 
+	- Por esta razón, se extrajeron todas las columnas necesarias desde `raw_personas_desaparecidas` mediante un `Table input` para poder hacer el match en los lookup.
+
+- Se usaron múltiples `Stream lookup`, cada uno con su respectivo `Table input` consultando la tabla de dimensión correspondiente. 
+	- En cada lookup se relacionaron los campos naturales de la tabla raw con los de la dimensión para obtener su clave subrogada.
+ 
+- Después, como las cuatro fechas (desaparición, denuncia, conocimiento, localización) apuntaban a la misma tabla dim_fecha, entonces se entendió que se trataba de una dimensión de rol múltiple. 
+	- Por tanto, se implementaron cuatro `Stream lookup` independientes contra dim_fecha, renombrando cada clave devuelta según su rol.
+
+- Se agregó scripting `Modified JavaScript value` para limpiar las medidas dias_solucion (NO_APLICA por -1) y edad (valores vacíos a null).
+
+- Con un `Select values` se filtraron los campos finales que fueron las claves subrogadas de cada dimensión y las medidas.
+
+- Por último, usando `Table output` se cargaron los datos transformados en la tabla fact_desaparacion, mapeando cada campo del flujo con su correspondiente columna en la base de datos.
+
+	- La ejecución mostró salida exitosa en Pentaho y se verificaron los datos en PostgreSQL.
+
+| Paso 1 | Paso 2 | Paso 3 |
+|---:|:---:|:---:|
+|  |  |  |
 
 ## 4. Análisis de insights clave obtenidos (OLAP)
 
