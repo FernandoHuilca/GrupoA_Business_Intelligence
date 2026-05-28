@@ -7,15 +7,17 @@
 - Gregory Salazar
 - Mateo Simbaña
 
+
 ------------
 ## **Índice de Contenidos**
 
 1. [El problema y la solución](#1-el-problema-y-la-solución)
 2. [Justificación del diseño](#2-justificación-del-diseño)
 3. [Proceso ETL](#3-proceso-etl)
-	 - 3.1. Creación de la tabla "raw_personas_desaparecidas"
-	 - 3.2. Transformacion y carga de datos
-		 - 3.2.1. dim_ubicacion_desaparicion
+	 * [3.1. Creación de la tabla "raw_personas_desaparecidas" en PostgreSQL](#31-creación-de-la-tabla-raw_personas_desaparecidas-en-postgresql)
+	 * [3.2. Transformacion y carga de datos](#32-transformacion-y-carga-de-datos)
+		 * [3.2.1. dim_ubicacion_desaparicion](#321-dim_ubicacion_desaparicion)
+		 * [3.2.2. dim_ubicacion_localizacion](#322-dim_ubicacion_localizacion)
 4. [Análisis de insights clave obtenidos (OLAP)](#4-análisis-de-insights-clave-obtenidos-olap)
 5. [Recomendaciones al negocio](#5-recomendaciones-al-negocio)
 ------------
@@ -108,6 +110,19 @@ Finalmente, se verificó que la transformación y carga de los datos se ejecutar
 |---:|:---:|:---:|
 | <img src="https://github.com/user-attachments/assets/9468f8e4-ad6c-447e-be28-add1d51e7590" alt="transformacion" width="360" /> | <img src="https://github.com/user-attachments/assets/43b94a32-f4fe-4bf2-990a-444424a42a15" alt="salida" width="360" /> | <img src="https://github.com/user-attachments/assets/87819eff-a8d3-4aee-8a28-80b35c2d6c8d" alt="verificacion" width="360" /> |
 
+#### 3.2.3 dim_persona
+
+* Se creó la tabla "dim_persona" en la base de datos "Proyecto01" dentro de PostgreSQL.
+* En la trasformación "carga_dim_persona" se inicio añadiendo un input `Table input` para obtener los datos de la tabla `raw_personas_desaparecidas`.
+* Se añadió el paso `Slect values` para escoger las columnas necesarias: sexo, nacionalidad, rango_edad, etnia.
+* Se aplicó `Sort rows` porque `Unique rows` sólo elimina duplicados consecutivos.
+* Se ejecutó `Unique rows` para remover registros duplicados.
+* Finalmente se añadió `Table output` para cargar los datos en `dim_persona`.
+* La ejecución mostró salida exitosa en Pentaho y se verificaron los datos en PostgreSQL.
+
+| Paso 1 | Paso 2 | Paso 3 |
+|---:|:---:|:---:|
+|  <img width="928" height="279" alt="image" src="https://github.com/user-attachments/assets/a8855a2f-a6c0-4ce6-9286-753050fe408a" /> | <img width="866" height="553" alt="image" src="https://github.com/user-attachments/assets/f6a94046-057d-4f6e-a914-924e25dc798f" /> | <img width="972" height="474" alt="Captura de pantalla 2026-05-27 234310" src="https://github.com/user-attachments/assets/149cf76d-8ad2-435f-9066-f61ac9d83c59" /> |
 
 #### 3.2.3 fact_desaparacion
 
