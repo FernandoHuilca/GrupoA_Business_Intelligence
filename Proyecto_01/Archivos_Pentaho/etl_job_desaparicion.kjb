@@ -284,6 +284,7 @@
     </field>
   </channel-log-table>
   <pass_batchid>N</pass_batchid>
+  <shared_objects_file/>
   <entries>
     <entry>
       <name>Start</name>

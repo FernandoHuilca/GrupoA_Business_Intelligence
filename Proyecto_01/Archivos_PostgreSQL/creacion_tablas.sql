@@ -85,9 +85,9 @@ CREATE TABLE dim_persona(
 	etnia VARCHAR(30)
 );
 
--- Creación de la tabla: fact_desaparacion
-CREATE TABLE fact_desaparacion(
-	desaparacion_key SERIAL PRIMARY KEY,
+-- Creación de la tabla: fact_desaparicion
+CREATE TABLE fact_desaparicion(
+	desaparicion_key SERIAL PRIMARY KEY,
 
 	edad INTEGER,
     dias_solucion INTEGER,
