@@ -164,6 +164,70 @@ Finalmente, se verificó que la transformación y carga de los datos se ejecutar
 
 <!-- Escribe aquí el contenido -->
 
+### 4.1 ¿Existe una correlación directa entre el tiempo que tarda un familiar en denunciar y la situacion_actual de la persona si es fallecido?
+
+- En Power BI, se creó una columna calculada en `fact_desaparacion` llamada `dias_denuncia` para medir los días transcurridos entre la desaparición y la denuncia:
+
+	```
+	dias_denuncia = DATEDIFF(fact_desaparacion[fecha_desaparicion_key], fact_desaparacion[fecha_denuncia_key], DAY)
+	```
+
+- Luego, se creó una columna de agrupación con el nombre de `Rango_Denuncia` para categorizar los días en intervalos significativos (0 días, 1-3, 4-7, 8-15, 16-30, +31).
+
+	```
+	Rango_Denuncia = 
+	SWITCH(
+	    TRUE(),
+	    fact_desaparacion[dias_denuncia] = 0, "a) 0 días",
+	    fact_desaparacion[dias_denuncia] <= 3, "b) 1-3 días",
+	    fact_desaparacion[dias_denuncia] <= 7, "c) 4-7 días",
+	    fact_desaparacion[dias_denuncia] <= 15, "d) 8-15 días",
+	    fact_desaparacion[dias_denuncia] <= 30, "e) 16-30 días",
+	    "f) 31+ días"
+	)
+	```
+
+- Después, se definieron tres medidas DAX (Data Analysis Expressions - Lenguaje de fórmulas oficial de Power BI) sobre `fact_desaparacion`:
+
+	- `Total_Casos`: conteo total de registros de la tabla `fact_desaparacion`.
+	
+		```
+		Total_Casos = COUNTROWS(fact_desaparacion)
+		```
+
+	- `Total_Fallecidos`: conteo de registros en `fact_desaparacion` con el atributo situacion_actual = "FALLECIDO" de dim_estado usando la relación.
+
+		```
+		Total_Fallecidos = 
+		CALCULATE(
+		    COUNTROWS(fact_desaparacion),
+		    dim_estado[situacion_actual] = "FALLECIDO"
+		)
+		```
+
+	- `Tasa_Letalidad`: división de `Total_Fallecidos` entre `Total_Casos`, formateada como porcentaje.
+
+		```
+		Tasa_Letalidad = DIVIDE([Total_Fallecidos], [Total_Casos], 0)
+		```
+
+- Para la visualización, se usó un gráfico combinado de columnas y líneas, ordenando ascendentemente por `Rango_Denuncia`:
+
+	- Eje X: Rango_Denuncia.
+
+	- Columnas: Total_Casos.
+
+	- Línea: Tasa_Letalidad.
+
+- Se observó que la tasa de letalidad subía de 1,41% (0 días) a 3,69% (1-3 días). 
+	
+	- Luego se mantuvo entre los valores del 3,5% al 4,5% para todos los demás rangos. Esto descartó una correlación lineal entre la demora en denunciar y la probabilidad de fallecimiento. 
+	
+- Se concluyó que el factor determinante del estado del desaparecido no se trató de la velocidad de la denuncia. Podría estar más asociado a otros factores como las circunstancias que rodearon la desaparición.
+
+
+
+
 ## 5. Recomendaciones al negocio
 
 <!-- Escribe aquí el contenido -->
