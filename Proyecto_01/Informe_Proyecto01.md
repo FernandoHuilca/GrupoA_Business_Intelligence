@@ -40,6 +40,45 @@
 * Se creó la base de datos "Proyecto01".
 * Se creó la tabla de los datos crudos tomando en cuenta cada columna del archivo "mdi_personasdesaparecidas_pm_2017_2025.xlsx" como un campo en la tabla con su respectivo tipo de dato.
 
+Se transformó el archivo .xlsx a formato .csv para facilitar su manipulación en Pentaho Data Integration.
+
+Primero, se seleccionó el componente CSV File Input y se importó el archivo CSV correspondiente a los datos de personas desaparecidas, utilizando el delimitador punto y coma (;).
+
+<img width="870" height="456" alt="image" src="https://github.com/user-attachments/assets/7628d59d-604a-48e1-84d9-b6fcb2c111db" />
+
+Como segundo paso, se utilizó un componente Value Mapper para reemplazar el valor NO_APLICA por la fecha 1900/01/01 en el campo fecha_conocimiento.
+
+<img width="599" height="280" alt="image" src="https://github.com/user-attachments/assets/810c3337-ba80-4c5f-98b0-9a7929831ccf" />
+
+Posteriormente, se utilizó otro componente Value Mapper para reemplazar el valor SIN_DATO por -1 en el campo edad.
+
+<img width="598" height="276" alt="image" src="https://github.com/user-attachments/assets/52b1089f-b912-4ed2-be23-0d4290c337f5" />
+
+A continuación, se utilizó nuevamente un componente Value Mapper en el campo fecha_localizacion, aplicando el mismo criterio utilizado previamente en el campo fecha_conocimiento.
+
+<img width="592" height="270" alt="image" src="https://github.com/user-attachments/assets/81aa7679-70e6-4d58-aa0a-c472baa53d8b" />
+
+Después, se utilizó un componente Value Mapper para reemplazar el valor NO_APLICA por -1 en el campo dias_solucion.
+
+<img width="593" height="271" alt="image" src="https://github.com/user-attachments/assets/920d1254-b938-471b-af10-3440310d17ab" />
+
+De igual manera, se utilizó otro componente Value Mapper para reemplazar un valor atípico o inconsistente en el campo dias_solucion por -1.
+
+<img width="594" height="268" alt="image" src="https://github.com/user-attachments/assets/62aeab4a-aac0-44a0-95a2-2141ed6cae6b" />
+
+Posteriormente, se utilizó el componente Select Values, específicamente en el apartado de Meta-data, para realizar el casteo de los campos a sus tipos de datos correspondientes.
+
+<img width="686" height="359" alt="image" src="https://github.com/user-attachments/assets/9887703d-01a2-4659-8daa-0aae40371d7d" />
+
+Finalmente, se utilizó el componente Table Output para insertar los datos transformados en la base de datos PostgreSQL.
+
+<img width="888" height="418" alt="image" src="https://github.com/user-attachments/assets/03cbe6c8-e976-4835-a898-c2ca17da494a" />
+
+Finalmente, se verificó que la transformación y carga de los datos se ejecutaron correctamente de manera exitosa.
+
+<img width="722" height="394" alt="image" src="https://github.com/user-attachments/assets/0178a4e6-3bff-4b28-96c3-37a0a69eba3f" />
+
+
 ### 3.2. Transformacion y carga de datos
 #### 3.2.1 dim_ubicacion_desaparicion
 
