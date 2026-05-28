@@ -166,7 +166,7 @@ Finalmente, se verificó que la transformación y carga de los datos se ejecutar
 <img width="671" height="328" alt="image" src="https://github.com/user-attachments/assets/b549ee04-4c87-4ee6-9823-e2ffec9c1dc6" />
 
 
-#### 3.2.4 fact_desaparacion
+#### 3.2.6 fact_desaparacion
 
 - Se creó la tabla `fact_desaparacion` en la base de datos `Proyecto01` dentro de PostgreSQL. 
 	- Se definieron las foreign keys hacia cada una de las dimensiones (dim_estado, dim_motivo, dim_ubicacion_desaparicion, dim_ubicacion_localizacion, cada una de las fechas de dim_fecha y dim_persona) junto con las medidas edad y dias_solucion.
@@ -192,7 +192,7 @@ Finalmente, se verificó que la transformación y carga de los datos se ejecutar
 |---:|:---:|:---:|
 | <img alt="Tabla en base de datos" width="360" src="https://github.com/user-attachments/assets/24689048-79bb-44a4-a997-321ef1c7ad6f" /> | <img alt="Resultado de transformacion" width="360" src="https://github.com/user-attachments/assets/59e2b050-a99d-4b67-943c-05d796660a21" /> | <img alt="Tabla llena con datos" width="360" src="https://github.com/user-attachments/assets/2cd3ef3f-0ff8-413c-be05-56598ff36943" /> |
 
-#### 3.2.5 etl_job_desaparacion
+#### 3.2.7 etl_job_desaparacion
 
 - Se creó el job `etl_job_desaparicion.kjb` para automatizar todas las transformaciones en el orden correcto.
 	
