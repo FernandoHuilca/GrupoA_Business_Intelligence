@@ -124,7 +124,7 @@ Finalmente, se verificó que la transformación y carga de los datos se ejecutar
 |---:|:---:|:---:|
 |  <img width="928" height="279" alt="image" src="https://github.com/user-attachments/assets/a8855a2f-a6c0-4ce6-9286-753050fe408a" /> | <img width="866" height="553" alt="image" src="https://github.com/user-attachments/assets/f6a94046-057d-4f6e-a914-924e25dc798f" /> | <img width="972" height="474" alt="Captura de pantalla 2026-05-27 234310" src="https://github.com/user-attachments/assets/149cf76d-8ad2-435f-9066-f61ac9d83c59" /> |
 
-#### 3.2.3 fact_desaparacion
+#### 3.2.4 fact_desaparacion
 
 - Se creó la tabla `fact_desaparacion` en la base de datos `Proyecto01` dentro de PostgreSQL. 
 	- Se definieron las foreign keys hacia cada una de las dimensiones (dim_estado, dim_motivo, dim_ubicacion_desaparicion, dim_ubicacion_localizacion, cada una de las fechas de dim_fecha y dim_persona) junto con las medidas edad y dias_solucion.
@@ -149,6 +149,16 @@ Finalmente, se verificó que la transformación y carga de los datos se ejecutar
 | Paso 1 | Paso 2 | Paso 3 |
 |---:|:---:|:---:|
 |  |  |  |
+
+#### 3.2.5 etl_job_desaparacion
+
+- Se creó el job `etl_job_desaparicion.kjb` para automatizar todas las transformaciones en el orden correcto.
+	
+	- Primero se cargó `carga_raw_desaparecidos.ktr` para obtener los datos del CSV a la tabla `raw_personas_desaparecidas`.
+
+	- Luego se cargaron las dimensiones para colocar los datos en las tablas dim_estado, dim_motivo, dim_persona, dim_fecha, dim_ubicacion_desaparicion y dim_ubicacion_localizacion.
+
+	- Finalmente, se cargó `carga_fact_desapariciones.ktr` para llenar la tabla `fact_desaparacion` usando las claves de las dimensiones ya cargadas.
 
 ## 4. Análisis de insights clave obtenidos (OLAP)
 
