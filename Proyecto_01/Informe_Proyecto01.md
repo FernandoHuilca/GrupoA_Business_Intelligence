@@ -82,7 +82,7 @@ Finalmente, se verificó que la transformación y carga de los datos se ejecutar
 
 
 ### 3.2. Transformacion y carga de datos
-#### 3.2.1 dim_ubicacion_desaparicion
+#### 3.2.1. dim_ubicacion_desaparicion
 
 * Se creó la tabla "dim_ubicacion_desaparicion" en la base de datos "Proyecto01" dentro de PostgreSQL.
 * En la transformación "Load_dim_ubicacion_desaparicion" se añadió un input `Table input` para obtener los datos de la tabla `raw_personas_desaparecidas`.
@@ -96,7 +96,7 @@ Finalmente, se verificó que la transformación y carga de los datos se ejecutar
 |---:|:---:|:---:|
 | <img src="https://github.com/user-attachments/assets/dc3acdb1-3d3c-4100-88fd-cabf7eb26f47" alt="transformacion" width="360" /> | <img src="https://github.com/user-attachments/assets/46aea794-86f2-4df1-85dd-9a0df91ab830" alt="salida" width="360" /> | <img src="https://github.com/user-attachments/assets/392399b0-300c-42f5-b1bc-f2c4a731259c" alt="verificacion" width="360" /> |
 
-#### 3.2.2 dim_ubicacion_localizacion
+#### 3.2.2. dim_ubicacion_localizacion
 
 * Se creó la tabla "dim_ubicacion_localizacion" en la base de datos "Proyecto01" dentro de PostgreSQL.
 * En la transformación "Load_dim_ubicacion_localizacion" se añadió un input `Table input` para obtener los datos de la tabla `raw_personas_desaparecidas`.
@@ -110,7 +110,7 @@ Finalmente, se verificó que la transformación y carga de los datos se ejecutar
 |---:|:---:|:---:|
 | <img src="https://github.com/user-attachments/assets/9468f8e4-ad6c-447e-be28-add1d51e7590" alt="transformacion" width="360" /> | <img src="https://github.com/user-attachments/assets/43b94a32-f4fe-4bf2-990a-444424a42a15" alt="salida" width="360" /> | <img src="https://github.com/user-attachments/assets/87819eff-a8d3-4aee-8a28-80b35c2d6c8d" alt="verificacion" width="360" /> |
 
-#### 3.2.3 dim_persona
+#### 3.2.3. dim_persona
 
 * Se creó la tabla "dim_persona" en la base de datos "Proyecto01" dentro de PostgreSQL.
 * En la trasformación "carga_dim_persona" se inicio añadiendo un input `Table input` para obtener los datos de la tabla `raw_personas_desaparecidas`.
@@ -124,7 +124,7 @@ Finalmente, se verificó que la transformación y carga de los datos se ejecutar
 |---:|:---:|:---:|
 |  <img width="928" height="279" alt="image" src="https://github.com/user-attachments/assets/a8855a2f-a6c0-4ce6-9286-753050fe408a" /> | <img width="866" height="553" alt="image" src="https://github.com/user-attachments/assets/f6a94046-057d-4f6e-a914-924e25dc798f" /> | <img width="972" height="474" alt="Captura de pantalla 2026-05-27 234310" src="https://github.com/user-attachments/assets/149cf76d-8ad2-435f-9066-f61ac9d83c59" /> |
 
-#### 3.2.4 dim_estado
+#### 3.2.4. dim_estado
 
 * Se creó la tabla dim_estado en la base de datos Proyecto01 dentro de PostgreSQL.
 * En la transformación carga_dim_estado se inició añadiendo un input `Table Input` para obtener los datos desde la tabla `raw_personas_desaparecidas`.
@@ -145,7 +145,7 @@ Finalmente, se verificó que la transformación y carga de los datos se ejecutar
 
 <img width="652" height="285" alt="Captura de pantalla 2026-05-27 205644" src="https://github.com/user-attachments/assets/ff5eda60-210a-4530-80b2-1b3f6e90f239" />
 
-#### 3.2.5 dim_motivo
+#### 3.2.5. dim_motivo
 
 * Se creó la tabla dim_motivo en la base de datos Proyecto01 dentro de PostgreSQL.
 * En la transformación carga_dim_motivo se inició añadiendo un input `Table Input` para obtener los datos desde la tabla `raw_personas_desaparecidas`.
@@ -180,9 +180,7 @@ Finalmente, se verificó que la transformación y carga de los datos se ejecutar
 
 | Paso 1 | Paso 2 | Paso 3 |
 |:---:|:---:|:---:|
-| <img width="260" alt="Paso 1" src="https://github.com/user-attachments/assets/74280ce6-5833-42bb-8be7-ff309e271007" /> 
-| <img width="260" alt="Paso 2" src="https://github.com/user-attachments/assets/9941e0ca-d237-44c9-8f29-3526c3253b14" /> 
-| <img width="260" alt="Paso 3" src="https://github.com/user-attachments/assets/6d6c5946-dfa9-47ec-a74e-b04bf63228d6" /> |
+| <img width="260" alt="Paso 1" src="https://github.com/user-attachments/assets/74280ce6-5833-42bb-8be7-ff309e271007" /> | <img width="260" alt="Paso 2" src="https://github.com/user-attachments/assets/9941e0ca-d237-44c9-8f29-3526c3253b14" /> | <img width="260" alt="Paso 3" src="https://github.com/user-attachments/assets/6d6c5946-dfa9-47ec-a74e-b04bf63228d6" /> |
 
 #### 3.2.7. fact_desaparacion
 
@@ -210,7 +208,7 @@ Finalmente, se verificó que la transformación y carga de los datos se ejecutar
 |---:|:---:|:---:|
 | <img alt="Tabla en base de datos" width="360" src="https://github.com/user-attachments/assets/24689048-79bb-44a4-a997-321ef1c7ad6f" /> | <img alt="Resultado de transformacion" width="360" src="https://github.com/user-attachments/assets/59e2b050-a99d-4b67-943c-05d796660a21" /> | <img alt="Tabla llena con datos" width="360" src="https://github.com/user-attachments/assets/2cd3ef3f-0ff8-413c-be05-56598ff36943" /> |
 
-#### 3.2.7 etl_job_desaparacion
+#### 3.2.8. etl_job_desaparacion
 
 - Se creó el job `etl_job_desaparicion.kjb` para automatizar todas las transformaciones en el orden correcto.
 	
@@ -227,7 +225,7 @@ Finalmente, se verificó que la transformación y carga de los datos se ejecutar
 
 <!-- Escribe aquí el contenido -->
 
-### 4.1 ¿Existe una correlación directa entre el tiempo que tarda un familiar en denunciar y la situacion_actual de la persona si es fallecido?
+### 4.1. ¿Existe una correlación directa entre el tiempo que tarda un familiar en denunciar y la situacion_actual de la persona si es fallecido?
 
 - En Power BI, se creó una columna calculada en `fact_desaparacion` llamada `dias_denuncia` para medir los días transcurridos entre la desaparición y la denuncia:
 
