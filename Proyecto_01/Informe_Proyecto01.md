@@ -29,7 +29,19 @@
 
 ## 1. El problema y la solución
 
-<!-- Escribe aquí el contenido -->
+### 1.1. Problema
+
+En Ecuador, los casos de personas reportadas como desaparecidas constituyen una problemática social y de seguridad que requiere seguimiento y análisis oportuno. Para este proyecto se trabajó con el conjunto de datos histórico del Ministerio del Interior, correspondiente al periodo 2017-2025, sobre personas reportadas como desaparecidas por presunta desaparición involuntaria.
+
+Aunque los datos contienen información relevante sobre fechas, ubicación, edad, sexo, motivo de desaparición, situación actual y tiempo de solución, su análisis en el formato original (archivo con extensión .xlsx) resulta limitado. Al estar en una estructura plana, no permite identificar fácilmente patrones temporales, demográficos o de resolución de casos. Por esta razón, se planteó la necesidad de organizar la información en un modelo analítico que facilite la obtención de **insights** y el **apoyo a la toma de decisiones**.	
+
+### 1.2 Solución
+
+Para abordar esta necesidad, se desarrolló una solución de inteligencia de negocios basada en un **proceso ETL** y un **modelo multidimensional tipo estrella**. Los datos fueron extraídos, transformados y cargados mediante Pentaho Data Integration hacia una base de datos PostgreSQL.
+
+Posteriormente, la información se organizó en una tabla de hechos y varias dimensiones. La tabla de hechos concentra los registros principales de desaparición, mientras que las dimensiones permiten filtrar y agrupar la información según las necesidades del análisis, como tiempo, ubicación, características de la persona, motivo de desaparición y estado actual.
+
+Finalmente, los datos transformados fueron conectados a Power BI para construir un reporte interactivo que facilite la identificación de patrones, la interpretación de la información y el apoyo a la toma de decisiones relacionadas con los casos de personas desaparecidas.
 
 ## 2. Justificación del diseño
 
