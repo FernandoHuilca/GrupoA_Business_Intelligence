@@ -55,7 +55,10 @@ En primera instancia, se identificó la granularidad del modelo: cada registro r
 
 Los hechos numéricos definidos son:
 * **`edad`:** Variable cuantitativa que almacena la edad cronológica de la víctima al momento del suceso. Su permanencia en la tabla de hechos es fundamental para calcular métricas agregadas como el promedio de edad de los desaparecidos según su perfil o territorio.
-* **`dias_solucion`:** Métrica operativa crítica que registra el tiempo transcurrido (en días) desde la fecha de desaparición hasta el cambio de condición del ciudadano (localización). 
+* **`dias_solucion`:** Métrica operativa crítica que registra el tiempo transcurrido (en días) desde la fecha de desaparición hasta el cambio de condición del ciudadano (localización).
+
+<img width="253" height="531" alt="image" src="https://github.com/user-attachments/assets/8ab50f15-9c39-458b-bf51-839280ac9cb6" />
+
 
 ### 2. Tablas de Dimensiones
 
@@ -64,19 +67,29 @@ El conjunto de datos original cuenta con múltiples variables temporales: `fecha
 
 Esta dimensión actuará bajo el concepto de **Dimensiones con Múltiples Roles (*Role-Playing Dimensions*)**. La tabla de hechos se conectará a ella mediante cuatro llaves foráneas independientes, permitiendo analizar de manera unificada el comportamiento estacional de la desaparición frente a la velocidad de la denuncia y la resolución.
 
+<img width="572" height="549" alt="image" src="https://github.com/user-attachments/assets/fd5ea4fa-050b-48dd-8582-05291227b4c0" />
+
 #### Dimensión de Estado (`dim_estado`)
 Esta dimensión condensa los atributos cualitativos que describen la situación administrativa y la condición física de la persona dentro del proceso de investigación. Agrupa las siguientes variables:
 * **`situación_actual`:** Categorías macro del desenlace del caso (`DESAPARECIDO`, `ENCONTRADO`, `FALLECIDO`).
 * **`estado_desaparecido`:** Detalle del estado legal o de la naturaleza del evento (`EN INVESTIGACIÓN`, `DESAPARICIÓN VOLUNTARIA`, `DESAPARICIÓN INVOLUNTARIA`, `EXTRAVÍO`).
 
+<img width="373" height="529" alt="image" src="https://github.com/user-attachments/assets/e3526e27-0ce4-4900-be94-2cb2c03f7bb5" />
+
 #### Dimensión de Motivo (`dim_motivo`)
 Diseñada para profundizar en la naturaleza del suceso y los factores detonantes. Centraliza dos columnas descriptivas: `motivo_desaparicion` y `motivacion_desaparicion_observada`. Su separación en una dimensión independiente facilita la clasificación de las causas subyacentes (delincuencia, violencia de género, problemas intrafamiliares o crisis de salud mental).
+
+<img width="311" height="426" alt="image" src="https://github.com/user-attachments/assets/d34f6fa1-9ee2-42f3-88bf-979c076372d9" />
 
 #### Dimensión de Persona (`dim_persona`)
 Funciona como una dimensión de perfiles demográficos (*Junk Dimension*), agrupando los atributos de `sexo`, `nacionalidad`, `rango_edad` y `etnia`. Dado que el dataset no expone identidades directas (nombres o cédulas) por motivos de confidencialidad, esta dimensión almacena las combinaciones **únicas** de características físicas y sociales. Esto mitiga la redundancia masiva de texto y permite identificar con precisión los grupos poblacionales con mayor índice de vulnerabilidad en el país.
 
+<img width="292" height="450" alt="image" src="https://github.com/user-attachments/assets/4fd241de-5c5e-4980-a05b-8e25a213aed9" />
+
 #### Dimensión de Ubicación de Localización (`dim_ubicacion_localizacion`)
 Para efectos del análisis del cierre de los casos, se consideró únicamente el atributo de `provincia_localizacion`. Al tratarse de un análisis macro del destino de las personas halladas, se descartaron los campos de latitud y longitud de localización, pues no son datos que se consideraron relevantes para la estructura de este modelo.
+
+<img width="480" height="661" alt="image" src="https://github.com/user-attachments/assets/fda091b4-c8b8-4e73-a311-8c8ca1f2d467" />
 
 #### Dimensión de Ubicación de Desaparición (`dim_ubicacion_desaparicion`)
 Representa una de las dimensiones con mayor número de columnas agrupadas del modelo. Durante la fase de diseño se evaluó la posibilidad de aplicar un modelo en *Copo de Nieve* para normalizar la jerarquía territorial de macro a micro (Zona -> Provincia -> Cantón -> Distrito -> Circuito -> Subcircuito) con el fin de reducir espacio en disco. 
@@ -85,9 +98,16 @@ Sin embargo, se decidió **colocar toda la jerarquía en una sola dimensión** s
 
 Además, se descartaron explícitamente las columnas de coordenadas geográficas (`latitud_desaparicion`, `longitud_desaparicion`) y los códigos internos de cantones y provincias, dado que no aportan valor numérico aditivo ni descriptivo de acuerdo con lo planteado para este informe.
 
+<img width="730" height="452" alt="Captura de pantalla 2026-05-28 172139" src="https://github.com/user-attachments/assets/a8bbc254-f059-4562-9074-a0308ba7ddaf" />
+
 ### Conclusión del Diseño
 
 A través de esta arquitectura compuesta por **una tabla de hechos y seis tablas de dimensiones**, el modelo estrella propuesto garantiza una estructura altamente normalizada y eficiente. El diseño no solo mitiga los problemas de redundancia del archivo de Excel original, sino que proporciona el entorno óptimo para extraer la información importante relacionada con los datos geográficos, patrones demográficos de riesgo y tiempos de respuesta institucional en el Ecuador.
+
+**Esquema estrella:**
+
+<img width="1236" height="799" alt="image" src="https://github.com/user-attachments/assets/1d33b5a6-adb5-44f6-a6ff-386a2929ba1f" />
+
 
 ## 3. Proceso ETL
 
