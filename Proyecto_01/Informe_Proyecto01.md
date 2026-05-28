@@ -141,7 +141,7 @@ Finalmente, se verificó que la transformación y carga de los datos se ejecutar
 |---|---|
 | <img src="https://github.com/user-attachments/assets/089d0ab2-d710-494b-9696-8a3128e03946" width="450" /> | <img src="https://github.com/user-attachments/assets/55700459-927f-46e9-b7d6-819e40e48e95" width="450" /> |
 
-### Transformation
+#### Transformación
 
 <img width="652" height="285" alt="Captura de pantalla 2026-05-27 205644" src="https://github.com/user-attachments/assets/ff5eda60-210a-4530-80b2-1b3f6e90f239" />
 
@@ -161,12 +161,30 @@ Finalmente, se verificó que la transformación y carga de los datos se ejecutar
 | Paso 3 | Paso 4 |
 |---|---|
 | <img src="https://github.com/user-attachments/assets/60c8b03c-fc84-451c-a334-42031d10e5b4" width="450" /> | <img src="https://github.com/user-attachments/assets/c2d0a2fd-f1c5-4a01-b071-a3f64f3b652d" width="450" /> |
-### Transformation
+
+#### Transformación
 
 <img width="671" height="328" alt="image" src="https://github.com/user-attachments/assets/b549ee04-4c87-4ee6-9823-e2ffec9c1dc6" />
 
+#### 3.2.6. dim_fecha
 
-#### 3.2.6 fact_desaparacion
+- Se creó la tabla “dim_fecha” en la base de datos "Proyecto01" dentro de PostgreSQL.
+- En la transformación “carga_dim_fecha” se añadió un input `Table input` para obtener las columnas “fecha_desaparicion”, “fecha_denuncia”, “fecha_conocimiento” y “fecha_localizacion” de la tabla `raw_personas_desaparecidas`.
+- Se usó la transformación `Row normaliser`para convertir las cuatro columnas de fecha en una sola columna. Para ello, se creó el campo “tipo_fecha”, que identifica de qué columna proviene cada fecha, y el campo “fecha_key”, donde se agrupan todas las fechas.
+- Se añadió la transformación `Select values` para escoger las columnas necesarias: fecha_key, especificando el tipo de dato y el formato.
+- Mediante el componente `Calculator`, se obtuvieron los valores correspondientes a “anio”, “mes”y “dia” para cada fecha almacenada en el campo “fecha_key”.
+- Se añadió `Sort rows` para ordenar los registros de forma ascendente según el campo “fecha_key”.
+- Se utilizó `Unique rows` para remover las fechas repetidas y conservar únicamente un registro por cada fecha.
+- Finalmente, se añadió `Table input` para cargar los datos en `dim_fecha`.
+- La ejecución mostró salida exitosa en Pentaho y se verificaron los datos en PostgreSQL.
+
+| Paso 1 | Paso 2 | Paso 3 |
+|:---:|:---:|:---:|
+| <img width="260" alt="Paso 1" src="https://github.com/user-attachments/assets/74280ce6-5833-42bb-8be7-ff309e271007" /> 
+| <img width="260" alt="Paso 2" src="https://github.com/user-attachments/assets/9941e0ca-d237-44c9-8f29-3526c3253b14" /> 
+| <img width="260" alt="Paso 3" src="https://github.com/user-attachments/assets/6d6c5946-dfa9-47ec-a74e-b04bf63228d6" /> |
+
+#### 3.2.7. fact_desaparacion
 
 - Se creó la tabla `fact_desaparacion` en la base de datos `Proyecto01` dentro de PostgreSQL. 
 	- Se definieron las foreign keys hacia cada una de las dimensiones (dim_estado, dim_motivo, dim_ubicacion_desaparicion, dim_ubicacion_localizacion, cada una de las fechas de dim_fecha y dim_persona) junto con las medidas edad y dias_solucion.
