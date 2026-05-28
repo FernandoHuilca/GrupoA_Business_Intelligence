@@ -32,7 +32,11 @@
 
 ## 3. Proceso ETL
 
-<!-- Escribe aquí el contenido -->
+### 1. Creación de la tabla "raw_personas_desaparecidas" en PostgreSQL
+
+Primero se creó la base de datos "Proyecto01". Luego, se creó la tabla de los datos crudos tomando en cuenta cada columna del archivo "mdi_personasdesaparecidas_pm_2017_2025.xlsx" como un campo en la tabla con su respectivo tipo de dato.
+
+
 
 ## 4. Análisis de insights clave obtenidos (OLAP)
 
@@ -41,6 +45,5 @@
 ## 5. Recomendaciones al negocio
 
 <!-- Escribe aquí el contenido -->
-
 
 
