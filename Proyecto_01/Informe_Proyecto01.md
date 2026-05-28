@@ -124,6 +124,48 @@ Finalmente, se verificó que la transformación y carga de los datos se ejecutar
 |---:|:---:|:---:|
 |  <img width="928" height="279" alt="image" src="https://github.com/user-attachments/assets/a8855a2f-a6c0-4ce6-9286-753050fe408a" /> | <img width="866" height="553" alt="image" src="https://github.com/user-attachments/assets/f6a94046-057d-4f6e-a914-924e25dc798f" /> | <img width="972" height="474" alt="Captura de pantalla 2026-05-27 234310" src="https://github.com/user-attachments/assets/149cf76d-8ad2-435f-9066-f61ac9d83c59" /> |
 
+#### 3.2.4 dim_estado
+
+* Se creó la tabla dim_estado en la base de datos Proyecto01 dentro de PostgreSQL.
+* En la transformación carga_dim_estado se inició añadiendo un input `Table Input` para obtener los datos desde la tabla `raw_personas_desaparecidas`.
+* Se añadió el paso `Select Values` para escoger las columnas necesarias relacionadas con el estado de la desaparición, como: situacion_actual, estado_desaparecido.
+* Posteriormente, se aplicó el componente `Unique Rows (Hash)` para eliminar registros duplicados y conservar únicamente combinaciones únicas.
+* Finalmente, se añadió el componente `Table Output` para cargar los datos en la tabla `dim_estado`.
+* La ejecución mostró una salida exitosa en Pentaho y posteriormente se verificaron los datos cargados correctamente en PostgreSQL.
+
+| Paso 1 | Paso 2 |
+|---|---|
+| <img src="https://github.com/user-attachments/assets/0e8b9c46-6f21-4622-9da7-b1f81744b961" width="450" /> | <img src="https://github.com/user-attachments/assets/ae581336-7f19-4222-8200-644955e5fffc" width="450" /> |
+
+| Paso 3 | Paso 4 |
+|---|---|
+| <img src="https://github.com/user-attachments/assets/089d0ab2-d710-494b-9696-8a3128e03946" width="450" /> | <img src="https://github.com/user-attachments/assets/55700459-927f-46e9-b7d6-819e40e48e95" width="450" /> |
+
+### Transformation
+
+<img width="652" height="285" alt="Captura de pantalla 2026-05-27 205644" src="https://github.com/user-attachments/assets/ff5eda60-210a-4530-80b2-1b3f6e90f239" />
+
+#### 3.2.5 dim_motivo
+
+* Se creó la tabla dim_motivo en la base de datos Proyecto01 dentro de PostgreSQL.
+* En la transformación carga_dim_motivo se inició añadiendo un input `Table Input` para obtener los datos desde la tabla `raw_personas_desaparecidas`.
+* Se añadió el paso `Select Values` para escoger las columnas necesarias relacionadas con el motivo de la desaparición, como: motivo_desaparicion, motivacion_desaparicion_observada.
+* Posteriormente, se aplicó el componente `Unique Rows (Hash)` para eliminar registros duplicados y conservar únicamente combinaciones únicas.
+* Finalmente, se añadió el componente `Table Output` para cargar los datos en la tabla `dim_motivo`.
+* La ejecución mostró una salida exitosa en Pentaho y posteriormente se verificaron los datos cargados correctamente en PostgreSQL.
+
+| Paso 1 | Paso 2 |
+|---|---|
+| <img src="https://github.com/user-attachments/assets/dcb7c2d7-b931-4ef6-8e1f-913943eb480c" width="450" /> | <img src="https://github.com/user-attachments/assets/00e15d4a-78ed-46a7-8e2b-f94d53cda8a6" width="450" /> |
+
+| Paso 3 | Paso 4 |
+|---|---|
+| <img src="https://github.com/user-attachments/assets/60c8b03c-fc84-451c-a334-42031d10e5b4" width="450" /> | <img src="https://github.com/user-attachments/assets/c2d0a2fd-f1c5-4a01-b071-a3f64f3b652d" width="450" /> |
+### Transformation
+
+<img width="671" height="328" alt="image" src="https://github.com/user-attachments/assets/b549ee04-4c87-4ee6-9823-e2ffec9c1dc6" />
+
+
 #### 3.2.4 fact_desaparacion
 
 - Se creó la tabla `fact_desaparacion` en la base de datos `Proyecto01` dentro de PostgreSQL. 
