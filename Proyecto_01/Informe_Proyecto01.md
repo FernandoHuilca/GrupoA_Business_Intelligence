@@ -228,6 +228,7 @@ Finalmente, se verificó que la transformación y carga de los datos se ejecutar
 	
 - Se concluyó que el factor determinante del estado del desaparecido no se trató de la velocidad de la denuncia. Podría estar más asociado a otros factores como las circunstancias que rodearon la desaparición.
 
+<img width="720" alt="dashboard power bi de tiempo de denuncia y la situacion_actual de la persona (fallecido)"  src="https://github.com/user-attachments/assets/7cd2f52b-d828-4fe3-be1f-1a536ca9a182" />
 
 
 
