@@ -46,6 +46,7 @@ Finalmente, los datos transformados fueron conectados a Power BI para construir 
 ## 2. Justificación del diseño
 
 <!-- Escribe aquí el contenido -->
+En proceso... (Matenme)
 
 ## 3. Proceso ETL
 
