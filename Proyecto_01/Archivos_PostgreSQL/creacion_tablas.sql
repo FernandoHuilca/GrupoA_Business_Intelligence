@@ -75,3 +75,12 @@ CREATE TABLE dim_fecha(
 	mes INTEGER,
 	dia INTEGER
 );
+
+-- Creación de la tabla: dim_persona
+CREATE TABLE dim_persona(
+	persona_key SERIAL PRIMARY KEY,
+	sexo VARCHAR(10),
+	nacionalidad VARCHAR(30),
+	rango_edad VARCHAR(30),
+	etnia VARCHAR(30)
+);
