@@ -2539,7 +2539,7 @@ if (edad == null || edad == "") {
     </partitioning>
     <connection>Proyecto01</connection>
     <schema>public</schema>
-    <table>fact_desaparacion</table>
+    <table>fact_desaparicion</table>
     <commit>1000</commit>
     <truncate>N</truncate>
     <ignore_errors>N</ignore_errors>

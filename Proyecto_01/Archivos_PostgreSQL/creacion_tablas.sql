@@ -103,4 +103,4 @@ CREATE TABLE fact_desaparicion(
 	ubicacion_localizacion_key INTEGER REFERENCES dim_ubicacion_localizacion(ubicacion_localizacion_key),
 	persona_key INTEGER REFERENCES dim_persona(persona_key)
 );
-SELECT * FROM fact_desaparacion;
+SELECT * FROM fact_desaparicion;
