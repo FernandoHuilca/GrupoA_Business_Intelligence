@@ -31,4 +31,19 @@ CREATE TABLE raw_personas_desaparecidas (
 	estado_desaparecido VARCHAR(50)
 );
 
+-- Tabla dim_estado
+CREATE TABLE dim_estado(
+	estado_key serial primary key,
+	situacion_actual VARCHAR(30),
+	estado_desaparecido VARCHAR(50)
+)
+
+-- Tabla dim_motivo
+CREATE TABLE dim_motivo(
+	motivo_key serial primary key,
+	motivo_desaparicion VARCHAR(100),
+	motivacion_desaparicion_observada VARCHAR(100)
+)
+
+
 
