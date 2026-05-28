@@ -237,3 +237,4 @@ Finalmente, se verificó que la transformación y carga de los datos se ejecutar
 <!-- Escribe aquí el contenido -->
 
 
+- Como el 57.33% de las denuncias se realizan entre 1 y 3 día, se deben implementar protocolos de búsqueda inmediata. Se debe destinar  recursos y personal de manera prioritaria durante las primeras 72 horas luego de la denuncia.
