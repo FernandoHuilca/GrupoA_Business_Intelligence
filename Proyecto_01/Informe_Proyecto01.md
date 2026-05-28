@@ -148,7 +148,7 @@ Finalmente, se verificó que la transformación y carga de los datos se ejecutar
 
 | Paso 1 | Paso 2 | Paso 3 |
 |---:|:---:|:---:|
-|  |  |  |
+| <img alt="Tabla en base de datos" width="360" src="https://github.com/user-attachments/assets/24689048-79bb-44a4-a997-321ef1c7ad6f" /> | <img alt="Resultado de transformacion" width="360" src="https://github.com/user-attachments/assets/59e2b050-a99d-4b67-943c-05d796660a21" /> | <img alt="Tabla llena con datos" width="360" src="https://github.com/user-attachments/assets/2cd3ef3f-0ff8-413c-be05-56598ff36943" /> |
 
 #### 3.2.5 etl_job_desaparacion
 
@@ -159,6 +159,9 @@ Finalmente, se verificó que la transformación y carga de los datos se ejecutar
 	- Luego se cargaron las dimensiones para colocar los datos en las tablas dim_estado, dim_motivo, dim_persona, dim_fecha, dim_ubicacion_desaparicion y dim_ubicacion_localizacion.
 
 	- Finalmente, se cargó `carga_fact_desapariciones.ktr` para llenar la tabla `fact_desaparacion` usando las claves de las dimensiones ya cargadas.
+
+<img width="360" alt="job etl para cargar la tabla raw, dim y fact" src="https://github.com/user-attachments/assets/033a25c2-cdb1-4bf2-8d7e-ac63829ac083" />
+
 
 ## 4. Análisis de insights clave obtenidos (OLAP)
 
