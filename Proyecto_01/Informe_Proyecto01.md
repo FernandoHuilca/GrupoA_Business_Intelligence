@@ -363,6 +363,31 @@ Finalmente, se verificó que la transformación y carga de los datos se ejecutar
 <img width="720" alt="dashboard power bi de tiempo de denuncia y la situacion_actual de la persona (fallecido)"  src="https://github.com/user-attachments/assets/7cd2f52b-d828-4fe3-be1f-1a536ca9a182" />
 
 
+### 4.2. ¿Existen meses o épocas del año donde los picos de desapariciones aumentan para rangos de edad específicos?
+
+- Para facilitar la lectura, los meses se presentan con su nombre y no con el número de la consulta SQL.
+
+| Rango de edad | Enero | Febrero | Marzo | Abril | Mayo | Junio | Julio | Agosto | Septiembre | Octubre | Noviembre | Diciembre | Mes con mayor pico | Mes con menor pico |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|---|
+| Adolescentes | 3774 | 3190 | 3348 | 2859 | 3025 | 3129 | 3306 | 3145 | 2956 | 3207 | 3143 | 2998 | Enero | Abril |
+| Adulto | 2629 | 2481 | 2617 | 2338 | 2439 | 2438 | 2560 | 2520 | 2491 | 2541 | 2352 | 2580 | Enero | Abril |
+| Adulto mayor | 246 | 234 | 246 | 255 | 219 | 238 | 253 | 256 | 243 | 267 | 231 | 293 | Diciembre | Mayo |
+| Niños(as) | 394 | 390 | 417 | 392 | 317 | 395 | 398 | 399 | 394 | 389 | 388 | 355 | Marzo | Mayo |
+
+- En términos generales, los grupos con mayor número de casos son **Adolescentes** y **Adulto**, muy por encima de **Niños(as)** y **Adulto mayor**.
+- El comportamiento mensual no muestra un único pico que se repita en todos los rangos de edad. Sin embargo, sí se observan meses de mayor concentración por grupo:
+	- **Adolescentes:** el valor más alto aparece en **enero** y se mantiene elevado en **marzo**, **julio** y **octubre**.
+	- **Adolescentes:** el valor más bajo se registra en **abril**.
+	- **Adulto:** el mayor volumen también se concentra en **enero**, seguido por valores altos en **marzo** y **diciembre**.
+	- **Adulto:** el valor más bajo se registra en **abril**.
+	- **Adulto mayor:** el pico más alto ocurre en **diciembre**, con un repunte adicional en **octubre**.
+	- **Adulto mayor:** el valor más bajo se registra en **mayo**.
+	- **Niños(as):** el máximo se registra en **marzo**, con niveles también altos en **julio**, **agosto** y **junio**.
+- **Niños(as):** el valor más bajo se registra en **mayo**.
+- Con base en estos resultados, se concluye que **sí existen meses con incrementos por rango de edad**, pero no se trata de una estacionalidad uniforme para toda la población. Más bien, cada grupo presenta sus propios meses críticos, por lo que el análisis debe enfocarse de forma segmentada.
+
+
+
 
 ## 5. Recomendaciones al negocio
 
