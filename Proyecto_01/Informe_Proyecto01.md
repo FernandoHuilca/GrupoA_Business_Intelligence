@@ -49,7 +49,7 @@ Para organizar, estructurar y transformar el conjunto de datos crudos sobre pers
 
 A continuación, se detalla y justifica la arquitectura del modelo, segmentada en su Tabla de Hechos y sus respectivas Tablas de Dimensiones.
 
-### 1. Tabla de Hechos (`fact_desapariciones`)
+### 1. Tabla de Hechos (`fact_desaparicion`)
 
 En primera instancia, se identificó la granularidad del modelo: cada registro representa una denuncia o alerta individual de desaparición. A partir de las preguntas de negocio planteadas, se determinó que la tabla de hechos centralizará las métricas numéricas y cuantitativas del fenómeno, además de las llaves foráneas (FK) que conectan con las dimensiones.
 
