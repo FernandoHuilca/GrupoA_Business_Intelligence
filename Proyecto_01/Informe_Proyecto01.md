@@ -428,9 +428,8 @@ Con base en los resultados, se obtuvieron los siguientes hallazgos:
   	-	Campos: Se colocó Macro_Estado y Detalle_Estado en la sección de Leyenda para habilitar la función nativa de desglose
    	-	Valores: Se asignó el campo desaparicion_key de la tabla de hechos configurado en Recuento.
 
-En base a los resultados se obtuvieron los siguientes resultados:
+A partir del análisis multidimensional de los 75,680 registros oficiales (periodo 2017-2025), se extrajeron las siguientes conclusiones estratégicas para el informe:
 
-- A partir del análisis multidimensional de los 75,680 registros oficiales (periodo 2017-2025), se extrajeron las siguientes conclusiones estratégicas para el informe:
 - Alta Efectividad de Localización: El Estado ecuatoriano registra una Tasa de Resolución Global del 96.61%, lo que equivale a 73,113 casos cerrados. Esto demuestra una alta capacidad operativa de las unidades especializadas para dar con el paradero de las víctimas y concluir los protocolos de búsqueda.
 - Índice de Letalidad en Casos Cerrados: Del total de casos resueltos, el 96.45% (70,518 personas) fue localizado con vida. Sin embargo, el 3.55% (2,595 personas) fue hallado fallecido, marcando el índice de letalidad del fenómeno y transformando la desaparición en una investigación de materia penal ordinaria.
 - Casos Abiertos: Únicamente el 3.39% (2,567 casos) permanece categorizado como "Casos No Resueltos". Esta cifra representa la carga activa de personas que continúan siendo buscadas activamente por las autoridades del orden a nivel nacional.
