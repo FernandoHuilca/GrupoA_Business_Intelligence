@@ -18,7 +18,7 @@
 	 * [3.2. Transformacion y carga de datos](#32-transformacion-y-carga-de-datos)
 		 * [3.2.1. dim_ubicacion_desaparicion](#321-dim_ubicacion_desaparicion)
 		 * [3.2.2. dim_ubicacion_localizacion](#322-dim_ubicacion_localizacion)
-		 * [3.2.3. dim_persona](323-dim_persona)
+		 * [3.2.3. dim_persona](#323-dim_persona)
 4. [Análisis de insights clave obtenidos (OLAP)](#4-análisis-de-insights-clave-obtenidos-olap)
 5. [Recomendaciones al negocio](#5-recomendaciones-al-negocio)
 ------------
