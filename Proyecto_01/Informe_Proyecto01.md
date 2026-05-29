@@ -111,7 +111,7 @@ Además, se descartaron explícitamente las columnas de coordenadas geográficas
 
 <img width="730" height="452" alt="Captura de pantalla 2026-05-28 172139" src="https://github.com/user-attachments/assets/a8bbc254-f059-4562-9074-a0308ba7ddaf" />
 
-### 2.3.Conclusión del diseño
+### 2.3. Conclusión del diseño
 
 A través de esta arquitectura compuesta por **una tabla de hechos y seis tablas de dimensiones**, el modelo estrella propuesto garantiza una estructura altamente normalizada y eficiente. El diseño no solo mitiga los problemas de redundancia del archivo de Excel original, sino que proporciona el entorno óptimo para extraer la información importante relacionada con los datos geográficos, patrones demográficos de riesgo y tiempos de respuesta institucional en el Ecuador.
 
