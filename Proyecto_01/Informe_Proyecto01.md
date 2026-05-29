@@ -12,18 +12,28 @@
 ## **Índice de Contenidos**
 
 1. [El problema y la solución](#1-el-problema-y-la-solución)
+	* [1.1. Problema](#11-problema)
+	* [1.2 Solución](#12-solución)
 2. [Justificación del diseño](#2-justificación-del-diseño)
+	* [2.1. Tabla de hechos](#21-tabla-de-hechos)
+	* [2.2. Tablas de dimensiones](#22-tablas-de-dimensiones)
+	* [2.3.Conclusión del diseño](#23-conclusión-del-diseño)
 3. [Proceso ETL](#3-proceso-etl)
 	 * [3.1. Creación de la tabla "raw_personas_desaparecidas" en PostgreSQL](#31-creación-de-la-tabla-raw_personas_desaparecidas-en-postgresql)
 	 * [3.2. Transformacion y carga de datos](#32-transformacion-y-carga-de-datos)
 		 * [3.2.1. dim_ubicacion_desaparicion](#321-dim_ubicacion_desaparicion)
 		 * [3.2.2. dim_ubicacion_localizacion](#322-dim_ubicacion_localizacion)
 		 * [3.2.3. dim_persona](#323-dim_persona)
+     	 * [3.2.4. dim_estado](#324-dim_estado)
+		 * [3.2.5. dim_motivo](#325-dim_motivo)
+		 * [3.2.6. dim_fecha](326-dim_fecha)
+		 * [3.2.7. fact_desaparacion](327-fact_desaparicion)
+		 * [3.2.8. etl_job_desaparacion](328-etl_job_desaparicion)
 4. [Análisis de insights clave obtenidos (OLAP)](#4-análisis-de-insights-clave-obtenidos-olap)
 5. [Recomendaciones al negocio](#5-recomendaciones-al-negocio)
 ------------
 
-# <center>**Análisis sobre desaparaciones en Ecuador 2017 a 2025**</center>
+# <center>**Análisis de desaparaciones en Ecuador durante el periodo 2017 a 2025**</center>
 
 ---
 
@@ -50,7 +60,7 @@ Para organizar, estructurar y transformar el conjunto de datos crudos sobre pers
 
 A continuación, se detalla y justifica la arquitectura del modelo, segmentada en su Tabla de Hechos y sus respectivas Tablas de Dimensiones.
 
-### 1. Tabla de Hechos (`fact_desaparicion`)
+### 2.1. Tabla de hechos
 
 En primera instancia, se identificó la granularidad del modelo: cada registro representa una denuncia o alerta individual de desaparición. A partir de las preguntas de negocio planteadas, se determinó que la tabla de hechos centralizará las métricas numéricas y cuantitativas del fenómeno, además de las llaves foráneas (FK) que conectan con las dimensiones.
 
@@ -61,7 +71,7 @@ Los hechos numéricos definidos son:
 <img width="253" height="531" alt="image" src="https://github.com/user-attachments/assets/8ab50f15-9c39-458b-bf51-839280ac9cb6" />
 
 
-### 2. Tablas de Dimensiones
+### 2.2. Tablas de dimensiones
 
 #### Dimensión de Tiempo (`dim_fecha`)
 El conjunto de datos original cuenta con múltiples variables temporales: `fecha_desaparicion`, `fecha_denuncia`, `fecha_conocimiento` y `fecha_localizacion`. En lugar de fragmentar el modelo en múltiples tablas de tiempo, se optó por unificar la estructura cronológica en una sola dimensión física. 
@@ -101,7 +111,7 @@ Además, se descartaron explícitamente las columnas de coordenadas geográficas
 
 <img width="730" height="452" alt="Captura de pantalla 2026-05-28 172139" src="https://github.com/user-attachments/assets/a8bbc254-f059-4562-9074-a0308ba7ddaf" />
 
-### Conclusión del diseño
+### 2.3.Conclusión del diseño
 
 A través de esta arquitectura compuesta por **una tabla de hechos y seis tablas de dimensiones**, el modelo estrella propuesto garantiza una estructura altamente normalizada y eficiente. El diseño no solo mitiga los problemas de redundancia del archivo de Excel original, sino que proporciona el entorno óptimo para extraer la información importante relacionada con los datos geográficos, patrones demográficos de riesgo y tiempos de respuesta institucional en el Ecuador.
 
