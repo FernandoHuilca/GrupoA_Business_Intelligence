@@ -446,7 +446,6 @@ Casos resueltos (Encontrados con o sin vida):
 
 ## 5. Recomendaciones al negocio
 
-<!-- Escribe aquí el contenido -->
-
-
 - Como el 57.33% de las denuncias se realizan entre 1 y 3 día, se deben implementar protocolos de búsqueda inmediata. Se debe destinar  recursos y personal de manera prioritaria durante las primeras 72 horas luego de la denuncia.
+
+- Se recomienda priorizar el análisis y seguimiento en Pichincha y Guayas, dado que concentran la mayor cantidad de reportes de desaparecidos y tienen un peso importante en la tendencia nacional. Esto permitiría enfocar mejor los recursos de prevención, búsqueda y respuesta institucional en las provincias donde el problema se presenta con mayor intensidad.
