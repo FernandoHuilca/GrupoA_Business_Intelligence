@@ -421,7 +421,7 @@ Con base en los resultados, se obtuvieron los siguientes hallazgos:
 - Para responder a esta pregunta es necesario realizar una categorización de la dimensión de estado para clasificar cada elemento entre ``Caso Resuelto`` y ``Caso no resuelto``.
 - En el editor de Power Query, se seleccionó la tabla "dim_estado" y se añadieron dos columnas condicionales para estructurar la jerarquía analítica.
 	-	Columna "Macro_Estado": Si situacion_actual es igual a ENCONTRADO o FALLECIDO, se asigna el valor "Casos Resueltos"; de lo contrario, "Casos No 		Resueltos".
- 	-	Columna Detalle_Estado: Mapeo descriptivo para identificar el desenlace vital (Encontrados con vida, Fallecidos / Hallados sin vida o Siguen 			desaparecidos).
+ 	-	Columna "Detalle_Estado": Mapeo descriptivo para identificar el desenlace vital (Encontrados con vida, Fallecidos / Hallados sin vida o Siguen 			desaparecidos).
 
  Para la configuración del gráfico se realizó lo siguiente:
   -	Se arrastró al lienzo un Gráfico de Anillos (Donut Chart).
