@@ -100,7 +100,7 @@ Además, se descartaron explícitamente las columnas de coordenadas geográficas
 
 <img width="730" height="452" alt="Captura de pantalla 2026-05-28 172139" src="https://github.com/user-attachments/assets/a8bbc254-f059-4562-9074-a0308ba7ddaf" />
 
-### Conclusión del Diseño
+### Conclusión del diseño
 
 A través de esta arquitectura compuesta por **una tabla de hechos y seis tablas de dimensiones**, el modelo estrella propuesto garantiza una estructura altamente normalizada y eficiente. El diseño no solo mitiga los problemas de redundancia del archivo de Excel original, sino que proporciona el entorno óptimo para extraer la información importante relacionada con los datos geográficos, patrones demográficos de riesgo y tiempos de respuesta institucional en el Ecuador.
 
@@ -114,7 +114,7 @@ A través de esta arquitectura compuesta por **una tabla de hechos y seis tablas
 ### 3.1. Creación de la tabla "raw_personas_desaparecidas" en PostgreSQL
 
 * Se creó la base de datos "Proyecto01".
-* Se creó la tabla de los datos crudos tomando en cuenta cada columna del archivo "mdi_personasdesaparecidas_pm_2017_2025.xlsx" como un campo en la tabla con su respectivo tipo de dato.
+* Se creó la tabla de los datos históricos tomando en cuenta cada columna del archivo "mdi_personasdesaparecidas_pm_2017_2025.xlsx" como un campo en la tabla con su respectivo tipo de dato.
 
 Se transformó el archivo .xlsx a formato .csv para facilitar su manipulación en Pentaho Data Integration.
 
