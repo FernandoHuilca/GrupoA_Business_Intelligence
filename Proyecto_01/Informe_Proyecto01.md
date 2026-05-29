@@ -417,6 +417,33 @@ Con base en los resultados, se obtuvieron los siguientes hallazgos:
 - A nivel territorial, los casos no se distribuyen de manera uniforme, puesto que Pichincha y Guayas concentran la mayor cantidad de reportes, con 18.493 y 17.643 casos, respectivamente.
 - Existe una diferencia considerable entre Pichincha y Guayas frente al resto de provincias, ya que Manabí, Azuay y El Oro registran menos de 4.000 casos cada una. Esto indica que la evolución nacional de los casos está fuertemente influenciada por las provincias con mayor concentración de reportes.
 
+### 4.4 ¿Cuántos casos han sido resueltos y cuántos permanecen sin resolución? Además, dentro de los casos resueltos, ¿cuántos corresponden a personas encontradas fallecidas?
+- Para responder a esta pregunta es necesario realizar una categorización de la dimensión de estado para clasificar cada elemento entre ``Caso Resuelto`` y ``Caso no resuelto``.
+- En el editor de Power Query, se seleccionó la tabla "dim_estado" y se añadieron dos columnas condicionales para estructurar la jerarquía analítica.
+	-	Columna "Macro_Estado": Si situacion_actual es igual a ENCONTRADO o FALLECIDO, se asigna el valor "Casos Resueltos"; de lo contrario, "Casos No 		Resueltos".
+ 	-	Columna "Detalle_Estado": Mapeo descriptivo para identificar el desenlace vital (Encontrados con vida, Fallecidos / Hallados sin vida o Siguen 			desaparecidos).
+
+ Para la configuración del gráfico se realizó lo siguiente:
+  -	Se arrastró al lienzo un Gráfico de Anillos (Donut Chart).
+  	-	Campos: Se colocó Macro_Estado y Detalle_Estado en la sección de Leyenda para habilitar la función nativa de desglose
+   	-	Valores: Se asignó el campo desaparicion_key de la tabla de hechos configurado en Recuento.
+
+En base a los resultados se obtuvieron los siguientes resultados:
+
+- A partir del análisis multidimensional de los 75,680 registros oficiales (periodo 2017-2025), se extrajeron las siguientes conclusiones estratégicas para el informe:
+- Alta Efectividad de Localización: El Estado ecuatoriano registra una Tasa de Resolución Global del 96.61%, lo que equivale a 73,113 casos cerrados. Esto demuestra una alta capacidad operativa de las unidades especializadas para dar con el paradero de las víctimas y concluir los protocolos de búsqueda.
+- Índice de Letalidad en Casos Cerrados: Del total de casos resueltos, el 96.45% (70,518 personas) fue localizado con vida. Sin embargo, el 3.55% (2,595 personas) fue hallado fallecido, marcando el índice de letalidad del fenómeno y transformando la desaparición en una investigación de materia penal ordinaria.
+- Casos Abiertos: Únicamente el 3.39% (2,567 casos) permanece categorizado como "Casos No Resueltos". Esta cifra representa la carga activa de personas que continúan siendo buscadas activamente por las autoridades del orden a nivel nacional.
+
+Casos resueltos vs No resueltos:
+
+<img width="617" height="585" alt="image" src="https://github.com/user-attachments/assets/fea9cbbc-4eac-4d8f-982b-cfd019418be2" />
+
+Casos resueltos (Encontrados con o sin vida):
+
+<img width="663" height="581" alt="image" src="https://github.com/user-attachments/assets/25cd9780-2761-4ea1-881f-a642b87374d9" />
+
+
 ## 5. Recomendaciones al negocio
 
 <!-- Escribe aquí el contenido -->
