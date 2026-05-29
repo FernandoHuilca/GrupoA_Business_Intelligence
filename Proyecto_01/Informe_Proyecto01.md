@@ -443,6 +443,32 @@ Casos resueltos (Encontrados con o sin vida):
 <img width="663" height="581" alt="image" src="https://github.com/user-attachments/assets/25cd9780-2761-4ea1-881f-a642b87374d9" />
 
 
+### 4.5 ¿Cuáles son los motivos_desaparicion más frecuentes según el rango_edad? 
+Para responder esta pregunta en Power BI, se utilizó la tabla de hechos `fact_desaparacion` junto con la dimensión `dim_persona` y `dim_motivo`.  
+El análisis se enfocó en identificar cuáles son los motivos de desaparición más frecuentes para cada grupo etario.
+
+A partir de los registros de desaparición, se relacionó el motivo de desaparición con el rango de edad correspondiente, permitiendo segmentar los casos entre adolescentes, adultos, adultos mayores, niños(as) y registros sin dato.
+
+Para la visualización, se construyó un gráfico de columnas apiladas con la siguiente configuración:
+
+- **Eje X:** `motivo_desaparicion`
+- **Eje Y:** Recuento de `desaparicion_key`
+- **Leyenda:** `rango_edad`
+
+<img width="678" height="389" alt="image" src="https://github.com/user-attachments/assets/bed93ef1-3e57-4ae7-b59e-58846940d2e7" />
+
+Con base en los resultados obtenidos, se identificaron los siguientes hallazgos:
+
+- Las causas familiares representan el motivo de desaparición más frecuente en todos los rangos de edad, especialmente en el grupo de adolescentes, donde se concentra la mayor cantidad de casos.
+- En segundo lugar se encuentran las causas sociales, nuevamente con una alta participación de adolescentes y adultos.
+- Los grupos de adultos también presentan una participación importante en motivos relacionados con causas personales, violencia y extraviados.
+- En contraste, los adultos mayores registran una cantidad considerablemente menor de desapariciones en comparación con adolescentes y adultos en casi todas las categorías.
+- Los casos relacionados con violencia, extraviado, fallecido y no aplica muestran una distribución más equilibrada entre adolescentes y adultos, aunque siguen predominando los adolescentes.
+- Los registros asociados a categorías como causas económicas, posible vinculación a delito, cerrado por fiscalía y discriminación presentan una incidencia baja dentro del total general de desapariciones.
+- El gráfico evidencia que el fenómeno de desaparición afecta principalmente a población joven, especialmente adolescentes, lo que sugiere una relación importante entre conflictos familiares/sociales y los reportes de desaparición en Ecuador.
+- Asimismo, se observa que los adultos mayores tienen una participación reducida en comparación con otros grupos etarios, indicando que las desapariciones en este segmento ocurren con menor frecuencia y posiblemente responden a contextos distintos a los observados en adolescentes.
+
+
 ## 5. Recomendaciones al negocio
 
 - Como el 57.33% de las denuncias se realizan entre 1 y 3 día, se deben implementar protocolos de búsqueda inmediata. Se debe destinar  recursos y personal de manera prioritaria durante las primeras 72 horas luego de la denuncia.
