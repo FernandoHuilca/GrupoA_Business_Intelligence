@@ -297,8 +297,6 @@ Finalmente, se verificó que la transformación y carga de los datos se ejecutar
 
 ## 4. Análisis de insights clave obtenidos (OLAP)
 
-<!-- Escribe aquí el contenido -->
-
 ### 4.1. ¿Existe una correlación directa entre el tiempo que tarda un familiar en denunciar y la situacion_actual de la persona si es fallecido?
 
 - En Power BI, se creó una columna calculada en `fact_desaparacion` llamada `dias_denuncia` para medir los días transcurridos entre la desaparición y la denuncia:
@@ -383,11 +381,41 @@ Finalmente, se verificó que la transformación y carga de los datos se ejecutar
 	- **Adulto mayor:** el pico más alto ocurre en **diciembre**, con un repunte adicional en **octubre**.
 	- **Adulto mayor:** el valor más bajo se registra en **mayo**.
 	- **Niños(as):** el máximo se registra en **marzo**, con niveles también altos en **julio**, **agosto** y **junio**.
-- **Niños(as):** el valor más bajo se registra en **mayo**.
+	- **Niños(as):** el valor más bajo se registra en **mayo**.
 - Con base en estos resultados, se concluye que **sí existen meses con incrementos por rango de edad**, pero no se trata de una estacionalidad uniforme para toda la población. Más bien, cada grupo presenta sus propios meses críticos, por lo que el análisis debe enfocarse de forma segmentada.
 
+### 4.3 ¿Cómo ha evolucionado la cantidad de personas reportadas como desaparecidas entre 2017 y 2025 en Ecuador, y qué provincias concentran los mayores niveles de casos durante este periodo?
 
+Para responder esta pregunta en Power BI, se utilizaron las dimensiones `dim_fecha` y `dim_ubicacion_desaparicion`, junto con la tabla de hechos `fact_desaparacion`.
 
+A partir de la fecha de desaparición registrada en la tabla de hechos, se relacionó cada caso con el campo anio de dim_fecha, permitiendo agrupar los registros por año.
+
+<img width="1294" height="616" alt="image" src="https://github.com/user-attachments/assets/40320b21-19a3-43b8-9d53-9afb55a43377" />
+
+Para la visualización, se construyó un gráfico de columnas con la siguiente configuración:
+Eje X: dim_fecha[anio]
+Eje Y: Total de desaparecidos (recuento[desaparicion_key])
+
+<img width="771" height="456" alt="image" src="https://github.com/user-attachments/assets/c315e965-b219-4d2f-834c-5f257fe6e7f1" />
+
+Por otro lado, se utilizó un mapa para identificar las provincias con mayor número de reportes de personas desaparecidas.
+
+<img width="634" height="641" alt="image" src="https://github.com/user-attachments/assets/5c3c8c8c-147e-4b08-bd95-6a67eca5d1c9" />
+
+| Provincia | Número de desaparecidos |
+| --------- | ----------------------: |
+| Pichincha |                  18.493 |
+| Guayas    |                  17.643 |
+| Manabí    |                   3.754 |
+| Azuay     |                   3.568 |
+| El Oro    |                   3.292 |
+
+Con base en los resultados, se obtuvieron los siguientes hallazgos:
+- Entre 2017 y 2019 se registraron los niveles más altos de personas reportadas como desaparecidas en Ecuador.
+- En 2020 se observa una disminución marcada en los reportes, año que coincide con el periodo de pandemia y restricciones de movilidad en el país.
+- Desde 2021 hasta 2025, los casos vuelven a incrementarse respecto a 2020, pero no alcanzan los valores registrados antes de la pandemia.
+- A nivel territorial, los casos no se distribuyen de manera uniforme, puesto que Pichincha y Guayas concentran la mayor cantidad de reportes, con 18.493 y 17.643 casos, respectivamente.
+- Existe una diferencia considerable entre Pichincha y Guayas frente al resto de provincias, ya que Manabí, Azuay y El Oro registran menos de 4.000 casos cada una. Esto indica que la evolución nacional de los casos está fuertemente influenciada por las provincias con mayor concentración de reportes.
 
 ## 5. Recomendaciones al negocio
 
