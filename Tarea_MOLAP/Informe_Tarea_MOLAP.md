@@ -35,19 +35,15 @@ GR2SW
 ---
 ## MOLAP
 
-### 1. Modelo relacional
+### 1. Modelo estrella
 
-#### 1.1. Inserción de datos
+#### 1.1. Inserción de datos en tablas de dimensiones
 
-### 2. Modelo estrella
+#### 1.2. Inserción de datos en la tabla de hechos
 
-#### 2.1. Inserción de datos en tablas de dimensiones
+### 2. Vista multidimensional
 
-#### 2.2. Inserción de datos en la tabla de hechos
-
-### 3. Vista multidimensional
-
-### 4. MOLAP (Vista materializada) 
+### 3. MOLAP (Vista materializada) 
 
 ## Consultas MOLAP
 
