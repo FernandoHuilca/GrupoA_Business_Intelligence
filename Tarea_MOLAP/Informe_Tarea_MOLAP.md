@@ -41,9 +41,7 @@ GR2SW
 
 #### 1.2. Inserción de datos en la tabla de hechos
 
-### 2. Vista multidimensional
-
-### 3. MOLAP (Vista materializada) 
+### 2. MOLAP (Vista materializada) 
 
 ## Consultas MOLAP
 
