@@ -35,13 +35,17 @@ GR2SW
 ---
 ## MOLAP
 
-### 1. Modelo estrella
+### 1. Proceso ETL
 
-#### 1.1. Inserción de datos en tablas de dimensiones
+#### 1.1. Creación de la tabla "raw_salud"
 
-#### 1.2. Inserción de datos en la tabla de hechos
+#### 1.2. Transformación y carga de datos
 
-### 2. MOLAP (Vista materializada) 
+##### 1.2.1. dim_
+
+### 2. Modelo estrella
+
+### 3. MOLAP (Vista materializada) 
 
 ## Consultas MOLAP
 
