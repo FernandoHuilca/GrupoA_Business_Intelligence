@@ -43,6 +43,15 @@ GR2SW
 
 ##### 1.2.1. dim_
 
+##### 1.2.2. dim_resultado
+Las siguientes imágenes muestran el proceso de construcción y carga de la dimensión dim_resultado dentro del flujo ETL. En primer lugar, se realiza la extracción de la columna outcome desde la base de datos PostgreSQL (Imagen 1), seguida de la selección específica de dicho atributo mediante el componente Select Values (Imagen 2). Posteriormente, se eliminan los registros duplicados utilizando el paso UniqueRows (HashSet) para garantizar la unicidad de los valores (Imagen 3). Una vez depurados los datos, estos se cargan en la tabla dim_resultado del almacén de datos (Imagen 4). Finalmente, se presenta el resultado obtenido tras la ejecución del proceso, evidenciando la correcta creación y almacenamiento de los registros en la dimensión (Imagen 5).
+
+| <img src="https://github.com/user-attachments/assets/6a64705a-ef6b-4ad9-816d-50686972311f" width="250"> | <img src="https://github.com/user-attachments/assets/caa8c6c4-b23d-4338-bd25-dcf412e4ca00" width="250"> | <img src="https://github.com/user-attachments/assets/d3031d63-b950-4c38-917e-9b655d1e7c41" width="250"> |
+|---|---|---|
+| Imagen 1. Carga de la columna `outcome` desde PostgreSQL | Imagen 2. Selección de la columna usando Select values| Imagen 3. Eliminación de duplicados con UniqueRows(HashSet) |
+| <img src="https://github.com/user-attachments/assets/cf4563a0-b265-44db-9432-d5bd8cc17c0b" width="250"> | <img src="https://github.com/user-attachments/assets/57b93a53-67e1-4223-b83f-15face6895e7" width="250"> | 
+| Imagen 4. Carga de los datos a la tabla dim_resultado | Imagen 5. Resultado final | 
+
 ### 2. Modelo estrella
 
 ### 3. MOLAP (Vista materializada) 
