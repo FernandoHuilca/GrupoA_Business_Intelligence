@@ -11,7 +11,7 @@ CREATE TABLE raw_salud (
     hospital_department VARCHAR(50),
     doctor_id INT,
     specialty VARCHAR(50),
-    diagnosis_group VARCHAR(50),
+    diagnostic_group VARCHAR(50),
     procedure_type VARCHAR(50),
     insurance_type VARCHAR(30),
     is_emergency INT,
@@ -23,7 +23,12 @@ CREATE TABLE raw_salud (
 );
 
 -- Creación de la tabla: dim_fecha
-
+CREATE TABLE dim_fecha (
+    fecha_key DATE PRIMARY KEY,
+    anio INT,
+    mes INT,
+    dia INT
+);
 
 -- Creación de la tabla: dim_paciente
 
@@ -35,17 +40,23 @@ CREATE TABLE raw_salud (
 
 
 -- Creación de la tabla: dim_diagnostico
-
+CREATE TABLE dim_diagnostico (
+    diagnostico_key SERIAL PRIMARY KEY,
+    diagnosis_group VARCHAR(50)
+);
 
 -- Creación de la tabla: dim_procedimiento
 
 
 -- Creación de la tabla: dim_tipo_seguro
-
+CREATE TABLE dim_tipo_seguro (
+    tipo_seguro_key SERIAL PRIMARY KEY,
+    insurance_type VARCHAR(30)
+);
 
 -- Creación de la tabla: dim_resultado
 CREATE TABLE dim_resultado (
-    resultado_key serial primary key,
+    resultado_key SERIAL PRIMARY KEY,
     outcome VARCHAR(30)
 );
 
