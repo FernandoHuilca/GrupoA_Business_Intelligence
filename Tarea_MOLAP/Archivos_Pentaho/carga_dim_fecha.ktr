@@ -436,32 +436,22 @@
   </notepads>
   <order>
     <hop>
-      <from>raw_personas_desaparecidas</from>
-      <to>Row normaliser</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Row normaliser</from>
-      <to>Select values</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
       <from>Select values</from>
       <to>Calculator</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Sort rows</from>
-      <to>Unique rows</to>
+      <from>raw_salud</from>
+      <to>Select values</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Calculator</from>
-      <to>Sort rows</to>
+      <to>Unique rows (HashSet)</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Unique rows</from>
+      <from>Unique rows (HashSet)</from>
       <to>carga_dim_fecha</to>
       <enabled>Y</enabled>
     </hop>
@@ -481,7 +471,7 @@
     <calculation>
       <field_name>anio</field_name>
       <calc_type>YEAR_OF_DATE</calc_type>
-      <field_a>fecha_key</field_a>
+      <field_a>visit_date</field_a>
       <field_b/>
       <field_c/>
       <value_type>None</value_type>
@@ -496,7 +486,7 @@
     <calculation>
       <field_name>mes</field_name>
       <calc_type>MONTH_OF_DATE</calc_type>
-      <field_a>fecha_key</field_a>
+      <field_a>visit_date</field_a>
       <field_b/>
       <field_c/>
       <value_type>None</value_type>
@@ -511,7 +501,7 @@
     <calculation>
       <field_name>dia</field_name>
       <calc_type>DAY_OF_MONTH</calc_type>
-      <field_a>fecha_key</field_a>
+      <field_a>visit_date</field_a>
       <field_b/>
       <field_c/>
       <value_type>None</value_type>
@@ -532,55 +522,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>592</xloc>
-      <yloc>80</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Row normaliser</name>
-    <type>Normaliser</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <typefield>tipo_fecha</typefield>
-    <fields>
-      <field>
-        <name>fecha_desaparicion</name>
-        <value>desaparicion</value>
-        <norm>fecha_key</norm>
-      </field>
-      <field>
-        <name>fecha_denuncia</name>
-        <value>denuncia</value>
-        <norm>fecha_key</norm>
-      </field>
-      <field>
-        <name>fecha_conocimiento</name>
-        <value>conocimiento</value>
-        <norm>fecha_key</norm>
-      </field>
-      <field>
-        <name>fecha_localizacion</name>
-        <value>localizacion</value>
-        <norm>fecha_key</norm>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>288</xloc>
+      <xloc>368</xloc>
       <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>
@@ -598,26 +540,10 @@
     </partitioning>
     <fields>
       <field>
-        <name>fecha_key</name>
+        <name>visit_date</name>
+        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
-      <meta>
-        <name>fecha_key</name>
-        <rename>fecha_key</rename>
-        <type>Date</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask>yyyy/mm/dd</conversion_mask>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>
     </fields>
     <attributes/>
     <cluster_schema/>
@@ -628,14 +554,14 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>448</xloc>
+      <xloc>240</xloc>
       <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Sort rows</name>
-    <type>SortRows</type>
+    <name>carga_dim_fecha</name>
+    <type>TableOutput</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -644,21 +570,39 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <directory>%%java.io.tmpdir%%</directory>
-    <prefix>out</prefix>
-    <sort_size>1000000</sort_size>
-    <free_memory/>
-    <compress>N</compress>
-    <compress_variable/>
-    <unique_rows>N</unique_rows>
+    <connection>TareaMOLAP</connection>
+    <schema>public</schema>
+    <table>dim_fecha</table>
+    <commit>1000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
     <fields>
       <field>
-        <name>fecha_key</name>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
-        <collator_enabled>N</collator_enabled>
-        <collator_strength>0</collator_strength>
-        <presorted>N</presorted>
+        <column_name>fecha_key</column_name>
+        <stream_name>visit_date</stream_name>
+      </field>
+      <field>
+        <column_name>anio</column_name>
+        <stream_name>anio</stream_name>
+      </field>
+      <field>
+        <column_name>mes</column_name>
+        <stream_name>mes</stream_name>
+      </field>
+      <field>
+        <column_name>dia</column_name>
+        <stream_name>dia</stream_name>
       </field>
     </fields>
     <attributes/>
@@ -670,48 +614,13 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>752</xloc>
+      <xloc>672</xloc>
       <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Unique rows</name>
-    <type>Unique</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <count_rows>N</count_rows>
-    <count_field/>
-    <reject_duplicate_row>N</reject_duplicate_row>
-    <error_description/>
-    <fields>
-      <field>
-        <name>fecha_key</name>
-        <case_insensitive>N</case_insensitive>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>896</xloc>
-      <yloc>80</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>raw_personas_desaparecidas</name>
+    <name>raw_salud</name>
     <type>TableInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -721,12 +630,9 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>Proyecto01</connection>
-    <sql>SELECT fecha_desaparicion,
-	fecha_denuncia,
-    fecha_conocimiento,
-    fecha_localizacion
-FROM raw_personas_desaparecidas;</sql>
+    <connection>TareaMOLAP</connection>
+    <sql>SELECT visit_date
+FROM raw_salud;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -737,80 +643,11 @@ FROM raw_personas_desaparecidas;</sql>
       <value-meta>
         <type>Date</type>
         <storagetype>normal</storagetype>
-        <name>fecha_desaparicion</name>
+        <name>visit_date</name>
         <length>-1</length>
         <precision>-1</precision>
-        <origin>raw_personas_desaparecidas</origin>
-        <comments>fecha_desaparicion</comments>
-        <conversion_Mask/>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>America/Guayaquil</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>Date</type>
-        <storagetype>normal</storagetype>
-        <name>fecha_denuncia</name>
-        <length>-1</length>
-        <precision>-1</precision>
-        <origin>raw_personas_desaparecidas</origin>
-        <comments>fecha_denuncia</comments>
-        <conversion_Mask/>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>America/Guayaquil</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>Date</type>
-        <storagetype>normal</storagetype>
-        <name>fecha_conocimiento</name>
-        <length>-1</length>
-        <precision>-1</precision>
-        <origin>raw_personas_desaparecidas</origin>
-        <comments>fecha_conocimiento</comments>
-        <conversion_Mask/>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>America/Guayaquil</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>Date</type>
-        <storagetype>normal</storagetype>
-        <name>fecha_localizacion</name>
-        <length>-1</length>
-        <precision>-1</precision>
-        <origin>raw_personas_desaparecidas</origin>
-        <comments>fecha_localizacion</comments>
+        <origin>raw_salud</origin>
+        <comments>visit_date</comments>
         <conversion_Mask/>
         <decimal_symbol>.</decimal_symbol>
         <grouping_symbol>,</grouping_symbol>
@@ -842,8 +679,8 @@ FROM raw_personas_desaparecidas;</sql>
     </GUI>
   </step>
   <step>
-    <name>carga_dim_fecha</name>
-    <type>TableOutput</type>
+    <name>Unique rows (HashSet)</name>
+    <type>UniqueRowsByHashSet</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -852,39 +689,12 @@ FROM raw_personas_desaparecidas;</sql>
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>Proyecto01</connection>
-    <schema>public</schema>
-    <table>dim_fecha</table>
-    <commit>1000</commit>
-    <truncate>N</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
-    <specify_fields>Y</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field/>
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field/>
+    <store_values>N</store_values>
+    <reject_duplicate_row>N</reject_duplicate_row>
+    <error_description/>
     <fields>
       <field>
-        <column_name>fecha_key</column_name>
-        <stream_name>fecha_key</stream_name>
-      </field>
-      <field>
-        <column_name>anio</column_name>
-        <stream_name>anio</stream_name>
-      </field>
-      <field>
-        <column_name>mes</column_name>
-        <stream_name>mes</stream_name>
-      </field>
-      <field>
-        <column_name>dia</column_name>
-        <stream_name>dia</stream_name>
+        <name>visit_date</name>
       </field>
     </fields>
     <attributes/>
@@ -896,7 +706,7 @@ FROM raw_personas_desaparecidas;</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1056</xloc>
+      <xloc>512</xloc>
       <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>

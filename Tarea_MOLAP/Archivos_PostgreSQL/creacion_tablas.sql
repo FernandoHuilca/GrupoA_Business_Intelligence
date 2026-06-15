@@ -23,7 +23,12 @@ CREATE TABLE raw_salud (
 );
 
 -- Creación de la tabla: dim_fecha
-
+CREATE TABLE dim_fecha (
+    fecha_key DATE PRIMARY KEY,
+    anio INT,
+    mes INT,
+    dia INT
+);
 
 -- Creación de la tabla: dim_paciente
 
@@ -45,7 +50,7 @@ CREATE TABLE raw_salud (
 
 -- Creación de la tabla: dim_resultado
 CREATE TABLE dim_resultado (
-    resultado_key serial primary key,
+    resultado_key SERIAL PRIMARY KEY,
     outcome VARCHAR(30)
 );
 
