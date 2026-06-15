@@ -1,0 +1,101 @@
+﻿visit_id,visit_date,patient_id,patient_age,patient_gender,city,hospital_department,doctor_id,specialty,diagnosis_group,procedure_type,insurance_type,is_emergency,length_of_stay_days,cost_medicine,cost_procedure,total_cost,outcome
+1,2023-01-05,101,67,F,Quito,Medicina Interna,12,Cardiología,Hipertensión,Consulta,Publico,0,0,35.20,280.50,315.70,Recuperado
+2,2023-01-06,88,52,M,Guayaquil,Cirugía,34,Traumatología,Fractura,Cirugía mayor,Privado,1,5,120.00,3500.75,3620.75,Mejorado
+3,2023-01-10,45,29,F,Cuenca,Emergencias,7,Medicina General,Covid-19,Hospitalización,Publico,1,7,80.50,1500.00,1580.50,Mejorado
+4,2023-01-11,12,4,F,Quito,Pediatría,22,Neumología,Neumonía,Hospitalización,Publico,1,4,60.10,950.30,1010.40,Recuperado
+5,2023-01-12,233,73,M,Loja,Medicina Interna,40,Oncología,Cáncer,Consulta,Privado,0,0,45.00,420.00,465.00,Sin cambio
+6,2023-01-12,178,56,M,Ambato,Cirugía,31,Traumatología,Fractura,Cirugía menor,Mixto,0,1,25.60,800.40,826.00,Mejorado
+7,2023-01-13,201,38,F,Guayaquil,Ginecología,55,Ginecología,Embarazo,Hospitalización,Publico,0,3,70.00,1100.00,1170.00,Recuperado
+8,2023-01-13,66,65,M,Cuenca,Medicina Interna,14,Cardiología,Hipertensión,Control,Publico,0,0,20.00,150.00,170.00,Mejorado
+9,2023-01-14,300,19,M,Quito,Emergencias,9,Medicina General,Fractura,Consulta,Sin seguro,1,0,18.90,230.00,248.90,Reingreso
+10,2023-01-14,77,82,F,Loja,Medicina Interna,18,Neumología,Neumonía,Control,Publico,0,0,22.00,180.00,202.00,Sin cambio
+11,2023-01-15,150,49,F,Ambato,Emergencias,25,Medicina General,Neumonía,Consulta,Mixto,1,0,33.40,350.60,384.00,Recuperado
+12,2023-01-15,210,70,M,Quito,Cirugía,30,Traumatología,Fractura,Cirugía menor,Publico,0,2,50.00,900.00,950.00,Mejorado
+13,2023-01-16,115,34,F,Guayaquil,Pediatría,16,Medicina General,Diabetes,Consulta,Privado,0,0,28.00,200.30,228.30,Mejorado
+14,2023-01-17,97,61,M,Cuenca,Medicina Interna,27,Cardiología,Hipertensión,Control,Publico,0,0,15.50,120.00,135.50,Recuperado
+15,2023-01-17,54,40,F,Loja,Cirugía,42,Oncología,Cáncer,Hospitalización,Privado,0,6,90.00,3200.00,3290.00,Sin cambio
+16,2023-01-18,210,25,M,Ambato,Emergencias,11,Medicina General,Neumonía,Consulta,Publico,1,0,24.00,400.00,424.00,Mejorado
+17,2023-01-18,81,48,F,Quito,Ginecología,50,Ginecología,Embarazo,Hospitalización,Publico,0,3,65.00,1050.00,1115.00,Recuperado
+18,2023-01-19,105,32,M,Guayaquil,Medicina Interna,36,Oncología,Cáncer,Control,Mixto,0,0,20.00,260.00,280.00,Sin cambio
+19,2023-01-19,60,59,F,Cuenca,Cirugía,33,Traumatología,Fractura,Cirugía mayor,Publico,1,4,110.00,3700.00,3810.00,Mejorado
+20,2023-01-20,244,21,M,Loja,Emergencias,15,Medicina General,Covid-19,Consulta,Publico,1,0,19.00,250.00,269.00,Recuperado
+21,2023-01-20,112,67,F,Ambato,Medicina Interna,29,Neumología,Neumonía,Control,Privado,0,0,30.00,220.00,250.00,Mejorado
+22,2023-01-21,185,44,M,Quito,Cirugía,38,Traumatología,Fractura,Cirugía menor,Mixto,0,1,45.00,870.00,915.00,Recuperado
+23,2023-01-21,156,72,F,Guayaquil,Emergencias,19,Medicina General,Hipertensión,Consulta,Publico,1,0,18.00,310.00,328.00,Reingreso
+24,2023-01-22,142,37,F,Cuenca,Medicina Interna,24,Cardiología,Diabetes,Control,Publico,0,0,22.00,160.00,182.00,Mejorado
+25,2023-01-23,100,51,M,Loja,Cirugía,41,Oncología,Cáncer,Cirugía mayor,Privado,1,8,130.00,4800.00,4930.00,Sin cambio
+26,2023-01-24,19,29,F,Ambato,Ginecología,57,Ginecología,Embarazo,Consulta,Publico,0,0,14.00,200.00,214.00,Recuperado
+27,2023-01-24,209,62,M,Quito,Cirugía,39,Traumatología,Fractura,Hospitalización,Mixto,0,5,95.00,2950.00,3045.00,Mejorado
+28,2023-01-25,144,45,F,Guayaquil,Pediatría,23,Medicina General,Neumonía,Consulta,Sin seguro,1,0,32.00,420.00,452.00,Sin cambio
+29,2023-01-26,80,60,M,Cuenca,Medicina Interna,21,Cardiología,Hipertensión,Control,Publico,0,0,12.00,140.00,152.00,Recuperado
+30,2023-01-26,262,55,F,Loja,Cirugía,43,Oncología,Cáncer,Control,Publico,0,0,25.00,210.00,235.00,Mejorado
+31,2023-01-27,125,41,M,Ambato,Emergencias,13,Medicina General,Fractura,Consulta,Mixto,1,0,28.00,240.00,268.00,Recuperado
+32,2023-01-27,155,33,F,Quito,Pediatría,18,Medicina General,Diabetes,Control,Publico,0,0,20.00,180.00,200.00,Mejorado
+33,2023-01-28,222,50,M,Guayaquil,Cirugía,35,Traumatología,Fractura,Cirugía menor,Privado,0,2,48.00,900.00,948.00,Sin cambio
+34,2023-01-29,290,47,F,Cuenca,Medicina Interna,10,Cardiología,Hipertensión,Consulta,Publico,0,0,16.00,200.00,216.00,Mejorado
+35,2023-01-29,142,38,M,Loja,Emergencias,26,Medicina General,Neumonía,Hospitalización,Publico,1,6,85.00,1500.00,1585.00,Recuperado
+36,2023-01-30,114,36,F,Ambato,Cirugía,53,Oncología,Cáncer,Cirugía mayor,Mixto,1,9,150.00,4200.00,4350.00,Sin cambio
+37,2023-01-30,61,58,M,Quito,Medicina Interna,17,Cardiología,Hipertensión,Consulta,Privado,0,0,24.00,200.00,224.00,Mejorado
+38,2023-01-31,96,43,F,Guayaquil,Emergencias,8,Medicina General,Fractura,Consulta,Sin seguro,1,0,18.00,260.00,278.00,Reingreso
+39,2023-02-01,190,69,M,Cuenca,Cirugía,52,Traumatología,Fractura,Cirugía mayor,Publico,1,7,100.00,3600.00,3700.00,Mejorado
+40,2023-02-01,309,22,F,Loja,Ginecología,60,Ginecología,Embarazo,Control,Publico,0,0,15.00,200.00,215.00,Recuperado
+41,2023-02-02,217,57,M,Ambato,Medicina Interna,28,Neumología,Neumonía,Consulta,Privado,0,0,18.00,220.00,238.00,Sin cambio
+42,2023-02-02,102,71,F,Quito,Emergencias,14,Medicina General,Covid-19,Consulta,Publico,1,0,22.00,280.00,302.00,Mejorado
+43,2023-02-03,56,46,M,Guayaquil,Cirugía,47,Traumatología,Fractura,Cirugía menor,Mixto,0,2,40.00,850.00,890.00,Recuperado
+44,2023-02-03,89,62,F,Cuenca,Medicina Interna,20,Cardiología,Hipertensión,Control,Privado,0,0,18.00,150.00,168.00,Mejorado
+45,2023-02-04,31,51,M,Loja,Pediatría,12,Medicina General,Diabetes,Consulta,Publico,0,0,25.00,180.00,205.00,Mejorado
+46,2023-02-04,274,34,F,Ambato,Cirugía,49,Traumatología,Fractura,Cirugía mayor,Privado,1,5,115.00,3100.00,3215.00,Sin cambio
+47,2023-02-05,163,68,M,Quito,Emergencias,7,Medicina General,Neumonía,Hospitalización,Mixto,1,4,85.00,1300.00,1385.00,Recuperado
+48,2023-02-05,120,55,F,Guayaquil,Medicina Interna,32,Neumología,Neumonía,Control,Sin seguro,0,0,30.00,200.00,230.00,Mejorado
+49,2023-02-06,213,42,M,Cuenca,Cirugía,44,Traumatología,Fractura,Cirugía menor,Privado,0,1,35.00,700.00,735.00,Reingreso
+50,2023-02-06,52,39,F,Loja,Pediatría,21,Medicina General,Diabetes,Consulta,Publico,0,0,18.00,150.00,168.00,Mejorado
+51,2023-02-07,118,60,F,Ambato,Medicina Interna,38,Cardiología,Hipertensión,Consulta,Privado,0,0,22.00,210.00,232.00,Mejorado
+52,2023-02-07,200,53,M,Quito,Cirugía,45,Traumatología,Fractura,Cirugía mayor,Mixto,1,6,120.00,3500.00,3620.00,Sin cambio
+53,2023-02-08,134,41,F,Guayaquil,Emergencias,18,Medicina General,Covid-19,Consulta,Publico,1,0,20.00,260.00,280.00,Recuperado
+54,2023-02-08,87,36,M,Cuenca,Pediatría,10,Medicina General,Neumonía,Control,Privado,0,0,24.00,180.00,204.00,Mejorado
+55,2023-02-09,99,27,F,Loja,Cirugía,37,Oncología,Cáncer,Cirugía menor,Privado,0,2,40.00,850.00,890.00,Sin cambio
+56,2023-02-09,278,73,M,Ambato,Medicina Interna,29,Cardiología,Hipertensión,Consulta,Publico,0,0,22.00,200.00,222.00,Mejorado
+57,2023-02-10,166,68,F,Quito,Cirugía,57,Traumatología,Fractura,Cirugía mayor,Publico,1,5,110.00,3800.00,3910.00,Recuperado
+58,2023-02-10,141,49,M,Guayaquil,Emergencias,17,Medicina General,Neumonía,Hospitalización,Mixto,1,3,78.00,1250.00,1328.00,Mejorado
+59,2023-02-11,109,46,F,Cuenca,Pediatría,11,Medicina General,Diabetes,Consulta,Publico,0,0,19.00,200.00,219.00,Mejorado
+60,2023-02-11,232,58,M,Loja,Cirugía,40,Oncología,Cáncer,Control,Sin seguro,0,0,26.00,300.00,326.00,Sin cambio
+61,2023-02-12,247,39,F,Ambato,Cirugía,48,Traumatología,Fractura,Cirugía menor,Privado,0,2,35.00,900.00,935.00,Mejorado
+62,2023-02-12,72,52,M,Quito,Medicina Interna,13,Neumología,Neumonía,Consulta,Publico,0,0,22.00,210.00,232.00,Recuperado
+63,2023-02-13,158,31,F,Guayaquil,Pediatría,22,Medicina General,Neumonía,Consulta,Mixto,0,0,28.00,220.00,248.00,Mejorado
+64,2023-02-13,191,64,M,Cuenca,Emergencias,19,Medicina General,Fractura,Consulta,Publico,1,0,24.00,260.00,284.00,Reingreso
+65,2023-02-14,53,40,F,Loja,Ginecología,59,Ginecología,Embarazo,Control,Privado,0,0,18.00,200.00,218.00,Recuperado
+66,2023-02-14,165,57,M,Ambato,Cirugía,44,Traumatología,Fractura,Cirugía mayor,Publico,1,7,115.00,3450.00,3565.00,Mejorado
+67,2023-02-15,183,38,F,Quito,Medicina Interna,20,Neumología,Neumonía,Consulta,Privado,0,0,22.00,210.00,232.00,Mejorado
+68,2023-02-15,143,70,M,Guayaquil,Emergencias,8,Medicina General,Covid-19,Consulta,Publico,1,0,20.00,260.00,280.00,Recuperado
+69,2023-02-16,205,50,F,Cuenca,Cirugía,33,Traumatología,Fractura,Cirugía menor,Mixto,0,1,36.00,850.00,886.00,Mejorado
+70,2023-02-16,70,32,M,Loja,Medicina Interna,12,Cardiología,Hipertensión,Control,Publico,0,0,16.00,180.00,196.00,Recuperado
+71,2023-02-17,215,66,F,Ambato,Cirugía,45,Traumatología,Fractura,Cirugía mayor,Privado,1,6,120.00,3600.00,3720.00,Mejorado
+72,2023-02-17,303,59,M,Quito,Emergencias,18,Medicina General,Neumonía,Hospitalización,Publico,1,5,90.00,1400.00,1490.00,Mejorado
+73,2023-02-18,221,41,F,Guayaquil,Cirugía,28,Traumatología,Fractura,Cirugía menor,Sin seguro,0,2,38.00,820.00,858.00,Sin cambio
+74,2023-02-18,167,54,M,Cuenca,Medicina Interna,15,Neumología,Neumonía,Consulta,Publico,0,0,20.00,230.00,250.00,Recuperado
+75,2023-02-19,136,45,F,Loja,Pediatría,21,Medicina General,Diabetes,Control,Privado,0,0,25.00,180.00,205.00,Mejorado
+76,2023-02-19,238,33,M,Ambato,Cirugía,49,Traumatología,Fractura,Cirugía mayor,Mixto,1,7,110.00,3600.00,3710.00,Sin cambio
+77,2023-02-20,92,30,F,Quito,Emergencias,7,Medicina General,Covid-19,Consulta,Publico,1,0,20.00,270.00,290.00,Mejorado
+78,2023-02-20,260,58,M,Guayaquil,Medicina Interna,34,Cardiología,Hipertensión,Control,Mixto,0,0,22.00,200.00,222.00,Recuperado
+79,2023-02-21,147,43,F,Cuenca,Cirugía,41,Traumatología,Fractura,Cirugía menor,Privado,0,1,34.00,900.00,934.00,Mejorado
+80,2023-02-21,123,72,M,Loja,Ginecología,57,Ginecología,Embarazo,Control,Publico,0,0,15.00,200.00,215.00,Recuperado
+81,2023-02-22,259,64,F,Ambato,Emergencias,8,Medicina General,Neumonía,Consulta,Sin seguro,1,0,24.00,260.00,284.00,Mejorado
+82,2023-02-22,188,52,M,Quito,Cirugía,47,Traumatología,Fractura,Cirugía mayor,Privado,1,7,110.00,3500.00,3610.00,Mejorado
+83,2023-02-23,75,39,F,Guayaquil,Medicina Interna,30,Neumología,Neumonía,Control,Publico,0,0,20.00,240.00,260.00,Mejorado
+84,2023-02-23,119,63,M,Cuenca,Emergencias,13,Medicina General,Fractura,Consulta,Mixto,1,0,22.00,250.00,272.00,Reingreso
+85,2023-02-24,204,48,F,Loja,Pediatría,17,Medicina General,Diabetes,Consulta,Privado,0,0,25.00,200.00,225.00,Mejorado
+86,2023-02-24,111,57,M,Ambato,Cirugía,44,Traumatología,Fractura,Cirugía menor,Publico,0,2,36.00,820.00,856.00,Recuperado
+87,2023-02-25,253,60,F,Quito,Medicina Interna,19,Cardiología,Hipertensión,Control,Publico,0,0,20.00,180.00,200.00,Mejorado
+88,2023-02-25,164,53,M,Guayaquil,Emergencias,15,Medicina General,Covid-19,Consulta,Sin seguro,1,0,22.00,260.00,282.00,Reingreso
+89,2023-02-26,140,31,F,Cuenca,Cirugía,27,Traumatología,Fractura,Cirugía mayor,Privado,1,6,115.00,3450.00,3565.00,Sin cambio
+90,2023-02-26,272,69,M,Loja,Medicina Interna,33,Neumología,Neumonía,Hospitalización,Publico,1,5,85.00,1500.00,1585.00,Recuperado
+91,2023-02-27,129,44,F,Ambato,Ginecología,59,Ginecología,Embarazo,Consulta,Privado,0,0,18.00,200.00,218.00,Mejorado
+92,2023-02-27,171,37,M,Quito,Emergencias,6,Medicina General,Fractura,Consulta,Publico,1,0,20.00,250.00,270.00,Recuperado
+93,2023-02-28,260,50,F,Guayaquil,Cirugía,38,Traumatología,Fractura,Cirugía menor,Mixto,0,2,36.00,900.00,936.00,Sin cambio
+94,2023-02-28,187,42,M,Cuenca,Medicina Interna,22,Cardiología,Hipertensión,Consulta,Publico,0,0,16.00,200.00,216.00,Mejorado
+95,2023-03-01,94,59,F,Loja,Pediatría,13,Medicina General,Diabetes,Consulta,Privado,0,0,26.00,180.00,206.00,Mejorado
+96,2023-03-01,254,40,M,Ambato,Cirugía,52,Traumatología,Fractura,Cirugía mayor,Publico,1,7,120.00,3500.00,3620.00,Reingreso
+97,2023-03-02,179,33,F,Quito,Emergencias,11,Medicina General,Covid-19,Consulta,Mixto,1,0,20.00,260.00,280.00,Recuperado
+98,2023-03-02,268,74,M,Guayaquil,Medicina Interna,18,Neumología,Neumonía,Control,Publico,0,0,22.00,200.00,222.00,Mejorado
+99,2023-03-03,145,61,F,Cuenca,Cirugía,46,Traumatología,Fractura,Cirugía menor,Privado,0,1,34.00,850.00,884.00,Recuperado
+100,2023-03-03,310,57,M,Loja,Medicina Interna,24,Cardiología,Hipertensión,Consulta,Sin seguro,0,0,18.00,200.00,218.00,Mejorado
