@@ -70,6 +70,12 @@ GR2SW
 
 ##### 1.2.5. dim_diagnostico
 
+| <img src="https://github.com/user-attachments/assets/ba312239-e057-4924-bf19-5e6308fe2483" width="250"> | <img src="https://github.com/user-attachments/assets/758bacd4-e605-4a40-9ce7-5c2d88334ecf" width="250"> | <img src="https://github.com/user-attachments/assets/e18f1d1d-7e24-4825-a05e-0ea2c68d0eb0" width="250"> |
+|---|---|---|
+| Imagen 1. Carga de la columna `outcome` desde PostgreSQL | Imagen 2. Selección de la columna usando Select values| Imagen 3. Eliminación de duplicados con UniqueRows(HashSet) |
+| <img src="https://github.com/user-attachments/assets/88ec443f-b085-4612-bd5c-601f49ac7b2c" width="250"> | <img src="https://github.com/user-attachments/assets/d1a5a073-545d-40f2-815c-b6b09bf733bc" width="250"> | 
+| Imagen 4. Carga de los datos a la tabla dim_resultado | Imagen 5. Resultado final | 
+
 ##### 1.2.6. dim_procedimiento
 
 ##### 1.2.7. dim_tipo_seguro
