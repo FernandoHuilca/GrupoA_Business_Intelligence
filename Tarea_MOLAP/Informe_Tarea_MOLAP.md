@@ -62,7 +62,19 @@ GR2SW
 | <img src="https://github.com/user-attachments/assets/e9b3e675-f7e0-4f00-b90f-66896adb87b5" width="250"> | <img src="https://github.com/user-attachments/assets/c8126951-b5ce-4bbe-97ef-c2cc7ae004d8" width="250"> | <img src="https://github.com/user-attachments/assets/a3d35ee9-cb9b-4b7a-9264-851f2bca0926" width="250"> |
 | Imagen 4. Carga de los datos a la tabla `dim_resultado` | Imagen 5. Resultado final | Imagen 6. Hola |
 
-##### 1.2.2. dim_resultado
+##### 1.2.2. dim_paciente
+
+##### 1.2.3. dim_departamento_hospital
+
+##### 1.2.4. dim_medico
+
+##### 1.2.5. dim_diagnostico
+
+##### 1.2.6. dim_procedimiento
+
+##### 1.2.7. dim_tipo_seguro
+
+##### 1.2.8. dim_resultado
 Las siguientes imágenes muestran el proceso de construcción y carga de la dimensión dim_resultado dentro del flujo ETL. En primer lugar, se realiza la extracción de la columna outcome desde la base de datos PostgreSQL (Imagen 1), seguida de la selección específica de dicho atributo mediante el componente Select Values (Imagen 2). Posteriormente, se eliminan los registros duplicados utilizando el paso UniqueRows (HashSet) para garantizar la unicidad de los valores (Imagen 3). Una vez depurados los datos, estos se cargan en la tabla dim_resultado del almacén de datos (Imagen 4). Finalmente, se presenta el resultado obtenido tras la ejecución del proceso, evidenciando la correcta creación y almacenamiento de los registros en la dimensión (Imagen 5).
 
 | <img src="https://github.com/user-attachments/assets/6a64705a-ef6b-4ad9-816d-50686972311f" width="250"> | <img src="https://github.com/user-attachments/assets/caa8c6c4-b23d-4338-bd25-dcf412e4ca00" width="250"> | <img src="https://github.com/user-attachments/assets/d3031d63-b950-4c38-917e-9b655d1e7c41" width="250"> |
