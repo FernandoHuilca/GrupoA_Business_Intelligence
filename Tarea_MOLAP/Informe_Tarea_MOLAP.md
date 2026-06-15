@@ -59,9 +59,7 @@ GR2SW
 | <img src="https://github.com/user-attachments/assets/331b3faf-5def-4c78-bbc5-cc1e6dd45354" width="250"> | <img src="https://github.com/user-attachments/assets/a918c214-54b6-4c4e-bde6-3bb596c3bee0" width="250"> | <img src="https://github.com/user-attachments/assets/c1c8545c-6b6d-49fe-a3cd-b2607f1e3dbd" width="250"> |
 |---|---|---|
 | Imagen 1. Carga de la columna `outcome` desde PostgreSQL | Imagen 2. Selección de la columna usando Select values| Imagen 3. Eliminación de duplicados con UniqueRows(HashSet) |
-| <img src="https://github.com/user-attachments/assets/e9b3e675-f7e0-4f00-b90f-66896adb87b5" width="250"> | <img src="https://github.com/user-attachments/assets/c8126951-b5ce-4bbe-97ef-c2cc7ae004d8" width="250"> | <img src="https://github.com/user-attachments/assets/a3d35ee9-cb9b-4b7a-9264-851f2bca0926" width="250"> |
- 
-| Imagen 4. Carga de los datos a la tabla dim_resultado | Imagen 5. Resultado final | Imagen 6. |
+| <img src="https://github.com/user-attachments/assets/e9b3e675-f7e0-4f00-b90f-66896adb87b5" width="250"> | <img src="https://github.com/user-attachments/assets/c8126951-b5ce-4bbe-97ef-c2cc7ae004d8" width="250"> | <img src="https://github.com/user-attachments/assets/a3d35ee9-cb9b-4b7a-9264-851f2bca0926" width="250"> | Imagen 4. Carga de los datos a la tabla dim_resultado | Imagen 5. Resultado final | Imagen 6. |
 
 ##### 1.2.2. dim_resultado
 Las siguientes imágenes muestran el proceso de construcción y carga de la dimensión dim_resultado dentro del flujo ETL. En primer lugar, se realiza la extracción de la columna outcome desde la base de datos PostgreSQL (Imagen 1), seguida de la selección específica de dicho atributo mediante el componente Select Values (Imagen 2). Posteriormente, se eliminan los registros duplicados utilizando el paso UniqueRows (HashSet) para garantizar la unicidad de los valores (Imagen 3). Una vez depurados los datos, estos se cargan en la tabla dim_resultado del almacén de datos (Imagen 4). Finalmente, se presenta el resultado obtenido tras la ejecución del proceso, evidenciando la correcta creación y almacenamiento de los registros en la dimensión (Imagen 5).
