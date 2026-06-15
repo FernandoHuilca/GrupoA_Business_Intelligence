@@ -44,9 +44,9 @@ CREATE TABLE raw_salud (
 
 
 -- Creación de la tabla: dim_resultado
-CREATE TABLE dim_resultado {
+CREATE TABLE dim_resultado (
     resultado_key serial primary key,
     outcome VARCHAR(30)
-};
+);
 
 -- Creación de la tabla: fact_atencion_medica
