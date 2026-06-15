@@ -60,7 +60,6 @@ GR2SW
 |---|---|---|
 | Imagen 1. Carga de la columna `outcome` desde PostgreSQL | Imagen 2. Selección de la columna usando Select values | Imagen 3. Eliminación de duplicados con UniqueRows(HashSet) |
 | <img src="https://github.com/user-attachments/assets/e9b3e675-f7e0-4f00-b90f-66896adb87b5" width="250"> | <img src="https://github.com/user-attachments/assets/c8126951-b5ce-4bbe-97ef-c2cc7ae004d8" width="250"> | <img src="https://github.com/user-attachments/assets/a3d35ee9-cb9b-4b7a-9264-851f2bca0926" width="250"> |
-|---|---|---|
 | Imagen 4. Carga de los datos a la tabla `dim_resultado` | Imagen 5. Resultado final | Imagen 6. Hola |
 
 ##### 1.2.2. dim_resultado
