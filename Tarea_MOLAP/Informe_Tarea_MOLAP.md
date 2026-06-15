@@ -80,6 +80,12 @@ GR2SW
 
 ##### 1.2.7. dim_tipo_seguro
 
+| <img src="https://github.com/user-attachments/assets/eadc1984-143f-4ff3-a86e-d27b4d0448b4" width="250"> | <img src="https://github.com/user-attachments/assets/f33e37d9-8e9b-48fd-b531-c3b6900b8e70" width="250"> | <img src="https://github.com/user-attachments/assets/e0dfcb23-78e5-44f2-bb2b-bf7c1651b71b" width="250"> |
+|---|---|---|
+| Imagen 1. Carga de la columna `outcome` desde PostgreSQL | Imagen 2. Selección de la columna usando Select values| Imagen 3. Eliminación de duplicados con UniqueRows(HashSet) |
+| <img src="https://github.com/user-attachments/assets/956abee0-a810-4bfa-95dc-5c6c4921ee42" width="250"> | <img src="https://github.com/user-attachments/assets/cca22acb-d68b-41fa-b7f9-8547443cdc8e" width="250"> | 
+| Imagen 4. Carga de los datos a la tabla dim_resultado | Imagen 5. Resultado final | 
+
 ##### 1.2.8. dim_resultado
 Las siguientes imágenes muestran el proceso de construcción y carga de la dimensión dim_resultado dentro del flujo ETL. En primer lugar, se realiza la extracción de la columna outcome desde la base de datos PostgreSQL (Imagen 1), seguida de la selección específica de dicho atributo mediante el componente Select Values (Imagen 2). Posteriormente, se eliminan los registros duplicados utilizando el paso UniqueRows (HashSet) para garantizar la unicidad de los valores (Imagen 3). Una vez depurados los datos, estos se cargan en la tabla dim_resultado del almacén de datos (Imagen 4). Finalmente, se presenta el resultado obtenido tras la ejecución del proceso, evidenciando la correcta creación y almacenamiento de los registros en la dimensión (Imagen 5).
 
