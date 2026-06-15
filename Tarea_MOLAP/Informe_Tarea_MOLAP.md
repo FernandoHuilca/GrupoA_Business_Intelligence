@@ -48,19 +48,27 @@ GR2SW
 
 | <img src="https://github.com/user-attachments/assets/210a2a71-2d36-45f3-a522-0abed85ad205" width="250"> | <img src="https://github.com/user-attachments/assets/96a1dca8-e192-4768-92e9-7bb041ad51a9" width="250"> | <img src="https://github.com/user-attachments/assets/c3a178c1-43cf-4990-b552-d451e9318448" width="250"> |
 |---|---|---|
-| Imagen 1. Carga de la columna `outcome` desde PostgreSQL | Imagen 2. Selección de la columna usando Select values| Imagen 3. Eliminación de duplicados con UniqueRows(HashSet) |
+| Imagen . Carga de los datos desde el archivo CSV | Imagen . Selección de columnas usando Select values | Imagen . Corrección en el nombre de la columna “visit_id”  |
 | <img src="https://github.com/user-attachments/assets/2e9dcf43-351a-4538-bec8-23d69826acfe" width="250"> | <img src="https://github.com/user-attachments/assets/f3b0460d-f7e7-4926-81a3-01038868c513" width="250"> | 
-| Imagen 4. Carga de los datos a la tabla dim_resultado | Imagen 5. Resultado final | 
+| Imagen . Carga de los datos a la tabla `raw_salud` | Imagen . Resultado final | 
 
 #### 1.2. Transformación y carga de datos
 
 ##### 1.2.1. dim_fecha
 
+*	Se creó la tabla `dim_fecha` en la base de datos "TareaMOLAP" dentro de PostgreSQL.
+*	En la transformación “carga_dim_fecha” se añadió un input `Table input` para obtener la columna “visit_date” de la `tabla raw_salud`.
+*	Se usó la transformación `Select values` para escoger la columna necesaria: visit_date.
+*	Mediante el componente `Calculator`, se obtuvieron los valores correspondientes a “anio”, “mes”y “dia” para cada fecha almacenada en el campo “visit_date”.
+*	Se utilizó `Unique rows (HashSet)` para remover las fechas repetidas y conservar únicamente un registro por cada fecha.
+*	Finalmente, se añadió `Table output ` para cargar los datos en `dim_fecha`.
+*	La ejecución mostró salida exitosa en Pentaho y se verificaron los datos en PostgreSQL.
+
 | <img src="https://github.com/user-attachments/assets/331b3faf-5def-4c78-bbc5-cc1e6dd45354" width="250"> | <img src="https://github.com/user-attachments/assets/a918c214-54b6-4c4e-bde6-3bb596c3bee0" width="250"> | <img src="https://github.com/user-attachments/assets/c1c8545c-6b6d-49fe-a3cd-b2607f1e3dbd" width="250"> |
 |---|---|---|
-| Imagen 1. Carga de la columna `outcome` desde PostgreSQL | Imagen 2. Selección de la columna usando Select values | Imagen 3. Eliminación de duplicados con UniqueRows(HashSet) |
+| Imagen . Carga de la columna `visit_date` desde PostgreSQL | Imagen . Selección de la columna usando Select values | Imagen . Cálculo del año, mes y día para cada fecha con Calculator |
 | <img src="https://github.com/user-attachments/assets/e9b3e675-f7e0-4f00-b90f-66896adb87b5" width="250"> | <img src="https://github.com/user-attachments/assets/c8126951-b5ce-4bbe-97ef-c2cc7ae004d8" width="250"> | <img src="https://github.com/user-attachments/assets/a3d35ee9-cb9b-4b7a-9264-851f2bca0926" width="250"> |
-| Imagen 4. Carga de los datos a la tabla `dim_resultado` | Imagen 5. Resultado final | Imagen 6. Hola |
+| Imagen . Eliminación de duplicados con UniqueRows(HashSet)` | Imagen . Carga de los datos a la tabla `dim_fecha` | Imagen . Resultado final |
 
 ##### 1.2.2. dim_paciente
 
@@ -70,21 +78,36 @@ GR2SW
 
 ##### 1.2.5. dim_diagnostico
 
+* Se creó la tabla `dim_diagnostico` en la base de datos "TareaMOLAP" dentro de PostgreSQL.
+* En la trasformación "carga_dim_diagnostico" se inició añadiendo un input `Table input` para obtener la columna "diagnosis_group" de la tabla `raw_salud `.
+* Se añadió el paso `Select values` para escoger las columnas necesarias: diagnosis_group.
+* Se ejecutó ` UniqueRows(HashSet)` para remover registros duplicados.
+* Finalmente se añadió `Table output` para cargar los datos en `dim_diagnostico`.
+* La ejecución mostró salida exitosa en Pentaho y se verificaron los datos en PostgreSQL.
+
+
 | <img src="https://github.com/user-attachments/assets/ba312239-e057-4924-bf19-5e6308fe2483" width="250"> | <img src="https://github.com/user-attachments/assets/758bacd4-e605-4a40-9ce7-5c2d88334ecf" width="250"> | <img src="https://github.com/user-attachments/assets/e18f1d1d-7e24-4825-a05e-0ea2c68d0eb0" width="250"> |
 |---|---|---|
-| Imagen 1. Carga de la columna `outcome` desde PostgreSQL | Imagen 2. Selección de la columna usando Select values| Imagen 3. Eliminación de duplicados con UniqueRows(HashSet) |
+| Imagen . Carga de la columna `diagnosis_group` desde PostgreSQL | Imagen . Selección de la columna usando Select values | Imagen . Eliminación de duplicados con UniqueRows(HashSet) |
 | <img src="https://github.com/user-attachments/assets/3e65f6be-07b0-4ae3-b1c4-e7872a9c45fc" width="250"> | <img src="https://github.com/user-attachments/assets/d1a5a073-545d-40f2-815c-b6b09bf733bc" width="250"> | 
-| Imagen 4. Carga de los datos a la tabla dim_resultado | Imagen 5. Resultado final | 
+| Imagen . Carga de los datos a la tabla `dim_diagnostico` | Imagen . Resultado final | 
 
 ##### 1.2.6. dim_procedimiento
 
 ##### 1.2.7. dim_tipo_seguro
 
+* Se creó la tabla `dim_tipo_seguro` en la base de datos "TareaMOLAP" dentro de PostgreSQL.
+* En la trasformación "carga_dim_diagnostico" se añadió un input `Table input` para obtener el campo "insurance_type" de la tabla `raw_salud `.
+* Se añadió el componente `Select values` para escoger las columnas necesarias: insurance_type.
+* Se utilizó ` UniqueRows(HashSet)` para remover registros duplicados.
+* Finalmente se añadió `Table output` para cargar los datos en `dim_tipo_seguro`.
+* La ejecución mostró salida exitosa en Pentaho y se verificaron los datos en PostgreSQL.
+
 | <img src="https://github.com/user-attachments/assets/eadc1984-143f-4ff3-a86e-d27b4d0448b4" width="250"> | <img src="https://github.com/user-attachments/assets/f33e37d9-8e9b-48fd-b531-c3b6900b8e70" width="250"> | <img src="https://github.com/user-attachments/assets/e0dfcb23-78e5-44f2-bb2b-bf7c1651b71b" width="250"> |
 |---|---|---|
-| Imagen 1. Carga de la columna `outcome` desde PostgreSQL | Imagen 2. Selección de la columna usando Select values| Imagen 3. Eliminación de duplicados con UniqueRows(HashSet) |
+| Imagen . Carga de la columna `insurance_type` desde PostgreSQL | Imagen . Selección de la columna usando Select values | Imagen . Eliminación de duplicados con UniqueRows(HashSet) |
 | <img src="https://github.com/user-attachments/assets/956abee0-a810-4bfa-95dc-5c6c4921ee42" width="250"> | <img src="https://github.com/user-attachments/assets/cca22acb-d68b-41fa-b7f9-8547443cdc8e" width="250"> | 
-| Imagen 4. Carga de los datos a la tabla dim_resultado | Imagen 5. Resultado final | 
+| Imagen . Carga de los datos a la tabla `dim_tipo_seguro` | Imagen . Resultado final | 
 
 ##### 1.2.8. dim_resultado
 Las siguientes imágenes muestran el proceso de construcción y carga de la dimensión dim_resultado dentro del flujo ETL. En primer lugar, se realiza la extracción de la columna outcome desde la base de datos PostgreSQL (Imagen 1), seguida de la selección específica de dicho atributo mediante el componente Select Values (Imagen 2). Posteriormente, se eliminan los registros duplicados utilizando el paso UniqueRows (HashSet) para garantizar la unicidad de los valores (Imagen 3). Una vez depurados los datos, estos se cargan en la tabla dim_resultado del almacén de datos (Imagen 4). Finalmente, se presenta el resultado obtenido tras la ejecución del proceso, evidenciando la correcta creación y almacenamiento de los registros en la dimensión (Imagen 5).
