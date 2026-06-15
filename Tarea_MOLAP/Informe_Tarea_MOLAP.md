@@ -46,10 +46,10 @@ GR2SW
 - Luego, se añadió `Table output` para cargar los datos en `raw_salud`.
 - Finalmente, se verificó que la transformación y carga de los datos se ejecutaron de manera exitosa.
 
-| <img src="https://github.com/user-attachments/assets/210a2a71-2d36-45f3-a522-0abed85ad205" width="250"> | <img src="https://github.com/user-attachments/assets/96a1dca8-e192-4768-92e9-7bb041ad51a9" width="250"> | <img src="https://github.com/user-attachments/assets/2e9dcf43-351a-4538-bec8-23d69826acfe" width="250">|
+| <img src="https://github.com/user-attachments/assets/210a2a71-2d36-45f3-a522-0abed85ad205" width="250"> | <img src="https://github.com/user-attachments/assets/96a1dca8-e192-4768-92e9-7bb041ad51a9" width="250"> | <img src="https://github.com/user-attachments/assets/c3a178c1-43cf-4990-b552-d451e9318448" width="250"> |
 |---|---|---|
 | Imagen 1. Carga de la columna `outcome` desde PostgreSQL | Imagen 2. Selección de la columna usando Select values| Imagen 3. Eliminación de duplicados con UniqueRows(HashSet) |
-| <img src="https://github.com/user-attachments/assets/c3a178c1-43cf-4990-b552-d451e9318448" width="250"> | <img src="https://github.com/user-attachments/assets/f3b0460d-f7e7-4926-81a3-01038868c513" width="250"> | 
+| <img src="https://github.com/user-attachments/assets/2e9dcf43-351a-4538-bec8-23d69826acfe" width="250"> | <img src="https://github.com/user-attachments/assets/f3b0460d-f7e7-4926-81a3-01038868c513" width="250"> | 
 | Imagen 4. Carga de los datos a la tabla dim_resultado | Imagen 5. Resultado final | 
 
 #### 1.2. Transformación y carga de datos
