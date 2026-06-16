@@ -123,6 +123,7 @@ Las siguientes imágenes muestran el proceso de construcción y carga de la dime
 Como resultado del proceso ETL se construyó el modelo estrella para organizar la información de las atenciones médicas. Este modelo está conformado por la tabla de hechos `fact_atencion_medica`, donde se almacenan las medidas principales, y dimensiones que permiten analizar los datos por fecha, paciente, ubicación, departamento, médico, diagnóstico, procedimiento, tipo de seguro y resultado.
 
 <img width="745" height="622" src="https://github.com/user-attachments/assets/0bb7c29a-2f53-4bb4-b341-360442300a6b" />
+
 Imagen . Modelo estrella resultante del proceso ETL
 
 ### 3. MOLAP (Vista materializada) 
@@ -130,11 +131,13 @@ Imagen . Modelo estrella resultante del proceso ETL
 Antes de realizar las consultas MOLAP, se creó una vista materializada `mv_atenciones_medicas` con los campos necesarios de las tablas de dimensiones y de la tabla de hechos que permitan responder las preguntas propuestas. Para ello, se utilizó la siguiente sentencia SQL:
 
 <img width="500" src="https://github.com/user-attachments/assets/aa883357-8f79-442e-b1bd-f2ed82798491" />
+
 Imagen . Creación de la vista materializada `mv_atenciones_medicas`
 
 Se comprobó que la vista materializada se haya creado correctamente mediante la visualización de sus datos y la verificación del número de registros almacenados. Como resultado, se obtuvo un total de 100 filas, cantidad que coincide con los registros cargados desde el archivo CSV y con los presentes en la tabla de hechos.
 
 <img width="500" src="https://github.com/user-attachments/assets/b215bd2c-8e70-4c3a-8894-db67dd5bf039" />
+
 Imagen . Visualización de registros en la vista materializada `mv_atenciones_medicas`
 
 ## Consultas MOLAP   
@@ -144,17 +147,21 @@ Imagen . Visualización de registros en la vista materializada `mv_atenciones_me
 Se realizó una consulta sobre la vista materializada `mv_atenciones_medicas`, agrupando los registros por especialidad médica, ciudad y mes de atención. De esta manera, se aplicó la función SUM al campo costo_total para obtener el costo total acumulado de las atenciones en cada combinación.
 
 <img width="500" src="https://github.com/user-attachments/assets/308a4c62-9163-451a-8b5d-f3dbfa078e05" />
+
 Imagen . Consulta SQL para obtener el costo total de atención por especialidad, ciudad y mes
 
 A continuación, se presentan los resultados obtenidos:
 
 <img width="500" src="https://github.com/user-attachments/assets/028da6c0-aa23-4088-8c3c-f61f97b730ef" />
+
 Imagen . Resultados de la consulta del costo total de atención por especialidad, ciudad y mes - parte 1
 
 <img width="500" src="https://github.com/user-attachments/assets/c25c564b-56fb-424c-bef0-6dec838e2521" />
+
 Imagen . Resultados de la consulta del costo total de atención por especialidad, ciudad y mes - parte 2
 
 <img width="500" src="https://github.com/user-attachments/assets/35fd615e-4249-4e5f-bbe0-ecff7408490d" />
+
 Imagen . Resultados de la consulta del costo total de atención por especialidad, ciudad y mes - parte 3
 
 ### 2. ¿Qué ciudad tuvo más emergencias por mes y género?
