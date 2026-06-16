@@ -74,7 +74,7 @@ GR2SW
 
 ##### 1.2.3. dim_departamento_hospital
 
-##### 1.2.4. dim_medico
+##### 1.2.4. dim_doctor (PONLE COMO DOCTOR JAJAJ)
 
 ##### 1.2.5. dim_diagnostico
 
