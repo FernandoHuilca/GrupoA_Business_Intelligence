@@ -174,5 +174,5 @@ Imagen . Resultados de la consulta del costo total de atención por especialidad
 ## Declaración de porcentaje de uso de IA
 ChatGPT:
 * Se utilizó como apoyo en el diseño del modelo estrella, principalmente para revisar en qué tabla debían ubicarse campos como "cost_medicine", "cost_procedure" e "is_emergency", y justificar si correspondían a la tabla de hechos o a una dimensión.
-* Se utilizó como apoyo para la elaboración de sentencias SQL grandes, como la creación de la tabla "raw_salud" y de la vista materializada.
+* Se utilizó como apoyo para la elaboración de sentencias SQL grandes, como la creación de la tabla `raw_salud` y de la vista materializada.
 * Se usó para analizar un error en Pentaho durante la transformación "carga_raw_salud", relacionado con el mapeo de la columna "visit_id" del archivo CSV hacia la tabla creada en PostgreSQL, debido a un carácter invisible en el encabezado.
