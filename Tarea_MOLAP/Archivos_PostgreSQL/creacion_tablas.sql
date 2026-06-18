@@ -34,7 +34,11 @@ CREATE TABLE dim_fecha (
 
 
 -- Creación de la tabla: dim_departamento_hospital
-
+CREATE TABLE dim_departamento_hospital (
+    departamento_key SERIAL PRIMARY KEY,
+    city VARCHAR(50),
+    hospital_department VARCHAR(50)
+);
 
 --Creación de la tabla: dim_medico
 
@@ -46,7 +50,10 @@ CREATE TABLE dim_diagnostico (
 );
 
 -- Creación de la tabla: dim_procedimiento
-
+CREATE TABLE dim_procedimiento (
+    procedimiento_key SERIAL PRIMARY KEY,
+    procedure_type VARCHAR(50)
+);
 
 -- Creación de la tabla: dim_tipo_seguro
 CREATE TABLE dim_tipo_seguro (
