@@ -74,6 +74,21 @@ GR2SW
 
 ##### 1.2.3. dim_departamento_hospital
 
+* Se creó la tabla `dim_departamento_hospital` en la base de datos "TareaMOLAP" dentro de PostgreSQL.
+* En la transformación "carga_dim_departamento_hospital" se añadió un input `Table input` para obtener la columna "city" y "hospital_department" de los datos crudos.
+* Se usó la transformación `String operations` para eliminar cualquier espacio en blanco que haya en los datos de las columnas extraidas.
+* Luego, se utilizó el elemento de `Sort rows` para ordenar los campos de "city" y "hospital_department" de forma ascendente.
+* Posteriormente mediante `Unque Rows` se removieron los datos repetidos, dejando unicamente las combinaciones únicas.
+* Finalmente, se añadió `Table output ` para cargar los datos en `dim_departamento_hospital`.
+* La ejecución mostró salida exitosa en Pentaho y se verificaron los datos en PostgreSQL.
+
+
+| <img width="200" alt="image" src="https://github.com/user-attachments/assets/6cdbadce-f131-4018-8508-dfcf0d9d1a98" /> | <img width="400" alt="image" src="https://github.com/user-attachments/assets/ad20bce6-8061-4c5d-8cb1-269178f4716c" /> | <img width="400" alt="image" src="https://github.com/user-attachments/assets/43f08a80-eb46-474f-b989-406f0cee9ed7" /> |
+|:---:|:---:|:---:|
+| Imagen 1. Carga de las columnas `city` y `hospital_department` desde PostgreSQL | **Imagen 2.** Eliminación de espacios en blanco con String operations | Imagen 3. Ordenamiento ascendente de las columnas |
+| <img width="200" alt="image" src="https://github.com/user-attachments/assets/06e8c293-e4fb-4505-87d0-455f3f2a7e8f" /> | <img width="400" alt="Captura de pantalla 2026-06-17 191955" src="https://github.com/user-attachments/assets/9ec708f5-5724-432f-abf1-df77aa4ee751" /> | |
+| Imagen 4. Carga de los datos a la tabla `dim_departamento_hospital` | Imagen 5. Resultado final | |
+
 ##### 1.2.4. dim_doctor (PONLE COMO DOCTOR JAJAJ)
 
 ##### 1.2.5. dim_diagnostico
@@ -93,6 +108,21 @@ GR2SW
 | Imagen . Carga de los datos a la tabla `dim_diagnostico` | Imagen . Resultado final | 
 
 ##### 1.2.6. dim_procedimiento
+
+* Se creó la tabla `dim_procedimiento` en la base de datos "TareaMOLAP" dentro de PostgreSQL.
+* En la transformación "carga_dim_procedimiento" se añadió un input `Table input` para obtener la columna "procedure_type" de los datos crudos.
+* Se usó la transformación `String operations` para eliminar cualquier espacio en blanco que haya en los datos de las columnas extraidas.
+* Luego, se utilizó el elemento de `Sort rows` para ordenar la tabla de forma ascendente.
+* Posteriormente mediante `Unque Rows` se removieron los datos repetidos, dejando unicamente las combinaciones únicas.
+* Finalmente, se añadió `Table output ` para cargar los datos en `dim_procedimiento`.
+* La ejecución mostró salida exitosa en Pentaho y se verificaron los datos en PostgreSQL.
+
+
+| <img width="400" alt="Captura de pantalla 2026-06-17 191536" src="https://github.com/user-attachments/assets/679d305f-3cca-4341-aa91-f5d06f8cb042" /> | <img width="400" alt="Captura de pantalla 2026-06-17 232407" src="https://github.com/user-attachments/assets/077b4792-65f3-4371-bbbf-653f869740da" /> | <img width="400" alt="image" src="https://github.com/user-attachments/assets/97914b5c-0fae-43a3-8a91-1c9aa3725346" /> |
+|---|---|---|
+| Imagen 1. Carga de la columna `procedure_type` desde PostgreSQL | Imagen 2. Eliminación de espacios en blanco con String operations | Imagen 3. Ordenamiento ascendente de la columna |
+| <img width="400" alt="image" src="https://github.com/user-attachments/assets/5a390b37-6b3b-48fa-86b1-8e9ca357ae90" /> | <img width="400" alt="Captura de pantalla 2026-06-17 192357" src="https://github.com/user-attachments/assets/4e883455-f8e2-4491-b739-34e3c40bc228" /> |  |
+| Imagen 4. Carga de los datos a la tabla `dim_procedimiento` | Imagen 5. Resultado final| |
 
 ##### 1.2.7. dim_tipo_seguro
 
