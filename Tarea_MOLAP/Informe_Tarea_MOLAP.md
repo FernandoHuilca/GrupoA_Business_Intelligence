@@ -156,10 +156,15 @@ Las siguientes imágenes muestran el proceso de construcción y carga de la dime
    - Se establecieron las métricas definidas en el modelo estrella (`is_emergency`, `length_of_stay_days`, `cost_medicine`, `cost_procedure` y `total_cost`)
    - Finalmente, se añadieron las claves foráneas correspondientes a cada dimensión (`fecha_key`, `paciente_key`, `departamento_key`, `doctor_key`, `diagnostico_key`, `procedimiento_key`, `tipo_seguro_key`, `resultado_key`).
 - En la transformación `carga_fact_atencion_medica` se añadió un input `Table input` para obtener los datos necesarios de la tabla `raw_salud`.
-   - Luego, se usó el Lookup `Stream lookup` por cada tabla de dimensiones para establecer la coincidencia entre el campo de la tabla raw_salud y el campo clave (La primary key) de cada dimensión, con el fin de obtener los valores correspondientes a cada clave foránea.
+   - Luego, se usó el Lookup `Stream lookup` por cada tabla de dimensiones para establecer la coincidencia entre el campo de la tabla `raw_salud` y el campo clave (La primary key) de cada dimensión, con el fin de obtener los valores correspondientes a cada clave foránea.
    - Después se usó el transformation `Select values` para escoger únicamente los campos necesarios para la tabla de hechos.
    - Finalmente, se añadió `Table output` para cargar los datos en `fact_atencion_medica` en la base de datos `TareaMOLAP`.
 
+| <img width="250" height="250" alt="image" src="https://github.com/user-attachments/assets/154cf675-d5ce-4015-8859-52190fd35c02" /> | <img width="250" height="250" alt="image" src="https://github.com/user-attachments/assets/8e0bec41-e936-4073-9858-53b95a6f976b" /> | <img width="250" height="250" alt="image" src="https://github.com/user-attachments/assets/6c348000-33d6-4bd6-849d-1876c1e63a33" /> |
+| --- | --- | --- |
+| Imagen . Creacion tabla `fact_atencion_medica` | Imagen . Proceso ETL completo para tabla de hechos y con salida exitosa junto con `Table input` para obtener los datos necesarios de la tabla `raw_salud`.| Imagen . Ejemplo de uso de `Stream lookup` en dim_fecha para establecer la coincidencia entre el campo de la tabla `raw_salud` y el campo clave |
+| <img width="250" height="250" alt="image" src="https://github.com/user-attachments/assets/6b87b610-9507-4db6-8683-d28a886d7915" /> | <img width="250" height="250" alt="image" src="https://github.com/user-attachments/assets/3017b73e-8588-4073-9eee-9411be717e33" /> | |
+| Imagen . Transformation `Select values` que escoge los campos necesarios para la tabla de hechos | Imagen . Output `Table output` que carga los datos en `fact_atencion_medica` |
 
 ### 2. Modelo estrella
 
@@ -219,7 +224,17 @@ Finalmente, se ordenaron los resultados de forma descendente según el diagnóst
 
 De esta manera, al ordenar por diagnóstico y luego por seguro, y dentro de cada grupo por costo de mayor a menor, entonces la primera ciudad que aparecerá para cada combinación diagnóstico-seguro será la que tendrá el costo promedio más alto.
 
+<img width="866" height="107" alt="image" src="https://github.com/user-attachments/assets/1827c216-0ba1-4484-9293-d4b5578cde69" />
+
 A continuación, se presentan los resultados obtenidos:
+
+<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/eab1d5bc-1027-4cbf-9827-884f8bd85092" />
+
+Imagen . Resultados de la consulta del costo promedio más alto por visita, diagnóstico, tipo de seguro y ciudad - parte 1
+
+<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/616ab206-5caa-4591-8ce2-08c46de5e2ba" />
+
+Imagen . Resultados de la consulta del costo promedio más alto por visita, diagnóstico, tipo de seguro y ciudad - parte 2
 
 ## Referencias bibliográficas
 
