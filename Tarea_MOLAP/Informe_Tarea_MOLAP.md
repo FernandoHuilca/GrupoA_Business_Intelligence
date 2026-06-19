@@ -219,6 +219,26 @@ Imagen . Resultados de la consulta del costo total de atención por especialidad
 
 ### 2. ¿Qué ciudad tuvo más emergencias por mes y género?
 
+La siguiente consulta permite identificar la ciudad con el mayor número de emergencias para cada combinación de mes y género del paciente. Para ello, se filtran únicamente los registros correspondientes a emergencias (`es_emergencia = 1`), se agrupan por mes, género y ciudad, y posteriormente se utiliza la función analítica `ROW_NUMBER()` para asignar un ranking en función de la cantidad de emergencias registradas. Finalmente, se selecciona únicamente la ciudad con la mayor cantidad de emergencias para cada grupo.
+
+<img width="451" height="488" alt="image" src="https://github.com/user-attachments/assets/7aac4eb1-6623-426a-8707-c887a9eaa318" />
+
+Imagen . Consulta SQL para obtener la ciudad que tuvo más emergencias por mes y género
+
+
+La ejecución de la consulta permitió identificar la ciudad con mayor número de atenciones de emergencia para cada combinación de mes y género. El resultado más relevante corresponde al **mes 2**, donde la ciudad de **Quito** registró el mayor número de emergencias para pacientes de género **masculino (M)**, alcanzando un total de **5 atenciones**, siendo este el valor más alto obtenido en todo el análisis.
+
+En el **mes 1**, la ciudad de **Guayaquil** concentró el mayor número de emergencias para pacientes de género **femenino (F)** con **3 casos**, mientras que **Loja** presentó el mayor número de emergencias para el género **masculino (M)** con **2 casos**. Por su parte, en el **mes 3**, las ciudades con mayor cantidad de emergencias fueron **Quito** para el género **femenino (F)** y **Ambato** para el género **masculino (M)**, registrando **1 caso** cada una.
+
+Estos resultados permiten identificar los patrones geográficos y temporales de las atenciones de emergencia, destacando a **Quito** como la ciudad con el mayor número de emergencias registradas durante el período analizado.
+Estos resultados permiten identificar la ciudad con mayor incidencia de emergencias según el mes y el género del paciente, facilitando el análisis de patrones geográficos y temporales para la toma de decisiones en el ámbito hospitalario.
+
+<img width="484" height="174" alt="image" src="https://github.com/user-attachments/assets/7edb8e75-5ee0-4c3d-967a-3c3c8c497d83" />
+
+Imagen . Resultados de la consulta de la ciudad con más emergencias por mes y género
+
+
+
 ### 3. ¿Por diagnóstico, tipo de seguro, cuál es el costo promedio por visita y en qué ciudad es más alto?
 
 La consulta se realizó sobre la vista materializada `mv_atenciones_medicas`. Primero se seleccionaron (`SELECT`) las dimensiones identificadas que fueron `diagnosis_group`, `insurance_type`, `city` y el `total_cost` de la tabla de hechos.
@@ -249,6 +269,7 @@ ChatGPT:
 * Se utilizó como apoyo en el diseño del modelo estrella, principalmente para revisar en qué tabla debían ubicarse campos como "cost_medicine", "cost_procedure" e "is_emergency", y justificar si correspondían a la tabla de hechos o a una dimensión.
 * Se utilizó como apoyo para la elaboración de sentencias SQL grandes, como la creación de la tabla `raw_salud` y de la vista materializada.
 * Se usó para analizar un error en Pentaho durante la transformación "carga_raw_salud", relacionado con el mapeo de la columna "visit_id" del archivo CSV hacia la tabla creada en PostgreSQL, debido a un carácter invisible en el encabezado.
+* Se utilizó para estructurar la consulta SQL correspondiente a la segunda pregunta analítica (**¿Qué ciudad tuvo más emergencias por mes y género?**), empleando funciones analíticas como `ROW_NUMBER()` para obtener la ciudad con el mayor número de emergencias en cada combinación de mes y género.
 
 Claude:
 * Se utilizó como apoyo para revisar mejores maneras de plantear las sentencias SQL utilizadas para responder las preguntas planteadas.
