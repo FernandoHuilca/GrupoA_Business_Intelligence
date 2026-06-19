@@ -148,6 +148,19 @@ Las siguientes imágenes muestran el proceso de construcción y carga de la dime
 | <img src="https://github.com/user-attachments/assets/cf4563a0-b265-44db-9432-d5bd8cc17c0b" width="250"> | <img src="https://github.com/user-attachments/assets/57b93a53-67e1-4223-b83f-15face6895e7" width="250"> | 
 | Imagen 4. Carga de los datos a la tabla dim_resultado | Imagen 5. Resultado final | 
 
+##### 1.2.9. fact_atencion_medica
+
+- Se creó la tabla `fact_atencion_medica` en la base de datos `TareaMOLAP` dentro de PostgreSQL.
+   - Se estableció su primary key `atencion_medica_key` siendo un valor entero autoincrementable.
+   - A pesar de no tener una influencia directa, también se incluyó el atributo `visit_id`.
+   - Se establecieron las métricas definidas en el modelo estrella (`is_emergency`, `length_of_stay_days`, `cost_medicine`, `cost_procedure` y `total_cost`)
+   - Finalmente, se añadieron las claves foráneas correspondientes a cada dimensión (`fecha_key`, `paciente_key`, `departamento_key`, `doctor_key`, `diagnostico_key`, `procedimiento_key`, `tipo_seguro_key`, `resultado_key`).
+- En la transformación `carga_fact_atencion_medica` se añadió un input `Table input` para obtener los datos necesarios de la tabla `raw_salud`.
+   - Luego, se usó el Lookup `Stream lookup` por cada tabla de dimensiones para establecer la coincidencia entre el campo de la tabla raw_salud y el campo clave (La primary key) de cada dimensión, con el fin de obtener los valores correspondientes a cada clave foránea.
+   - Después se usó el transformation `Select values` para escoger únicamente los campos necesarios para la tabla de hechos.
+   - Finalmente, se añadió `Table output` para cargar los datos en `fact_atencion_medica` en la base de datos `TareaMOLAP`.
+
+
 ### 2. Modelo estrella
 
 Como resultado del proceso ETL se construyó el modelo estrella para organizar la información de las atenciones médicas. Este modelo está conformado por la tabla de hechos `fact_atencion_medica`, donde se almacenan las medidas principales, y dimensiones que permiten analizar los datos por fecha, paciente, ubicación, departamento, médico, diagnóstico, procedimiento, tipo de seguro y resultado.
@@ -196,7 +209,17 @@ Imagen . Resultados de la consulta del costo total de atención por especialidad
 
 ### 2. ¿Qué ciudad tuvo más emergencias por mes y género?
 
-### 3. ¿Por diagnóstico, tipo de seguro,  cuál es el costo promedio por visita y en qué ciudad es más alto?
+### 3. ¿Por diagnóstico, tipo de seguro, cuál es el costo promedio por visita y en qué ciudad es más alto?
+
+La consulta se realizó sobre la vista materializada `mv_atenciones_medicas`. Primero se seleccionaron (`SELECT`) las dimensiones identificadas que fueron `diagnosis_group`, `insurance_type`, `city` y el `total_cost` de la tabla de hechos.
+
+Luego, se agruparon los registros (`GROUP BY()`) por diagnóstico, tipo de seguro y ciudad. De esta manera, se juntaron en una sola fila las que tenían la misma tríada de valores diagnóstico-seguro-ciudad. Esto provocó que el `total_cost` se sumara en un solo valor. Este valor sumado de `total_cost` se le aplicó lo establecido en el `SELECT`, lo cual consistió en que se dividió por el número de registros que tenían esa misma combinación para obtener el costo promedio por visita (`AVG()` y redondeado a 2 decimales con `ROUND()` renombrándolo como `costo_promedio`).
+
+Finalmente, se ordenaron los resultados de forma descendente según el diagnóstico, tipo de seguro y costo promedio (`ORDER BY DESC`). Esto permitió ordenar alfabéticamente por diagnóstico, teniendo como segundo criterio el tipo de seguro si es que había dos o más diagnósticos iguales, y como tercer criterio el costo promedio de forma descendente para cada combinación de diagnóstico y tipo de seguro.
+
+De esta manera, al ordenar por diagnóstico y luego por seguro, y dentro de cada grupo por costo de mayor a menor, entonces la primera ciudad que aparecerá para cada combinación diagnóstico-seguro será la que tendrá el costo promedio más alto.
+
+A continuación, se presentan los resultados obtenidos:
 
 ## Referencias bibliográficas
 
@@ -206,3 +229,7 @@ ChatGPT:
 * Se utilizó como apoyo en el diseño del modelo estrella, principalmente para revisar en qué tabla debían ubicarse campos como "cost_medicine", "cost_procedure" e "is_emergency", y justificar si correspondían a la tabla de hechos o a una dimensión.
 * Se utilizó como apoyo para la elaboración de sentencias SQL grandes, como la creación de la tabla `raw_salud` y de la vista materializada.
 * Se usó para analizar un error en Pentaho durante la transformación "carga_raw_salud", relacionado con el mapeo de la columna "visit_id" del archivo CSV hacia la tabla creada en PostgreSQL, debido a un carácter invisible en el encabezado.
+
+Claude:
+* Se utilizó como apoyo para revisar mejores maneras de plantear las sentencias SQL utilizadas para responder las preguntas planteadas.
+* Se utilizó para recordar el funcionamiento de algunos componentes de Pentaho, como Stream lookup.

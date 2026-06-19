@@ -68,3 +68,24 @@ CREATE TABLE dim_resultado (
 );
 
 -- Creación de la tabla: fact_atencion_medica
+CREATE TABLE fact_atencion_medica (
+	atencion_medica_key SERIAL PRIMARY KEY,
+	visit_id INT,
+	
+	-- metricas
+	is_emergency INT,
+	length_of_stay_days INT,
+	cost_medicine NUMERIC(10,2),
+	cost_procedure NUMERIC(10,2),
+	total_cost NUMERIC(10,2),
+
+	-- claves foraneas
+	fecha_key DATE NOT NULL REFERENCES dim_fecha(fecha_key),
+	paciente_key INT NOT NULL REFERENCES dim_paciente(paciente_key),
+	departamento_key INT NOT NULL REFERENCES dim_departamento_hospital(departamento_key),
+	doctor_key INT NOT NULL REFERENCES dim_doctor(doctor_key),
+	diagnostico_key INT NOT NULL REFERENCES dim_diagnostico(diagnostico_key),
+	procedimiento_key INT NOT NULL REFERENCES dim_procedimiento(procedimiento_key),
+	tipo_seguro_key INT NOT NULL REFERENCES dim_tipo_seguro(tipo_seguro_key),
+	resultado_key INT NOT NULL REFERENCES dim_resultado(resultado_key)
+);
