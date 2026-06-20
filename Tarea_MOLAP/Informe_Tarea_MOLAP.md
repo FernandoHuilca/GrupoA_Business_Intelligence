@@ -14,22 +14,26 @@ GR2SW
 ------------
 ## **Índice de Contenidos**
 
-1. [Pentaho y PostgreSQL](#pentaho-y-postgresql)
-   - [1. Creación de la tabla "raw_desnutricion_infantil" en PostgreSQL](#1-creación-de-la-tabla-raw_desnutricion_infantil-en-postgresql)
-   - [2. Creación de tablas de dimensiones y tabla de hechos](#2-creación-de-tablas-de-dimensiones-y-tabla-de-hechos)
-   - [3. Carga de los datos desde Pentaho al Staging de PostgreSQL](#3-carga-de-los-datos-desde-pentaho-al-staging-de-postgresql)
-   - [4. Transformación y carga de los datos crudos](#4-transformación-y-carga-de-los-datos-crudos-desde-el-staging-a-las-tablas-de-dimensiones-y-tabla-de-hechos)
-     - [4.1. dim_child](#41-dim_child)
-     - [4.2. dim_status](#42-dim_status)
-     - [4.3. dim_location](#43-dim_location)
-     - [4.4. dim_date](#44-dim_date)
-     - [4.5. fact_measurement](#45-fact_measurement)
-   - [5. Creación y ejecución de un job](#5-creación-y-ejecución-de-un-job)
-2. [Modelo estrella en Power Pivot](#modelo-estrella-en-power-pivot)
-3. [Preguntas contestadas en SQL](#preguntas-contestadas-en-sql)
-   - [1. ¿Cuál es el tipo de desnutrición más común por región?](#1-cuál-es-el-tipo-de-desnutrición-más-común-por-región)
-   - [2. ¿Cómo varía la desnutrición por edad y género?](#2-cómo-varía-la-desnutrición-por-edad-y-género)
-   - [3. ¿Qué instituciones atienden más casos?](#3-qué-instituciones-atienden-más-casos)
+[MOLAP](#molap)
+[1. Proceso ETL](#1-proceso-etl)
+* [1.1. Creación de la tabla `raw_salud`](#11-creación-de-la-tabla-raw_salud)
+* [1.2. Transformación y carga de datos](#12-transformación-y-carga-de-datos)
+  * [1.2.1. `dim_fecha`](#121-dim_fecha)
+  * [1.2.2. `dim_paciente`](#122-dim_paciente)
+  * [1.2.3. `dim_departamento_hospital`](#123-dim_departamento_hospital)
+  * [1.2.4. `dim_doctor`](#124-dim_doctor)
+  * [1.2.5. `dim_diagnostico`](#125-dim_diagnostico)
+  * [1.2.6. `dim_procedimiento`](#126-dim_procedimiento)
+  * [1.2.7. `dim_tipo_seguro`](#127-dim_tipo_seguro)
+  * [1.2.8. `dim_resultado`](#128-dim_resultado)
+  * [1.2.9. `fact_atencion_medica`](#129-fact_atencion_medica)
+[2. Modelo estrella](#2-modelo-estrella)
+[3. MOLAP: vista materializada](#3-molap-vista-materializada)
+[4. Consultas MOLAP](#4-consultas-molap)
+* [4.1. ¿Cuál es el costo total de atención por especialidad, ciudad y mes?](#41-cuál-es-el-costo-total-de-atención-por-especialidad-ciudad-y-mes)
+* [4.2. ¿Qué ciudad tuvo más emergencias por mes y género?](#42-qué-ciudad-tuvo-más-emergencias-por-mes-y-género)
+* [4.3. ¿Por diagnóstico y tipo de seguro, cuál es el costo promedio por visita y en qué ciudad es más alto?](#43-por-diagnóstico-y-tipo-de-seguro-cuál-es-el-costo-promedio-por-visita-y-en-qué-ciudad-es-más-alto)
+
 ------------
 # <center>**Tarea MOLAP**</center>
 ---
