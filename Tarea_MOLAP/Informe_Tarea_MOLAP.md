@@ -238,7 +238,7 @@ Imagen 56. Resultados de la consulta del costo total de atención por especialid
 
 Imagen 57. Resultados de la consulta del costo total de atención por especialidad, ciudad y mes - parte 2
 
-<img width="512" height="90" alt="image" src="https://github.com/user-attachments/assets/e1881a58-b844-4f11-a9f4-6b496b152f67" />
+<img width="512" height="87" alt="image" src="https://github.com/user-attachments/assets/97a81669-94a6-4a16-9254-5488899775eb" />
 
 Imagen 58. Resultados de la consulta del costo total de atención por especialidad, ciudad y mes - parte 3
 
