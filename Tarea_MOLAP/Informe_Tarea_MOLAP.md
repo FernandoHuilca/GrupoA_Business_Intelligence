@@ -86,7 +86,7 @@ GR2SW
 
 *	Se creó la tabla `dim_paciente` en la base de datos "TareaMOLAP" dentro de PostgreSQL.
 *	En la transformación “carga_dim_paciente” se añadió un input `Table input` para obtener las columnas de la tabla `raw_salud`.
-*	Se usó la transformación `Select values` para escogers las columnas necesarias.
+*	Se usó la transformación `Select values` para escoger las columnas necesarias.
 *	Se utilizó `Unique rows (HashSet)` para remover valores repetidos y conservar los registros únicos.
 *	Finalmente, se añadió `Table output ` para cargar los datos en `dim_paciente`.
 *	La ejecución mostró salida exitosa en Pentaho y se verificaron los datos en PostgreSQL.
@@ -101,9 +101,9 @@ GR2SW
 
 * Se creó la tabla `dim_departamento_hospital` en la base de datos "TareaMOLAP" dentro de PostgreSQL.
 * En la transformación "carga_dim_departamento_hospital" se añadió un input `Table input` para obtener la columna "city" y "hospital_department" de los datos crudos.
-* Se usó la transformación `String operations` para eliminar cualquier espacio en blanco que haya en los datos de las columnas extraidas.
+* Se usó la transformación `String operations` para eliminar cualquier espacio en blanco que haya en los datos de las columnas extraídas.
 * Luego, se utilizó el elemento de `Sort rows` para ordenar los campos de "city" y "hospital_department" de forma ascendente.
-* Posteriormente mediante `Unque Rows` se removieron los datos repetidos, dejando unicamente las combinaciones únicas.
+* Posteriormente mediante `Unique Rows` se removieron los datos repetidos, dejando únicamente las combinaciones únicas.
 * Finalmente, se añadió `Table output ` para cargar los datos en `dim_departamento_hospital`.
 * La ejecución mostró salida exitosa en Pentaho y se verificaron los datos en PostgreSQL.
 
@@ -117,7 +117,7 @@ GR2SW
 
 *	Se creó la tabla `dim_doctor` en la base de datos "TareaMOLAP" dentro de PostgreSQL.
 *	En la transformación “carga_dim_doctor” se añadió un input `Table input` para obtener las columnas de la tabla `raw_salud`.
-*	Se usó la transformación `Select values` para escogers las columnas necesarias.
+*	Se usó la transformación `Select values` para escoger las columnas necesarias.
 *	Se utilizó `Unique rows (HashSet)` para remover valores repetidos y conservar los registros únicos.
 *	Finalmente, se añadió `Table output ` para cargar los datos en `dim_doctor`.
 *	La ejecución mostró salida exitosa en Pentaho y se verificaron los datos en PostgreSQL.
@@ -131,7 +131,7 @@ GR2SW
 ##### 1.2.5. dim_diagnostico
 
 * Se creó la tabla `dim_diagnostico` en la base de datos "TareaMOLAP" dentro de PostgreSQL.
-* En la trasformación "carga_dim_diagnostico" se inició añadiendo un input `Table input` para obtener la columna "diagnosis_group" de la tabla `raw_salud `.
+* En la transformación "carga_dim_diagnostico" se inició añadiendo un input `Table input` para obtener la columna "diagnosis_group" de la tabla `raw_salud `.
 * Se añadió el paso `Select values` para escoger las columnas necesarias: diagnosis_group.
 * Se ejecutó ` UniqueRows(HashSet)` para remover registros duplicados.
 * Finalmente se añadió `Table output` para cargar los datos en `dim_diagnostico`.
@@ -148,9 +148,9 @@ GR2SW
 
 * Se creó la tabla `dim_procedimiento` en la base de datos "TareaMOLAP" dentro de PostgreSQL.
 * En la transformación "carga_dim_procedimiento" se añadió un input `Table input` para obtener la columna "procedure_type" de los datos crudos.
-* Se usó la transformación `String operations` para eliminar cualquier espacio en blanco que haya en los datos de las columnas extraidas.
+* Se usó la transformación `String operations` para eliminar cualquier espacio en blanco que haya en los datos de las columnas extraídas.
 * Luego, se utilizó el elemento de `Sort rows` para ordenar la tabla de forma ascendente.
-* Posteriormente mediante `Unque Rows` se removieron los datos repetidos, dejando unicamente las combinaciones únicas.
+* Posteriormente mediante `Unique Rows` se removieron los datos repetidos, dejando únicamente las combinaciones únicas.
 * Finalmente, se añadió `Table output ` para cargar los datos en `dim_procedimiento`.
 * La ejecución mostró salida exitosa en Pentaho y se verificaron los datos en PostgreSQL.
 
@@ -164,7 +164,7 @@ GR2SW
 ##### 1.2.7. dim_tipo_seguro
 
 * Se creó la tabla `dim_tipo_seguro` en la base de datos "TareaMOLAP" dentro de PostgreSQL.
-* En la trasformación "carga_dim_diagnostico" se añadió un input `Table input` para obtener el campo "insurance_type" de la tabla `raw_salud `.
+* En la transformación "carga_dim_diagnostico" se añadió un input `Table input` para obtener el campo "insurance_type" de la tabla `raw_salud `.
 * Se añadió el componente `Select values` para escoger las columnas necesarias: insurance_type.
 * Se utilizó ` UniqueRows(HashSet)` para remover registros duplicados.
 * Finalmente se añadió `Table output` para cargar los datos en `dim_tipo_seguro`.
@@ -304,7 +304,7 @@ Imagen 64. Resultados de la consulta del costo promedio más alto por visita, di
 
 ## Referencias bibliográficas
 
-Cambridge University Press. (2019). Data mining and data warehousing: Principles and practical techniques. Cambridge University Press. https://www.cambridge.org/9781108727747
+[1] P. Bhatia, Data Mining and Data Warehousing: Principles and Practical Techniques. Cambridge, U.K.: Cambridge University Press, 2019. doi: 10.1017/9781108635592.
 
 ## Declaración de porcentaje de uso de IA
 **ChatGPT:**
