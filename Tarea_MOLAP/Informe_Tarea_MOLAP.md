@@ -287,8 +287,8 @@ Imagen 62. Resultados de la consulta del costo promedio más alto por visita, di
 Imagen 63. Resultados de la consulta del costo promedio más alto por visita, diagnóstico, tipo de seguro y ciudad - parte 2
 
 <img width="615" height="337" alt="image" src="https://github.com/user-attachments/assets/97d82890-473b-444c-87fb-2afb7fd89788" />
-Imagen 64. Resultados de la consulta del costo promedio más alto por visita, diagnóstico, tipo de seguro y ciudad - parte 3
 
+Imagen 64. Resultados de la consulta del costo promedio más alto por visita, diagnóstico, tipo de seguro y ciudad - parte 3
 
 ## Referencias bibliográficas
 
