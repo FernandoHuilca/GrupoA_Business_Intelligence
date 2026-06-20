@@ -307,12 +307,12 @@ Imagen 64. Resultados de la consulta del costo promedio más alto por visita, di
 Cambridge University Press. (2019). Data mining and data warehousing: Principles and practical techniques. Cambridge University Press. https://www.cambridge.org/9781108727747
 
 ## Declaración de porcentaje de uso de IA
-ChatGPT:
+**ChatGPT:**
 * Se utilizó como apoyo en el diseño del modelo estrella, principalmente para revisar en qué tabla debían ubicarse campos como "cost_medicine", "cost_procedure" e "is_emergency", y justificar si correspondían a la tabla de hechos o a una dimensión.
 * Se utilizó como apoyo para la elaboración de sentencias SQL grandes, como la creación de la tabla `raw_salud` y de la vista materializada.
 * Se usó para analizar un error en Pentaho durante la transformación "carga_raw_salud", relacionado con el mapeo de la columna "visit_id" del archivo CSV hacia la tabla creada en PostgreSQL, debido a un carácter invisible en el encabezado.
 * Se utilizó para estructurar la consulta SQL correspondiente a la segunda pregunta analítica (**¿Qué ciudad tuvo más emergencias por mes y género?**), empleando funciones analíticas como `ROW_NUMBER()` para obtener la ciudad con el mayor número de emergencias en cada combinación de mes y género.
 
-Claude:
+**Claude:**
 * Se utilizó como apoyo para revisar mejores maneras de plantear las sentencias SQL utilizadas para responder las preguntas planteadas.
 * Se utilizó para recordar el funcionamiento de algunos componentes de Pentaho, como Stream lookup.
