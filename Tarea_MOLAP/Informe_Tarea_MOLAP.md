@@ -288,6 +288,7 @@ Imagen . Resultados de la consulta del costo promedio más alto por visita, diag
 
 ## Referencias bibliográficas
 
+Cambridge University Press. (2019). Data mining and data warehousing: Principles and practical techniques. Cambridge University Press. https://www.cambridge.org/9781108727747
 
 ## Declaración de porcentaje de uso de IA
 ChatGPT:
