@@ -31,7 +31,12 @@ CREATE TABLE dim_fecha (
 );
 
 -- Creación de la tabla: dim_paciente
-
+CREATE TABLE dim_paciente (
+	paciente_key SERIAL PRIMARY KEY,
+	patient_id INT,
+	patient_age INT,
+	patient_gender VARCHAR(1)
+);
 
 -- Creación de la tabla: dim_departamento_hospital
 CREATE TABLE dim_departamento_hospital (
@@ -40,8 +45,12 @@ CREATE TABLE dim_departamento_hospital (
     hospital_department VARCHAR(50)
 );
 
---Creación de la tabla: dim_medico
-
+--Creación de la tabla: dim_doctor
+CREATE TABLE dim_doctor (
+	doctor_key SERIAL PRIMARY KEY,
+	doctor_id INT,
+	specialty VARCHAR(150)
+);
 
 -- Creación de la tabla: dim_diagnostico
 CREATE TABLE dim_diagnostico (
