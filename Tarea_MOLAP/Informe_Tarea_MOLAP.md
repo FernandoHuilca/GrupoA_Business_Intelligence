@@ -72,6 +72,19 @@ GR2SW
 
 ##### 1.2.2. dim_paciente
 
+*	Se creó la tabla `dim_paciente` en la base de datos "TareaMOLAP" dentro de PostgreSQL.
+*	En la transformación “carga_dim_paciente” se añadió un input `Table input` para obtener las columnas de la tabla `raw_salud`.
+*	Se usó la transformación `Select values` para escogers las columnas necesarias.
+*	Se utilizó `Unique rows (HashSet)` para remover valores repetidos y conservar los registros únicos.
+*	Finalmente, se añadió `Table output ` para cargar los datos en `dim_paciente`.
+*	La ejecución mostró salida exitosa en Pentaho y se verificaron los datos en PostgreSQL.
+
+| <img width="250" height="250" alt="image" src="https://github.com/user-attachments/assets/fdc56beb-336b-4e50-9006-97df74f41305" /> | <img width="250" height="250" alt="image" src="https://github.com/user-attachments/assets/9f1f1781-ac39-4d15-a4a7-c00ae4740464" /> | <img width="250" height="250" alt="image" src="https://github.com/user-attachments/assets/6405307b-82b8-4085-bb7f-7614bcb8b8a4" /> |
+|---|---|---|
+| Imagen . Carga de las columnas desde PostgreSQL | Imagen . Selección de columnas usando Select values | Imagen . Eliminación de duplicados con UniqueRows(HashSet) |
+| <img width="250" height="250" alt="image" src="https://github.com/user-attachments/assets/c1773dbc-a3fb-46d0-8aba-eee0fd3479aa" /> | <img width="250" height="250" alt="image" src="https://github.com/user-attachments/assets/4ac591d2-8af2-4191-b676-9e29cedcb218" /> | |
+| Imagen . Carga de los datos a la tabla `dim_paciente` | Imagen . Resultado final | |
+
 ##### 1.2.3. dim_departamento_hospital
 
 * Se creó la tabla `dim_departamento_hospital` en la base de datos "TareaMOLAP" dentro de PostgreSQL.
@@ -82,14 +95,26 @@ GR2SW
 * Finalmente, se añadió `Table output ` para cargar los datos en `dim_departamento_hospital`.
 * La ejecución mostró salida exitosa en Pentaho y se verificaron los datos en PostgreSQL.
 
-
 | <img width="200" alt="image" src="https://github.com/user-attachments/assets/6cdbadce-f131-4018-8508-dfcf0d9d1a98" /> | <img width="400" alt="image" src="https://github.com/user-attachments/assets/ad20bce6-8061-4c5d-8cb1-269178f4716c" /> | <img width="400" alt="image" src="https://github.com/user-attachments/assets/43f08a80-eb46-474f-b989-406f0cee9ed7" /> |
 |:---:|:---:|:---:|
 | Imagen 1. Carga de las columnas `city` y `hospital_department` desde PostgreSQL | **Imagen 2.** Eliminación de espacios en blanco con String operations | Imagen 3. Ordenamiento ascendente de las columnas |
 | <img width="200" alt="image" src="https://github.com/user-attachments/assets/06e8c293-e4fb-4505-87d0-455f3f2a7e8f" /> | <img width="400" alt="Captura de pantalla 2026-06-17 191955" src="https://github.com/user-attachments/assets/9ec708f5-5724-432f-abf1-df77aa4ee751" /> | |
 | Imagen 4. Carga de los datos a la tabla `dim_departamento_hospital` | Imagen 5. Resultado final | |
 
-##### 1.2.4. dim_doctor (PONLE COMO DOCTOR JAJAJ)
+##### 1.2.4. dim_doctor
+
+*	Se creó la tabla `dim_doctor` en la base de datos "TareaMOLAP" dentro de PostgreSQL.
+*	En la transformación “carga_dim_doctor” se añadió un input `Table input` para obtener las columnas de la tabla `raw_salud`.
+*	Se usó la transformación `Select values` para escogers las columnas necesarias.
+*	Se utilizó `Unique rows (HashSet)` para remover valores repetidos y conservar los registros únicos.
+*	Finalmente, se añadió `Table output ` para cargar los datos en `dim_doctor`.
+*	La ejecución mostró salida exitosa en Pentaho y se verificaron los datos en PostgreSQL.
+
+| <img width="250" height="250" alt="image" src="https://github.com/user-attachments/assets/45e39624-2deb-449b-9395-22e80c39075a" /> | <img width="250" height="250" alt="image" src="https://github.com/user-attachments/assets/d49ece52-80da-4a76-a001-3082f8d02f8a" /> | <img width="250" height="250" alt="image" src="https://github.com/user-attachments/assets/3ae6b08f-d6ed-4d37-8bda-e039bdde50cc" /> |
+|:---:|:---:|:---:|
+| Imagen 1. Carga de las columnas relacionadas con `dim_doctor` desde PostgreSQL | **Imagen 2.** Selección de columnas usando Select values | Imagen 3. Eliminación de duplicados con UniqueRows(HashSet) |
+| <img width="250" height="250" alt="image" src="https://github.com/user-attachments/assets/908d19d7-66d7-4be0-850f-028d91d55f96" /> | <img width="792" height="523" alt="image" src="https://github.com/user-attachments/assets/120a741e-bd43-4ada-a54b-7da8539799dd" />| |
+| Imagen 4. Carga de los datos a la tabla `dim_doctor` | Imagen 5. Resultado final | |
 
 ##### 1.2.5. dim_diagnostico
 
