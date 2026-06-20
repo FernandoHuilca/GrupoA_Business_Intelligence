@@ -230,15 +230,15 @@ Imagen 55. Consulta SQL para obtener el costo total de atención por especialida
 
 A continuación, se presentan los resultados obtenidos:
 
-<img width="500" src="https://github.com/user-attachments/assets/028da6c0-aa23-4088-8c3c-f61f97b730ef" />
+<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/ffd13260-9124-4838-b636-00792444e064" />
 
 Imagen 56. Resultados de la consulta del costo total de atención por especialidad, ciudad y mes - parte 1
 
-<img width="500" src="https://github.com/user-attachments/assets/c25c564b-56fb-424c-bef0-6dec838e2521" />
+<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/d1ae3cd0-97a9-439b-a5ec-ed2d09f02828" />
 
 Imagen 57. Resultados de la consulta del costo total de atención por especialidad, ciudad y mes - parte 2
 
-<img width="500" src="https://github.com/user-attachments/assets/35fd615e-4249-4e5f-bbe0-ecff7408490d" />
+<img width="512" height="90" alt="image" src="https://github.com/user-attachments/assets/e1881a58-b844-4f11-a9f4-6b496b152f67" />
 
 Imagen 58. Resultados de la consulta del costo total de atención por especialidad, ciudad y mes - parte 3
 
