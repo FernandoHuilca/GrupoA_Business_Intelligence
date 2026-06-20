@@ -33,10 +33,10 @@ GR2SW
 
 [3. MOLAP: vista materializada](#3-molap-vista-materializada)
 
-[4. Consultas MOLAP](#4-consultas-molap)
-* [4.1. ¿Cuál es el costo total de atención por especialidad, ciudad y mes?](#41-cuál-es-el-costo-total-de-atención-por-especialidad-ciudad-y-mes)
-* [4.2. ¿Qué ciudad tuvo más emergencias por mes y género?](#42-qué-ciudad-tuvo-más-emergencias-por-mes-y-género)
-* [4.3. ¿Por diagnóstico y tipo de seguro, cuál es el costo promedio por visita y en qué ciudad es más alto?](#43-por-diagnóstico-y-tipo-de-seguro-cuál-es-el-costo-promedio-por-visita-y-en-qué-ciudad-es-más-alto)
+[Consultas MOLAP](#consultas-molap)
+* [1. ¿Cuál es el costo total de atención por especialidad, ciudad y mes?](#1-cuál-es-el-costo-total-de-atención-por-especialidad-ciudad-y-mes)
+* [2. ¿Qué ciudad tuvo más emergencias por mes y género?](#2-qué-ciudad-tuvo-más-emergencias-por-mes-y-género)
+* [3. ¿Por diagnóstico y tipo de seguro, cuál es el costo promedio por visita y en qué ciudad es más alto?](#3-por-diagnóstico-y-tipo-de-seguro-cuál-es-el-costo-promedio-por-visita-y-en-qué-ciudad-es-más-alto)
 
 ------------
 # <center>**Tarea MOLAP**</center>
