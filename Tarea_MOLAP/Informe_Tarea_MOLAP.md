@@ -278,13 +278,17 @@ De esta manera, al ordenar por diagnóstico y luego por seguro, y dentro de cada
 
 A continuación, se presentan los resultados obtenidos:
 
-<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/eab1d5bc-1027-4cbf-9827-884f8bd85092" />
+<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/1b0db8ac-01ce-4c11-84c7-1cde943c8820" />
 
 Imagen . Resultados de la consulta del costo promedio más alto por visita, diagnóstico, tipo de seguro y ciudad - parte 1
 
-<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/616ab206-5caa-4591-8ce2-08c46de5e2ba" />
+<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/546ddf45-5c18-4210-94d6-f6af0fa0dffe" />
 
 Imagen . Resultados de la consulta del costo promedio más alto por visita, diagnóstico, tipo de seguro y ciudad - parte 2
+
+<img width="615" height="337" alt="image" src="https://github.com/user-attachments/assets/97d82890-473b-444c-87fb-2afb7fd89788" />
+Imagen . Resultados de la consulta del costo promedio más alto por visita, diagnóstico, tipo de seguro y ciudad - parte 3
+
 
 ## Referencias bibliográficas
 
