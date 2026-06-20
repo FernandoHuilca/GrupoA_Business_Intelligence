@@ -33,7 +33,7 @@ ORDER BY
     total_emergencias DESC;
 
 -- 3. ¿Por diagnóstico, tipo de seguro, cuál es el costo promedio por visita y en qué ciudad es más alto?
-SELECT diagnosis_group, insurance_type, city, ROUND(AVG(total_cost), 2) AS costo_promedio
+SELECT diagnostico, tipo_seguro, ciudad, ROUND(AVG(costo_total), 2) AS costo_promedio
 FROM mv_atenciones_medicas
-GROUP BY diagnosis_group, insurance_type, city
-ORDER BY diagnosis_group, insurance_type, costo_promedio DESC;
+GROUP BY diagnostico, tipo_seguro, ciudad
+ORDER BY diagnostico, tipo_seguro, costo_promedio DESC;

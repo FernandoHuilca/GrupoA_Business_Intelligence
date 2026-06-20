@@ -11,7 +11,7 @@ CREATE TABLE raw_salud (
     hospital_department VARCHAR(50),
     doctor_id INT,
     specialty VARCHAR(50),
-    diagnostic_group VARCHAR(50),
+    diagnosis_group VARCHAR(50),
     procedure_type VARCHAR(50),
     insurance_type VARCHAR(30),
     is_emergency INT,

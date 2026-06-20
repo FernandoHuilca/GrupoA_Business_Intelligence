@@ -538,7 +538,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>Tarea_MOLAP_connection</connection>
+    <connection>TareaMOLAP</connection>
     <sql>SELECT * FROM dim_departamento_hospital</sql>
     <limit>0</limit>
     <lookup/>
@@ -548,6 +548,29 @@
     <cached_row_meta_active>N</cached_row_meta_active>
     <row-meta>
       <value-meta>
+        <type>Integer</type>
+        <storagetype>normal</storagetype>
+        <name>departamento_key</name>
+        <length>9</length>
+        <precision>0</precision>
+        <origin>Leer dim_departamento_hospital</origin>
+        <comments>departamento_key</comments>
+        <conversion_Mask>####0;-####0</conversion_Mask>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>America/Guayaquil</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
         <type>String</type>
         <storagetype>normal</storagetype>
         <name>city</name>
@@ -556,8 +579,8 @@
         <origin>Leer dim_departamento_hospital</origin>
         <comments>city</comments>
         <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -579,8 +602,8 @@
         <origin>Leer dim_departamento_hospital</origin>
         <comments>hospital_department</comments>
         <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -619,7 +642,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>Tarea_MOLAP_connection</connection>
+    <connection>TareaMOLAP</connection>
     <sql>SELECT diagnostico_key, diagnosis_group FROM dim_diagnostico</sql>
     <limit>0</limit>
     <lookup/>
@@ -637,8 +660,8 @@
         <origin>Leer dim_diagnostico</origin>
         <comments>diagnostico_key</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -660,8 +683,8 @@
         <origin>Leer dim_diagnostico</origin>
         <comments>diagnosis_group</comments>
         <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -700,7 +723,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>Tarea_MOLAP_connection</connection>
+    <connection>TareaMOLAP</connection>
     <sql>SELECT doctor_key, doctor_id FROM dim_doctor</sql>
     <limit>0</limit>
     <lookup/>
@@ -718,8 +741,8 @@
         <origin>Leer dim_doctor</origin>
         <comments>doctor_key</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -741,8 +764,8 @@
         <origin>Leer dim_doctor</origin>
         <comments>doctor_id</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -781,7 +804,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>Tarea_MOLAP_connection</connection>
+    <connection>TareaMOLAP</connection>
     <sql>SELECT fecha_key FROM dim_fecha</sql>
     <limit>0</limit>
     <lookup/>
@@ -799,8 +822,8 @@
         <origin>Leer dim_fecha</origin>
         <comments>fecha_key</comments>
         <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -839,7 +862,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>Tarea_MOLAP_connection</connection>
+    <connection>TareaMOLAP</connection>
     <sql>SELECT paciente_key, patient_id FROM dim_paciente</sql>
     <limit>0</limit>
     <lookup/>
@@ -857,8 +880,8 @@
         <origin>Leer dim_paciente</origin>
         <comments>paciente_key</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -880,8 +903,8 @@
         <origin>Leer dim_paciente</origin>
         <comments>patient_id</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -920,7 +943,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>Tarea_MOLAP_connection</connection>
+    <connection>TareaMOLAP</connection>
     <sql>SELECT procedimiento_key, procedure_type FROM dim_procedimiento</sql>
     <limit>0</limit>
     <lookup/>
@@ -938,8 +961,8 @@
         <origin>Leer dim_procedimiento</origin>
         <comments>procedimiento_key</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -961,8 +984,8 @@
         <origin>Leer dim_procedimiento</origin>
         <comments>procedure_type</comments>
         <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1001,7 +1024,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>Tarea_MOLAP_connection</connection>
+    <connection>TareaMOLAP</connection>
     <sql>SELECT resultado_key, outcome FROM dim_resultado</sql>
     <limit>0</limit>
     <lookup/>
@@ -1019,8 +1042,8 @@
         <origin>Leer dim_resultado</origin>
         <comments>resultado_key</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1042,8 +1065,8 @@
         <origin>Leer dim_resultado</origin>
         <comments>outcome</comments>
         <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1082,7 +1105,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>Tarea_MOLAP_connection</connection>
+    <connection>TareaMOLAP</connection>
     <sql>SELECT tipo_seguro_key, insurance_type FROM dim_tipo_seguro</sql>
     <limit>0</limit>
     <lookup/>
@@ -1100,8 +1123,8 @@
         <origin>Leer dim_tipo_seguro</origin>
         <comments>tipo_seguro_key</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1123,8 +1146,8 @@
         <origin>Leer dim_tipo_seguro</origin>
         <comments>insurance_type</comments>
         <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1163,7 +1186,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>Tarea_MOLAP_connection</connection>
+    <connection>TareaMOLAP</connection>
     <sql>SELECT * FROM raw_salud
 </sql>
     <limit>0</limit>
@@ -1182,8 +1205,8 @@
         <origin>Leer raw_salud</origin>
         <comments>visit_id</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1205,8 +1228,8 @@
         <origin>Leer raw_salud</origin>
         <comments>visit_date</comments>
         <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1228,8 +1251,8 @@
         <origin>Leer raw_salud</origin>
         <comments>patient_id</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1251,8 +1274,8 @@
         <origin>Leer raw_salud</origin>
         <comments>patient_age</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1274,8 +1297,8 @@
         <origin>Leer raw_salud</origin>
         <comments>patient_gender</comments>
         <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1297,8 +1320,8 @@
         <origin>Leer raw_salud</origin>
         <comments>city</comments>
         <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1320,8 +1343,8 @@
         <origin>Leer raw_salud</origin>
         <comments>hospital_department</comments>
         <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1343,8 +1366,8 @@
         <origin>Leer raw_salud</origin>
         <comments>doctor_id</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1366,8 +1389,8 @@
         <origin>Leer raw_salud</origin>
         <comments>specialty</comments>
         <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1389,8 +1412,8 @@
         <origin>Leer raw_salud</origin>
         <comments>diagnosis_group</comments>
         <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1412,8 +1435,8 @@
         <origin>Leer raw_salud</origin>
         <comments>procedure_type</comments>
         <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1435,8 +1458,8 @@
         <origin>Leer raw_salud</origin>
         <comments>insurance_type</comments>
         <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1458,8 +1481,8 @@
         <origin>Leer raw_salud</origin>
         <comments>is_emergency</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1481,8 +1504,8 @@
         <origin>Leer raw_salud</origin>
         <comments>length_of_stay_days</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1504,8 +1527,8 @@
         <origin>Leer raw_salud</origin>
         <comments>cost_medicine</comments>
         <conversion_Mask>####0.0#########;-####0.0#########</conversion_Mask>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1527,8 +1550,8 @@
         <origin>Leer raw_salud</origin>
         <comments>cost_procedure</comments>
         <conversion_Mask>####0.0#########;-####0.0#########</conversion_Mask>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1550,8 +1573,8 @@
         <origin>Leer raw_salud</origin>
         <comments>total_cost</comments>
         <conversion_Mask>####0.0#########;-####0.0#########</conversion_Mask>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1573,8 +1596,8 @@
         <origin>Leer raw_salud</origin>
         <comments>outcome</comments>
         <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -2023,7 +2046,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>Tarea_MOLAP_connection</connection>
+    <connection>TareaMOLAP</connection>
     <schema>public</schema>
     <table>fact_atencion_medica</table>
     <commit>1000</commit>
