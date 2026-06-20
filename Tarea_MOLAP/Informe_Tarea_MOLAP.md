@@ -202,7 +202,7 @@ Como resultado del proceso ETL se construyó el modelo estrella para organizar l
 
 <img width="745" height="622" src="https://github.com/user-attachments/assets/0bb7c29a-2f53-4bb4-b341-360442300a6b" />
 
-Imagen . Modelo estrella resultante del proceso ETL
+Imagen 52. Modelo estrella resultante del proceso ETL
 
 ### 3. MOLAP (Vista materializada) 
 
@@ -210,13 +210,13 @@ Antes de realizar las consultas MOLAP, se creó una vista materializada `mv_aten
 
 <img width="500" src="https://github.com/user-attachments/assets/aa883357-8f79-442e-b1bd-f2ed82798491" />
 
-Imagen . Creación de la vista materializada `mv_atenciones_medicas`
+Imagen 53. Creación de la vista materializada `mv_atenciones_medicas`
 
 Se comprobó que la vista materializada se haya creado correctamente mediante la visualización de sus datos y la verificación del número de registros almacenados. Como resultado, se obtuvo un total de 100 filas, cantidad que coincide con los registros cargados desde el archivo CSV y con los presentes en la tabla de hechos.
 
 <img width="500" src="https://github.com/user-attachments/assets/b215bd2c-8e70-4c3a-8894-db67dd5bf039" />
 
-Imagen . Visualización de registros en la vista materializada `mv_atenciones_medicas`
+Imagen 54. Visualización de registros en la vista materializada `mv_atenciones_medicas`
 
 ## Consultas MOLAP   
 
@@ -226,21 +226,21 @@ Se realizó una consulta sobre la vista materializada `mv_atenciones_medicas`, a
 
 <img width="500" src="https://github.com/user-attachments/assets/308a4c62-9163-451a-8b5d-f3dbfa078e05" />
 
-Imagen . Consulta SQL para obtener el costo total de atención por especialidad, ciudad y mes
+Imagen 55. Consulta SQL para obtener el costo total de atención por especialidad, ciudad y mes
 
 A continuación, se presentan los resultados obtenidos:
 
 <img width="500" src="https://github.com/user-attachments/assets/028da6c0-aa23-4088-8c3c-f61f97b730ef" />
 
-Imagen . Resultados de la consulta del costo total de atención por especialidad, ciudad y mes - parte 1
+Imagen 56. Resultados de la consulta del costo total de atención por especialidad, ciudad y mes - parte 1
 
 <img width="500" src="https://github.com/user-attachments/assets/c25c564b-56fb-424c-bef0-6dec838e2521" />
 
-Imagen . Resultados de la consulta del costo total de atención por especialidad, ciudad y mes - parte 2
+Imagen 57. Resultados de la consulta del costo total de atención por especialidad, ciudad y mes - parte 2
 
 <img width="500" src="https://github.com/user-attachments/assets/35fd615e-4249-4e5f-bbe0-ecff7408490d" />
 
-Imagen . Resultados de la consulta del costo total de atención por especialidad, ciudad y mes - parte 3
+Imagen 58. Resultados de la consulta del costo total de atención por especialidad, ciudad y mes - parte 3
 
 ### 2. ¿Qué ciudad tuvo más emergencias por mes y género?
 
@@ -248,7 +248,7 @@ La siguiente consulta permite identificar la ciudad con el mayor número de emer
 
 <img width="451" height="488" alt="image" src="https://github.com/user-attachments/assets/7aac4eb1-6623-426a-8707-c887a9eaa318" />
 
-Imagen . Consulta SQL para obtener la ciudad que tuvo más emergencias por mes y género
+Imagen 59. Consulta SQL para obtener la ciudad que tuvo más emergencias por mes y género
 
 
 La ejecución de la consulta permitió identificar la ciudad con mayor número de atenciones de emergencia para cada combinación de mes y género. El resultado más relevante corresponde al **mes 2**, donde la ciudad de **Quito** registró el mayor número de emergencias para pacientes de género **masculino (M)**, alcanzando un total de **5 atenciones**, siendo este el valor más alto obtenido en todo el análisis.
@@ -260,9 +260,7 @@ Estos resultados permiten identificar la ciudad con mayor incidencia de emergenc
 
 <img width="484" height="174" alt="image" src="https://github.com/user-attachments/assets/7edb8e75-5ee0-4c3d-967a-3c3c8c497d83" />
 
-Imagen . Resultados de la consulta de la ciudad con más emergencias por mes y género
-
-
+Imagen 60. Resultados de la consulta de la ciudad con más emergencias por mes y género
 
 ### 3. ¿Por diagnóstico, tipo de seguro, cuál es el costo promedio por visita y en qué ciudad es más alto?
 
@@ -276,18 +274,20 @@ De esta manera, al ordenar por diagnóstico y luego por seguro, y dentro de cada
 
 <img width="866" height="107" alt="image" src="https://github.com/user-attachments/assets/1827c216-0ba1-4484-9293-d4b5578cde69" />
 
+Imagen 61. Consulta SQL para identificar el costo promedio por visita y la ciudad con mayor valor según diagnóstico y tipo de seguro
+
 A continuación, se presentan los resultados obtenidos:
 
 <img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/1b0db8ac-01ce-4c11-84c7-1cde943c8820" />
 
-Imagen . Resultados de la consulta del costo promedio más alto por visita, diagnóstico, tipo de seguro y ciudad - parte 1
+Imagen 62. Resultados de la consulta del costo promedio más alto por visita, diagnóstico, tipo de seguro y ciudad - parte 1
 
 <img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/546ddf45-5c18-4210-94d6-f6af0fa0dffe" />
 
-Imagen . Resultados de la consulta del costo promedio más alto por visita, diagnóstico, tipo de seguro y ciudad - parte 2
+Imagen 63. Resultados de la consulta del costo promedio más alto por visita, diagnóstico, tipo de seguro y ciudad - parte 2
 
 <img width="615" height="337" alt="image" src="https://github.com/user-attachments/assets/97d82890-473b-444c-87fb-2afb7fd89788" />
-Imagen . Resultados de la consulta del costo promedio más alto por visita, diagnóstico, tipo de seguro y ciudad - parte 3
+Imagen 64. Resultados de la consulta del costo promedio más alto por visita, diagnóstico, tipo de seguro y ciudad - parte 3
 
 
 ## Referencias bibliográficas
