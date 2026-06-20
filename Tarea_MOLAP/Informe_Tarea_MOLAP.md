@@ -38,6 +38,10 @@ GR2SW
 * [2. ¿Qué ciudad tuvo más emergencias por mes y género?](#2-qué-ciudad-tuvo-más-emergencias-por-mes-y-género)
 * [3. ¿Por diagnóstico y tipo de seguro, cuál es el costo promedio por visita y en qué ciudad es más alto?](#3-por-diagnóstico-y-tipo-de-seguro-cuál-es-el-costo-promedio-por-visita-y-en-qué-ciudad-es-más-alto)
 
+[Referencias bibliográficas](#referencias-bibliográficas)  
+
+[Declaración de porcentaje de uso de IA](#declaración-de-porcentaje-de-uso-de-ia)
+
 ------------
 # <center>**Tarea MOLAP**</center>
 ---
