@@ -276,15 +276,15 @@ Imagen 60. Resultados de la consulta de la ciudad con más emergencias por mes y
 
 ### 3. ¿Por diagnóstico, tipo de seguro, cuál es el costo promedio por visita y en qué ciudad es más alto?
 
-La consulta se realizó sobre la vista materializada `mv_atenciones_medicas`. Primero se seleccionaron (`SELECT`) las dimensiones identificadas que fueron `diagnosis_group`, `insurance_type`, `city` y el `total_cost` de la tabla de hechos.
+La consulta se realizó sobre la vista materializada `mv_atenciones_medicas`. Primero se seleccionaron (`SELECT`) los campos necesarios que fueron `diagnostico`, `tipo_seguro`, `ciudad` y el `costo_total`.
 
-Luego, se agruparon los registros (`GROUP BY()`) por diagnóstico, tipo de seguro y ciudad. De esta manera, se juntaron en una sola fila las que tenían la misma tríada de valores diagnóstico-seguro-ciudad. Esto provocó que el `total_cost` se sumara en un solo valor. Este valor sumado de `total_cost` se le aplicó lo establecido en el `SELECT`, lo cual consistió en que se dividió por el número de registros que tenían esa misma combinación para obtener el costo promedio por visita (`AVG()` y redondeado a 2 decimales con `ROUND()` renombrándolo como `costo_promedio`).
+Luego, se agruparon los registros (`GROUP BY()`) por diagnóstico, tipo de seguro y ciudad. De esta manera, se juntaron en una sola fila las que tenían la misma tríada de valores diagnóstico-seguro-ciudad. Esto provocó que el `costo_total` se sumara en un solo valor. Este valor sumado de `costo_total` se le aplicó lo establecido en el `SELECT`, lo cual consistió en que se dividió por el número de registros que tenían esa misma combinación para obtener el costo promedio por visita (`AVG()` y redondeado a 2 decimales con `ROUND()` renombrándolo como `costo_promedio`).
 
 Finalmente, se ordenaron los resultados de forma descendente según el diagnóstico, tipo de seguro y costo promedio (`ORDER BY DESC`). Esto permitió ordenar alfabéticamente por diagnóstico, teniendo como segundo criterio el tipo de seguro si es que había dos o más diagnósticos iguales, y como tercer criterio el costo promedio de forma descendente para cada combinación de diagnóstico y tipo de seguro.
 
 De esta manera, al ordenar por diagnóstico y luego por seguro, y dentro de cada grupo por costo de mayor a menor, entonces la primera ciudad que aparecerá para cada combinación diagnóstico-seguro será la que tendrá el costo promedio más alto.
 
-<img width="866" height="107" alt="image" src="https://github.com/user-attachments/assets/1827c216-0ba1-4484-9293-d4b5578cde69" />
+<img width="892" height="112" alt="image" src="https://github.com/user-attachments/assets/4e0fd2ee-940d-4f42-8688-e2e081c04a69" />
 
 Imagen 61. Consulta SQL para identificar el costo promedio por visita y la ciudad con mayor valor según diagnóstico y tipo de seguro
 
