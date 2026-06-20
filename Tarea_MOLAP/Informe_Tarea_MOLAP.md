@@ -15,6 +15,7 @@ GR2SW
 ## **Índice de Contenidos**
 
 [MOLAP](#molap)
+
 [1. Proceso ETL](#1-proceso-etl)
 * [1.1. Creación de la tabla `raw_salud`](#11-creación-de-la-tabla-raw_salud)
 * [1.2. Transformación y carga de datos](#12-transformación-y-carga-de-datos)
@@ -28,7 +29,9 @@ GR2SW
   * [1.2.8. `dim_resultado`](#128-dim_resultado)
   * [1.2.9. `fact_atencion_medica`](#129-fact_atencion_medica)
 [2. Modelo estrella](#2-modelo-estrella)
+
 [3. MOLAP: vista materializada](#3-molap-vista-materializada)
+
 [4. Consultas MOLAP](#4-consultas-molap)
 * [4.1. ¿Cuál es el costo total de atención por especialidad, ciudad y mes?](#41-cuál-es-el-costo-total-de-atención-por-especialidad-ciudad-y-mes)
 * [4.2. ¿Qué ciudad tuvo más emergencias por mes y género?](#42-qué-ciudad-tuvo-más-emergencias-por-mes-y-género)
