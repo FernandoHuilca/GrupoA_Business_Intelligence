@@ -48,9 +48,9 @@ GR2SW
 
 | <img src="https://github.com/user-attachments/assets/210a2a71-2d36-45f3-a522-0abed85ad205" width="250"> | <img src="https://github.com/user-attachments/assets/96a1dca8-e192-4768-92e9-7bb041ad51a9" width="250"> | <img src="https://github.com/user-attachments/assets/c3a178c1-43cf-4990-b552-d451e9318448" width="250"> |
 |---|---|---|
-| Imagen . Carga de los datos desde el archivo CSV | Imagen . Selección de columnas usando Select values | Imagen . Corrección en el nombre de la columna “visit_id”  |
+| Imagen 1. Carga de los datos desde el archivo CSV | Imagen 2. Selección de columnas usando Select values | Imagen 3. Corrección en el nombre de la columna “visit_id”  |
 | <img src="https://github.com/user-attachments/assets/2e9dcf43-351a-4538-bec8-23d69826acfe" width="250"> | <img src="https://github.com/user-attachments/assets/f3b0460d-f7e7-4926-81a3-01038868c513" width="250"> | 
-| Imagen . Carga de los datos a la tabla `raw_salud` | Imagen . Resultado final | 
+| Imagen 4. Carga de los datos a la tabla `raw_salud` | Imagen 5. Resultado final | 
 
 #### 1.2. Transformación y carga de datos
 
@@ -66,9 +66,9 @@ GR2SW
 
 | <img src="https://github.com/user-attachments/assets/331b3faf-5def-4c78-bbc5-cc1e6dd45354" width="250"> | <img src="https://github.com/user-attachments/assets/a918c214-54b6-4c4e-bde6-3bb596c3bee0" width="250"> | <img src="https://github.com/user-attachments/assets/c1c8545c-6b6d-49fe-a3cd-b2607f1e3dbd" width="250"> |
 |---|---|---|
-| Imagen . Carga de la columna `visit_date` desde PostgreSQL | Imagen . Selección de la columna usando Select values | Imagen . Cálculo del año, mes y día para cada fecha con Calculator |
+| Imagen 6. Carga de la columna `visit_date` desde PostgreSQL | Imagen 7. Selección de la columna usando Select values | Imagen 8. Cálculo del año, mes y día para cada fecha con Calculator |
 | <img src="https://github.com/user-attachments/assets/e9b3e675-f7e0-4f00-b90f-66896adb87b5" width="250"> | <img src="https://github.com/user-attachments/assets/c8126951-b5ce-4bbe-97ef-c2cc7ae004d8" width="250"> | <img src="https://github.com/user-attachments/assets/a3d35ee9-cb9b-4b7a-9264-851f2bca0926" width="250"> |
-| Imagen . Eliminación de duplicados con UniqueRows(HashSet)` | Imagen . Carga de los datos a la tabla `dim_fecha` | Imagen . Resultado final |
+| Imagen 9. Eliminación de duplicados con UniqueRows(HashSet)` | Imagen 10. Carga de los datos a la tabla `dim_fecha` | Imagen 11. Resultado final |
 
 ##### 1.2.2. dim_paciente
 
@@ -81,9 +81,9 @@ GR2SW
 
 | <img width="250" height="250" alt="image" src="https://github.com/user-attachments/assets/fdc56beb-336b-4e50-9006-97df74f41305" /> | <img width="250" height="250" alt="image" src="https://github.com/user-attachments/assets/9f1f1781-ac39-4d15-a4a7-c00ae4740464" /> | <img width="250" height="250" alt="image" src="https://github.com/user-attachments/assets/6405307b-82b8-4085-bb7f-7614bcb8b8a4" /> |
 |---|---|---|
-| Imagen . Carga de las columnas desde PostgreSQL | Imagen . Selección de columnas usando Select values | Imagen . Eliminación de duplicados con UniqueRows(HashSet) |
+| Imagen 12. Carga de las columnas desde PostgreSQL | Imagen 13. Selección de columnas usando Select values | Imagen 14. Eliminación de duplicados con UniqueRows(HashSet) |
 | <img width="250" height="250" alt="image" src="https://github.com/user-attachments/assets/c1773dbc-a3fb-46d0-8aba-eee0fd3479aa" /> | <img width="250" height="250" alt="image" src="https://github.com/user-attachments/assets/4ac591d2-8af2-4191-b676-9e29cedcb218" /> | |
-| Imagen . Carga de los datos a la tabla `dim_paciente` | Imagen . Resultado final | |
+| Imagen 15. Carga de los datos a la tabla `dim_paciente` | Imagen 16. Resultado final | |
 
 ##### 1.2.3. dim_departamento_hospital
 
@@ -97,9 +97,9 @@ GR2SW
 
 | <img width="200" alt="image" src="https://github.com/user-attachments/assets/6cdbadce-f131-4018-8508-dfcf0d9d1a98" /> | <img width="400" alt="image" src="https://github.com/user-attachments/assets/ad20bce6-8061-4c5d-8cb1-269178f4716c" /> | <img width="400" alt="image" src="https://github.com/user-attachments/assets/43f08a80-eb46-474f-b989-406f0cee9ed7" /> |
 |:---:|:---:|:---:|
-| Imagen 1. Carga de las columnas `city` y `hospital_department` desde PostgreSQL | **Imagen 2.** Eliminación de espacios en blanco con String operations | Imagen 3. Ordenamiento ascendente de las columnas |
+| Imagen 17. Carga de las columnas `city` y `hospital_department` desde PostgreSQL | Imagen 18. Eliminación de espacios en blanco con String operations | Imagen 19. Ordenamiento ascendente de las columnas |
 | <img width="200" alt="image" src="https://github.com/user-attachments/assets/06e8c293-e4fb-4505-87d0-455f3f2a7e8f" /> | <img width="400" alt="Captura de pantalla 2026-06-17 191955" src="https://github.com/user-attachments/assets/9ec708f5-5724-432f-abf1-df77aa4ee751" /> | |
-| Imagen 4. Carga de los datos a la tabla `dim_departamento_hospital` | Imagen 5. Resultado final | |
+| Imagen 20. Carga de los datos a la tabla `dim_departamento_hospital` | Imagen 21. Resultado final | |
 
 ##### 1.2.4. dim_doctor
 
@@ -112,9 +112,9 @@ GR2SW
 
 | <img width="250" height="250" alt="image" src="https://github.com/user-attachments/assets/45e39624-2deb-449b-9395-22e80c39075a" /> | <img width="250" height="250" alt="image" src="https://github.com/user-attachments/assets/d49ece52-80da-4a76-a001-3082f8d02f8a" /> | <img width="250" height="250" alt="image" src="https://github.com/user-attachments/assets/3ae6b08f-d6ed-4d37-8bda-e039bdde50cc" /> |
 |:---:|:---:|:---:|
-| Imagen 1. Carga de las columnas relacionadas con `dim_doctor` desde PostgreSQL | **Imagen 2.** Selección de columnas usando Select values | Imagen 3. Eliminación de duplicados con UniqueRows(HashSet) |
+| Imagen 22. Carga de las columnas relacionadas con `dim_doctor` desde PostgreSQL | Imagen 23. Selección de columnas usando Select values | Imagen 24. Eliminación de duplicados con UniqueRows(HashSet) |
 | <img width="250" height="250" alt="image" src="https://github.com/user-attachments/assets/908d19d7-66d7-4be0-850f-028d91d55f96" /> | <img width="792" height="523" alt="image" src="https://github.com/user-attachments/assets/120a741e-bd43-4ada-a54b-7da8539799dd" />| |
-| Imagen 4. Carga de los datos a la tabla `dim_doctor` | Imagen 5. Resultado final | |
+| Imagen 25. Carga de los datos a la tabla `dim_doctor` | Imagen 26. Resultado final | |
 
 ##### 1.2.5. dim_diagnostico
 
@@ -128,9 +128,9 @@ GR2SW
 
 | <img src="https://github.com/user-attachments/assets/ba312239-e057-4924-bf19-5e6308fe2483" width="250"> | <img src="https://github.com/user-attachments/assets/758bacd4-e605-4a40-9ce7-5c2d88334ecf" width="250"> | <img src="https://github.com/user-attachments/assets/e18f1d1d-7e24-4825-a05e-0ea2c68d0eb0" width="250"> |
 |---|---|---|
-| Imagen . Carga de la columna `diagnosis_group` desde PostgreSQL | Imagen . Selección de la columna usando Select values | Imagen . Eliminación de duplicados con UniqueRows(HashSet) |
+| Imagen 27. Carga de la columna `diagnosis_group` desde PostgreSQL | Imagen 28. Selección de la columna usando Select values | Imagen 29. Eliminación de duplicados con UniqueRows(HashSet) |
 | <img src="https://github.com/user-attachments/assets/3e65f6be-07b0-4ae3-b1c4-e7872a9c45fc" width="250"> | <img src="https://github.com/user-attachments/assets/d1a5a073-545d-40f2-815c-b6b09bf733bc" width="250"> | 
-| Imagen . Carga de los datos a la tabla `dim_diagnostico` | Imagen . Resultado final | 
+| Imagen 30. Carga de los datos a la tabla `dim_diagnostico` | Imagen 31. Resultado final | 
 
 ##### 1.2.6. dim_procedimiento
 
@@ -145,9 +145,9 @@ GR2SW
 
 | <img width="400" alt="Captura de pantalla 2026-06-17 191536" src="https://github.com/user-attachments/assets/679d305f-3cca-4341-aa91-f5d06f8cb042" /> | <img width="400" alt="Captura de pantalla 2026-06-17 232407" src="https://github.com/user-attachments/assets/077b4792-65f3-4371-bbbf-653f869740da" /> | <img width="400" alt="image" src="https://github.com/user-attachments/assets/97914b5c-0fae-43a3-8a91-1c9aa3725346" /> |
 |---|---|---|
-| Imagen 1. Carga de la columna `procedure_type` desde PostgreSQL | Imagen 2. Eliminación de espacios en blanco con String operations | Imagen 3. Ordenamiento ascendente de la columna |
+| Imagen 32. Carga de la columna `procedure_type` desde PostgreSQL | Imagen 33. Eliminación de espacios en blanco con String operations | Imagen 34. Ordenamiento ascendente de la columna |
 | <img width="400" alt="image" src="https://github.com/user-attachments/assets/5a390b37-6b3b-48fa-86b1-8e9ca357ae90" /> | <img width="400" alt="Captura de pantalla 2026-06-17 192357" src="https://github.com/user-attachments/assets/4e883455-f8e2-4491-b739-34e3c40bc228" /> |  |
-| Imagen 4. Carga de los datos a la tabla `dim_procedimiento` | Imagen 5. Resultado final| |
+| Imagen 35. Carga de los datos a la tabla `dim_procedimiento` | Imagen 36. Resultado final| |
 
 ##### 1.2.7. dim_tipo_seguro
 
@@ -160,9 +160,9 @@ GR2SW
 
 | <img src="https://github.com/user-attachments/assets/eadc1984-143f-4ff3-a86e-d27b4d0448b4" width="250"> | <img src="https://github.com/user-attachments/assets/f33e37d9-8e9b-48fd-b531-c3b6900b8e70" width="250"> | <img src="https://github.com/user-attachments/assets/e0dfcb23-78e5-44f2-bb2b-bf7c1651b71b" width="250"> |
 |---|---|---|
-| Imagen . Carga de la columna `insurance_type` desde PostgreSQL | Imagen . Selección de la columna usando Select values | Imagen . Eliminación de duplicados con UniqueRows(HashSet) |
+| Imagen 37. Carga de la columna `insurance_type` desde PostgreSQL | Imagen 38. Selección de la columna usando Select values | Imagen 39. Eliminación de duplicados con UniqueRows(HashSet) |
 | <img src="https://github.com/user-attachments/assets/956abee0-a810-4bfa-95dc-5c6c4921ee42" width="250"> | <img src="https://github.com/user-attachments/assets/cca22acb-d68b-41fa-b7f9-8547443cdc8e" width="250"> | 
-| Imagen . Carga de los datos a la tabla `dim_tipo_seguro` | Imagen . Resultado final | 
+| Imagen 40. Carga de los datos a la tabla `dim_tipo_seguro` | Imagen 41. Resultado final | 
 
 ##### 1.2.8. dim_resultado
 * Se creó la tabla `dim_resultado` en la base de datos en PostgreSQL.
@@ -174,9 +174,9 @@ GR2SW
 
 | <img src="https://github.com/user-attachments/assets/6a64705a-ef6b-4ad9-816d-50686972311f" width="250"> | <img src="https://github.com/user-attachments/assets/caa8c6c4-b23d-4338-bd25-dcf412e4ca00" width="250"> | <img src="https://github.com/user-attachments/assets/d3031d63-b950-4c38-917e-9b655d1e7c41" width="250"> |
 |---|---|---|
-| Imagen 1. Carga de la columna `outcome` desde PostgreSQL | Imagen 2. Selección de la columna usando Select values| Imagen 3. Eliminación de duplicados con UniqueRows(HashSet) |
+| Imagen 42. Carga de la columna `outcome` desde PostgreSQL | Imagen 43. Selección de la columna usando Select values| Imagen 44. Eliminación de duplicados con UniqueRows(HashSet) |
 | <img src="https://github.com/user-attachments/assets/cf4563a0-b265-44db-9432-d5bd8cc17c0b" width="250"> | <img src="https://github.com/user-attachments/assets/57b93a53-67e1-4223-b83f-15face6895e7" width="250"> | 
-| Imagen 4. Carga de los datos a la tabla dim_resultado | Imagen 5. Resultado final | 
+| Imagen 45. Carga de los datos a la tabla dim_resultado | Imagen 46. Resultado final | 
 
 ##### 1.2.9. fact_atencion_medica
 
@@ -192,9 +192,9 @@ GR2SW
 
 | <img width="250" height="250" alt="image" src="https://github.com/user-attachments/assets/154cf675-d5ce-4015-8859-52190fd35c02" /> | <img width="250" height="250" alt="image" src="https://github.com/user-attachments/assets/8e0bec41-e936-4073-9858-53b95a6f976b" /> | <img width="250" height="250" alt="image" src="https://github.com/user-attachments/assets/6c348000-33d6-4bd6-849d-1876c1e63a33" /> |
 | --- | --- | --- |
-| Imagen . Creacion tabla `fact_atencion_medica` | Imagen . Proceso ETL completo para tabla de hechos y con salida exitosa junto con `Table input` para obtener los datos necesarios de la tabla `raw_salud`.| Imagen . Ejemplo de uso de `Stream lookup` en dim_fecha para establecer la coincidencia entre el campo de la tabla `raw_salud` y el campo clave |
+| Imagen 47. Creación tabla `fact_atencion_medica` | Imagen 48. Proceso ETL completo para tabla de hechos y con salida exitosa junto con `Table input` para obtener los datos necesarios de la tabla `raw_salud`.| Imagen 49. Ejemplo de uso de `Stream lookup` en dim_fecha para establecer la coincidencia entre el campo de la tabla `raw_salud` y el campo clave |
 | <img width="250" height="250" alt="image" src="https://github.com/user-attachments/assets/6b87b610-9507-4db6-8683-d28a886d7915" /> | <img width="250" height="250" alt="image" src="https://github.com/user-attachments/assets/3017b73e-8588-4073-9eee-9411be717e33" /> | |
-| Imagen . Transformation `Select values` que escoge los campos necesarios para la tabla de hechos | Imagen . Output `Table output` que carga los datos en `fact_atencion_medica` |
+| Imagen 50. Transformación `Select values` que escoge los campos necesarios para la tabla de hechos | Imagen 51. Output `Table output` que carga los datos en `fact_atencion_medica` |
 
 ### 2. Modelo estrella
 
