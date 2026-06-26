@@ -129,7 +129,30 @@ Luego, se probó la ejecución del código hasta obtener los 2 resultados posibl
 ## 2. Predecir valores
 
 
-<img width="500" alt="image" src="https://github.com/user-attachments/assets/a5c2b4a7-ff6d-4c9f-933d-0fe738bd246b" />
+
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/1658f0a6-363e-44c7-ae8a-6ada832b12c8" />
+
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/9a1d8e70-161d-4f43-95a5-f136f825e364" />
+
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/5a0c1796-a01a-4989-bf25-11395cb84931" />
+
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/c94d147a-f40e-4971-8369-67e86bc0f7c5" />
+
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/51406f7a-cd31-4a01-a10a-2a4b994ac0b5" />
+
+Después de modificar los valores del registro, se guardó el archivo como "test.arff".
+
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/80dd028f-62d1-4506-a85b-de8c96dbb88c" />
+
+Se abrió el archivo "weather.nominal.arff" en la pestaña "Preprocess" del módulo "Explorer".
+
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/30f6c435-57ee-45bc-ab07-d7bc45982a10" />
+
+A continuación, se debe seleccionar la pestaña Classify y elegir el clasificador NaiveBayes. 
+Clic en el botón Start, lo que permitirá construir el clasificador. 
+
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/4d30dfdf-6338-4982-9b63-8fd31f03de29" />
+
 
 
 ## 3. Referencias bibliográficas
