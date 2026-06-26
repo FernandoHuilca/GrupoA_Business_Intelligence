@@ -160,11 +160,15 @@ Posteriormente, se abre el archivo con Open File → seleccionar test.arff.
 
 paso extra
 
-<img width="770" height="483" alt="image" src="https://github.com/user-attachments/assets/b0dd353e-77d0-4d77-9faa-c3c11c4cc2fb" />
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/b0dd353e-77d0-4d77-9faa-c3c11c4cc2fb" />
 
 La predicción
 
-<img width="680" height="341" alt="image" src="https://github.com/user-attachments/assets/2bc343b9-d5df-4658-896c-cd63e2e3d4f2" />
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/af948e06-86b2-48a8-9982-5bd73cb49133" />
+
+Para J48
+
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/b3106526-294a-4576-a61d-ec70cfcdb7f2" />
 
 
 
