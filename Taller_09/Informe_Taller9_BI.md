@@ -138,7 +138,7 @@ Luego, se probó la ejecución del código hasta obtener los 2 resultados posibl
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/c94d147a-f40e-4971-8369-67e86bc0f7c5" />
 
-<img width="500" alt="image" src="https://github.com/user-attachments/assets/8cd67f56-ab29-4a6a-ab8b-fa7738d3e0b2" />
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/008660d6-fa23-4526-9774-67cbad07bd65" />
 
 Después de modificar los valores del registro, se guardó el archivo como "test.arff".
 
@@ -158,6 +158,13 @@ Posteriormente, se abre el archivo con Open File → seleccionar test.arff.
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/2021bce0-78ca-4892-9218-266280bbc4ac" />
 
+paso extra
+
+<img width="770" height="483" alt="image" src="https://github.com/user-attachments/assets/b0dd353e-77d0-4d77-9faa-c3c11c4cc2fb" />
+
+La predicción
+
+<img width="680" height="341" alt="image" src="https://github.com/user-attachments/assets/2bc343b9-d5df-4658-896c-cd63e2e3d4f2" />
 
 
 
