@@ -138,7 +138,7 @@ Luego, se probó la ejecución del código hasta obtener los 2 resultados posibl
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/c94d147a-f40e-4971-8369-67e86bc0f7c5" />
 
-<img width="500" alt="image" src="https://github.com/user-attachments/assets/51406f7a-cd31-4a01-a10a-2a4b994ac0b5" />
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/8cd67f56-ab29-4a6a-ab8b-fa7738d3e0b2" />
 
 Después de modificar los valores del registro, se guardó el archivo como "test.arff".
 
@@ -152,6 +152,12 @@ A continuación, se debe seleccionar la pestaña Classify y elegir el clasificad
 Clic en el botón Start, lo que permitirá construir el clasificador. 
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/4d30dfdf-6338-4982-9b63-8fd31f03de29" />
+
+Seleccionar la opción Supplied test set y hacer clic en el botón Set. 
+Posteriormente, se abre el archivo con Open File → seleccionar test.arff. 
+
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/2021bce0-78ca-4892-9218-266280bbc4ac" />
+
 
 
 
