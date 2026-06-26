@@ -142,7 +142,7 @@ Luego, se probó la ejecución del código hasta obtener los 2 resultados posibl
 
 Después de modificar los valores del registro, se guardó el archivo como "test.arff".
 
-<img width="500" alt="image" src="https://github.com/user-attachments/assets/80dd028f-62d1-4506-a85b-de8c96dbb88c" />
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/a1a76bfd-057f-45cf-abe2-d541b0cb442c" />
 
 Se abrió el archivo "weather.nominal.arff" en la pestaña "Preprocess" del módulo "Explorer".
 
