@@ -48,21 +48,29 @@ GR2SW
 
 ## 1. Naive Bayes
 
-Se cargó el archivo "weather.nominal.arf"en Weka Explorer.
+En primer lugar, en `Weka Explorer` se cargó el archivo `weather.nominal.arff`, el cual contiene un conjunto de datos relacionado con condiciones climáticas y la variable de clase `play`. Este dataset permite analizar, mediante clasificación, si bajo determinadas condiciones del clima es conveniente o no jugar. 
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/c4bede85-2a64-4b5d-99c1-701df1d50dfa" />
 
-En la pestaña "Classify" se seleccionó el clasificador "NaiveBayes", en "More Options" se dejaron los valores por defecto y se seleccionó la opción Use Training Set.
+Imagen 1. Carga del archivo `weather.nominal.arff` desde la pestaña `Preprocess` de `Weka Explorer`.
+
+Posteriormente, en la pestaña `Classify`, se seleccionó el clasificador `NaiveBayes`. En `More options` se conservaron los valores predeterminados y se eligió la opción `Use training set` para entrenar y evaluar el modelo con el conjunto de datos cargado.
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/16947ce2-cf71-4afb-9dc2-d74f0798bb92" />
 
-Se seleccionó "Start", obteniendo los siguientes resultados.
+Imagen 2. Selección del clasificador `NaiveBayes` en la pestaña `Classify` de `Weka Explorer`, utilizando la opción `Use training set`.
+
+Luego, se seleccionó el botón `Start` para ejecutar el clasificador. Weka construyó el modelo de Naive Bayes y mostró los siguientes resultados de la evaluación sobre el conjunto de entrenamiento.
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/c432628c-9bc5-46ba-b410-263ddf254476" />
 
+Imagen 3. Información general y modelo generado por el clasificador `NaiveBayes` en Weka.
+
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/ed730b40-1184-4004-a711-166acd2e8a08" />
 
-Se utilizó el siguiente código en Python según los datos obtenidos en "Classifier output".
+Imagen 4. Resultados de evaluación del modelo NaiveBayes, con 13 de 14 instancias clasificadas correctamente.
+
+A partir de los datos obtenidos en `Classifier output`, se implementó un código en Python para reproducir el comportamiento del clasificador Naive Bayes y calcular la predicción de la variable `play`.
 
 ```Python
 def naive_bayes_play(outlook, temperature, humidity, windy): 
@@ -119,39 +127,67 @@ windy = input("→ Windy (true / false): ").strip().lower()
 prediccion = naive_bayes_play(outlook, temperature, humidity, windy) 
 print(f"\n Predicción final: {'JUGAR' if prediccion == 'yes' else 'NO JUGAR'}") 
 ```
+Tabla 1. Implementación en Python del clasificador Naive Bayes para predecir si se debe jugar según las condiciones climáticas ingresadas.
 
-Luego, se probó la ejecución del código hasta obtener los 2 resultados posibles.
+Finalmente, se probó el código con distintos valores de entrada hasta obtener los dos posibles resultados: **JUGAR** y **NO JUGAR**.
 
 <img width="477" alt="image" src="https://github.com/user-attachments/assets/323a19f7-1aca-43cb-a3f0-45d442180a9e" />
 
+Imagen 5. Ejecución del código en Python con una predicción final de **JUGAR**.
+
 <img width="475" alt="image" src="https://github.com/user-attachments/assets/9077165f-babf-45d1-9cb5-b40819a75e5b" />
+
+**Imagen 6.** Ejecución del código en Python con una predicción final de **NO JUGAR**.
 
 ## 2. Predecir valores
 
 
 
+Primero, en la pestaña `Tools`, se seleccionó la opción `ArffViewer`, con el fin de abrir y modificar el conjunto de datos que será utilizado como instancia de prueba.
+
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/1658f0a6-363e-44c7-ae8a-6ada832b12c8" />
+
+Imagen 7. Selección de la opción `ArffViewer` desde el menú `Tools` de Weka.
+
+En la ventana de `ARFF-Viewer`, se abrió el archivo `weather.nominal.arff`. 
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/9a1d8e70-161d-4f43-95a5-f136f825e364" />
 
+Imagen 8. Apertura del archivo `weather.nominal.arff` desde la ventana `ARFF-Viewer`.
+
+Después, desde la pestaña `Edit`, se utilizó la opción `Delete instances` para eliminar los registros del archivo, conservando únicamente uno como instancia de prueba para realizar la predicción.
+
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/5a0c1796-a01a-4989-bf25-11395cb84931" />
+
+Imagen 9. Eliminación de registros mediante la opción `Delete instances` de la pestaña `Edit`.
+
+Como siguiente paso, se modificaron los valores del registro restante, asignando las condiciones climáticas que se utilizarán como instancia de prueba para la predicción. Además, se dejó en blanco el atributo de clase `play`, debido a que este es el valor que se desea predecir mediante el clasificador.
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/c94d147a-f40e-4971-8369-67e86bc0f7c5" />
 
+Imagen 10. Registro antes de modificar los valores para la prueba.
+
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/008660d6-fa23-4526-9774-67cbad07bd65" />
 
-Después de modificar los valores del registro, se guardó el archivo como "test.arff".
+Imagen 11. Registro modificado con nuevos valores y atributo `play` vacío para realizar la predicción en Weka.
+
+Una vez modificado el registro, se guardó el archivo como `test.arff` en la carpeta `Downloads`.
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/a1a76bfd-057f-45cf-abe2-d541b0cb442c" />
 
-Se abrió el archivo "weather.nominal.arff" en la pestaña "Preprocess" del módulo "Explorer".
+Imagen 12. Guardado del archivo de prueba `test.arff` en la carpeta `Downloads`.
+
+Posteriormente, en la pestaña `Preprocess` del módulo `Explorer`, se abrió nuevamente el archivo `weather.nominal.arff`, puesto que será utilizado como conjunto de entrenamiento para construir el clasificador.
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/30f6c435-57ee-45bc-ab07-d7bc45982a10" />
 
-A continuación, se debe seleccionar la pestaña Classify y elegir el clasificador NaiveBayes. 
-Clic en el botón Start, lo que permitirá construir el clasificador. 
+Imagen 13. Apertura del archivo `weather.nominal.arff` en `Weka Explorer`.
+
+A continuación, en la pestaña `Classify`, se seleccionó `NaiveBayes` como clasificador y se usó la opción `Use training set` para generar el modelo con los datos de entrenamiento.
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/4d30dfdf-6338-4982-9b63-8fd31f03de29" />
+
+Imagen 14. Construcción del modelo `NaiveBayes` usando el archivo `weather.nominal.arff` como conjunto de entrenamiento.
 
 Seleccionar la opción Supplied test set y hacer clic en el botón Set. 
 Posteriormente, se abre el archivo con Open File → seleccionar test.arff. 
