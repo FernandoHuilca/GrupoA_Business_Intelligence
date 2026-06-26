@@ -1,5 +1,5 @@
 # <center>**Escuela Politécnica Nacional**</center>
-## <center>**Business Intelligence**</center>
+## <center>**Bussiness Intelligence**</center>
 ### **Integrantes:**
 - Juan Cofre
 - Fernando Huilca
