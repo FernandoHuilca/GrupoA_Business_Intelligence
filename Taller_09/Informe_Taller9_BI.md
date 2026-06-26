@@ -48,10 +48,88 @@ GR2SW
 
 ## 1. Naive Bayes
 
+Se cargó el archivo "weather.nominal.arf"en Weka Explorer.
 
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/c4bede85-2a64-4b5d-99c1-701df1d50dfa" />
+
+En la pestaña "Classify" se seleccionó el clasificador "NaiveBayes", en "More Options" se dejaron los valores por defecto y se seleccionó la opción Use Training Set.
+
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/16947ce2-cf71-4afb-9dc2-d74f0798bb92" />
+
+Se seleccionó "Start", obteniendo los siguientes resultados.
+
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/c432628c-9bc5-46ba-b410-263ddf254476" />
+
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/ed730b40-1184-4004-a711-166acd2e8a08" />
+
+Se utilizó el siguiente código en Python según los datos obtenidos en "Classifier output".
+
+```Python
+def naive_bayes_play(outlook, temperature, humidity, windy): 
+    P_yes = 0.63 
+    P_no = 0.38 
+   
+    total_yes = 12.0 
+    total_no = 8.0 
+ 
+    probs = { 
+        'yes': { 
+            'outlook': {'sunny': 3.0 / total_yes, 'overcast': 5.0 / total_yes, 'rainy': 4.0 / total_yes}, 
+            'temperature': {'hot': 3.0 / total_yes, 'mild': 5.0 / total_yes, 'cool': 4.0 / total_yes}, 
+            'humidity': {'high': 4.0 / 11.0, 'normal': 7.0 / 11.0}, 
+            'windy': {'true': 4.0 / 11.0, 'false': 7.0 / 11.0}, 
+        }, 
+        'no': { 
+            'outlook': {'sunny': 4.0 / total_no, 'overcast': 1.0 / total_no, 'rainy': 3.0 / total_no}, 
+            'temperature': {'hot': 3.0 / total_no, 'mild': 3.0 / total_no, 'cool': 2.0 / total_no}, 
+            'humidity': {'high': 5.0 / 7.0, 'normal': 2.0 / 7.0}, 
+            'windy': {'true': 4.0 / 7.0, 'false': 3.0 / 7.0}, 
+        } 
+    } 
+ 
+    def calc_prob(clase): 
+        return ( 
+            (P_yes if clase == 'yes' else P_no) * 
+            probs[clase]['outlook'][outlook] * 
+            probs[clase]['temperature'][temperature] * 
+            probs[clase]['humidity'][humidity] * 
+            probs[clase]['windy'][windy] 
+        ) 
+    
+    prob_yes = calc_prob('yes') 
+    prob_no = calc_prob('no') 
+    
+    total = prob_yes + prob_no 
+    prob_yes /= total 
+    prob_no /= total
+    
+    print(f"\n🔍 Resultados:") 
+    print(f"Probabilidad de SÍ jugar: {prob_yes:.4f}") 
+    print(f"Probabilidad de NO jugar: {prob_no:.4f}") 
+    
+    return 'yes' if prob_yes > prob_no else 'no' 
+
+print("Ingrese los datos del clima:")
+
+outlook = input("→ Outlook (sunny / overcast / rainy): ").strip().lower() 
+temperature = input("→ Temperature (hot / mild / cool): ").strip().lower() 
+humidity = input("→ Humidity (high / normal): ").strip().lower() 
+windy = input("→ Windy (true / false): ").strip().lower()
+ 
+prediccion = naive_bayes_play(outlook, temperature, humidity, windy) 
+print(f"\n Predicción final: {'JUGAR' if prediccion == 'yes' else 'NO JUGAR'}") 
+```
+
+Luego, se probó la ejecución del código hasta obtener los 2 resultados posibles.
+
+<img width="477" alt="image" src="https://github.com/user-attachments/assets/323a19f7-1aca-43cb-a3f0-45d442180a9e" />
+
+<img width="475" alt="image" src="https://github.com/user-attachments/assets/9077165f-babf-45d1-9cb5-b40819a75e5b" />
 
 ## 2. Predecir valores
 
+
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/a5c2b4a7-ff6d-4c9f-933d-0fe738bd246b" />
 
 
 ## 3. Referencias bibliográficas
