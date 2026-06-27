@@ -137,6 +137,10 @@ Tabla 1. Implementación en Python del clasificador Naive Bayes para predecir si
 
 Finalmente, se probó el modelo con distintos valores de entrada hasta obtener los dos posibles resultados: **JUGAR** y **NO JUGAR**.
 
+| <img width="477" alt="image" src="https://github.com/user-attachments/assets/323a19f7-1aca-43cb-a3f0-45d442180a9e" /> | <img width="475" alt="image" src="https://github.com/user-attachments/assets/9077165f-babf-45d1-9cb5-b40819a75e5b" /> |
+|---|---|
+| Imagen 5. Ejecución del modelo en Python con una predicción final de **JUGAR**. | **Imagen 6.** Ejecución del modelo en Python con una predicción final de **NO JUGAR**. |
+
 <img width="477" alt="image" src="https://github.com/user-attachments/assets/323a19f7-1aca-43cb-a3f0-45d442180a9e" />
 
 Imagen 5. Ejecución del modelo en Python con una predicción final de **JUGAR**.
