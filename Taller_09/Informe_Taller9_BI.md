@@ -141,14 +141,6 @@ Finalmente, se probó el modelo con distintos valores de entrada hasta obtener l
 |---|---|
 | Imagen 5. Ejecución del modelo en Python con una predicción final de **JUGAR**. | **Imagen 6.** Ejecución del modelo en Python con una predicción final de **NO JUGAR**. |
 
-<img width="477" alt="image" src="https://github.com/user-attachments/assets/323a19f7-1aca-43cb-a3f0-45d442180a9e" />
-
-Imagen 5. Ejecución del modelo en Python con una predicción final de **JUGAR**.
-
-<img width="475" alt="image" src="https://github.com/user-attachments/assets/9077165f-babf-45d1-9cb5-b40819a75e5b" />
-
-**Imagen 6.** Ejecución del modelo en Python con una predicción final de **NO JUGAR**.
-
 ## 2. Predecir valores
 
 ### 2.1. Creación del archivo de prueba
@@ -172,6 +164,10 @@ Después, desde la pestaña `Edit`, se utilizó la opción `Delete instances` pa
 Imagen 9. Eliminación de registros mediante la opción `Delete instances` de la pestaña `Edit`.
 
 Como siguiente paso, se modificaron los valores del registro restante, asignando las condiciones climáticas que se utilizarán como instancia de prueba para la predicción. Además, se dejó en blanco el atributo de clase `play`, debido a que este es el valor que se desea predecir mediante el clasificador.
+
+| <img width="500" alt="image" src="https://github.com/user-attachments/assets/c94d147a-f40e-4971-8369-67e86bc0f7c5" /> | <img width="500" alt="image" src="https://github.com/user-attachments/assets/008660d6-fa23-4526-9774-67cbad07bd65" /> |
+|---|---|
+| Imagen 10. Registro antes de modificar los valores para la prueba. | Imagen 11. Registro modificado con nuevos valores y atributo `play` vacío para realizar la predicción en Weka. |
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/c94d147a-f40e-4971-8369-67e86bc0f7c5" />
 
