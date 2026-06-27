@@ -15,28 +15,18 @@ GR2SW
 ## **Índice de Contenidos**
 
 [1. Naive Bayes](#1-naive-bayes)
-
 * [1.1. Carga del conjunto de datos](#11-carga-del-conjunto-de-datos)
-
 * [1.2. Configuración del clasificador](#12-configuración-del-clasificador)
-
-[1.3. Ejecución y resultados del modelo](#13-ejecución-y-resultados-del-modelo)
-
-[1.4. Implementación del modelo en Python](#14-implementación-del-modelo-en-python)
-
-[1.5. Ejecución del modelo en Python usando Google Colab](#15-ejecución-del-modelo-en-python-usando-google-colab)
+* [1.3. Ejecución y resultados del modelo](#13-ejecución-y-resultados-del-modelo)
+* [1.4. Implementación del modelo en Python](#14-implementación-del-modelo-en-python)
+* [1.5. Ejecución del modelo en Python usando Google Colab](#15-ejecución-del-modelo-en-python-usando-google-colab)
 
 [2. Predecir valores](#2-predecir-valores)
-
-[2.1. Creación del archivo de prueba](#21-creación-del-archivo-de-prueba)
-
-[2.2. Carga del conjunto de entrenamiento](#22-carga-del-conjunto-de-entrenamiento)
-
-[2.3. Construcción del clasificador](#23-construcción-del-clasificador)
-
-[2.4. Carga del conjunto de prueba](#24-carga-del-conjunto-de-prueba)
-
-[2.5. Predicción y comparación de resultados](#25-predicción-y-comparación-de-resultados)
+* [2.1. Creación del archivo de prueba](#21-creación-del-archivo-de-prueba)
+* [2.2. Carga del conjunto de entrenamiento](#22-carga-del-conjunto-de-entrenamiento)
+* [2.3. Construcción del clasificador](#23-construcción-del-clasificador)
+* [2.4. Carga del conjunto de prueba](#24-carga-del-conjunto-de-prueba)
+* [2.5. Predicción y comparación de resultados](#25-predicción-y-comparación-de-resultados)
 
 [3. Referencias bibliográficas](#3-referencias-bibliográficas)
 
