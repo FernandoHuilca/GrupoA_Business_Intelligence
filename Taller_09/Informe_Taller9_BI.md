@@ -48,17 +48,23 @@ GR2SW
 
 ## 1. Naive Bayes
 
+### 1.1. Carga del conjunto de datos
+
 En primer lugar, en `Weka Explorer` se cargó el archivo `weather.nominal.arff`, el cual contiene un conjunto de datos relacionado con condiciones climáticas y la variable de clase `play`. Este dataset permite analizar, mediante clasificación, si bajo determinadas condiciones del clima es conveniente o no jugar. 
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/c4bede85-2a64-4b5d-99c1-701df1d50dfa" />
 
 Imagen 1. Carga del archivo `weather.nominal.arff` desde la pestaña `Preprocess` de `Weka Explorer`.
 
+### 1.2. Configuración del clasificador
+
 Posteriormente, en la pestaña `Classify`, se seleccionó el clasificador `NaiveBayes`. En `More options` se conservaron los valores predeterminados y se eligió la opción `Use training set` para entrenar y evaluar el modelo con el conjunto de datos cargado.
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/16947ce2-cf71-4afb-9dc2-d74f0798bb92" />
 
 Imagen 2. Selección del clasificador `NaiveBayes` en la pestaña `Classify` de `Weka Explorer`, utilizando la opción `Use training set`.
+
+### 1.3. Ejecución y resultados del modelo
 
 Luego, se seleccionó el botón `Start` para ejecutar el clasificador. Weka construyó el modelo de Naive Bayes y mostró los siguientes resultados de la evaluación sobre el conjunto de entrenamiento.
 
@@ -69,6 +75,8 @@ Imagen 3. Información general y modelo generado por el clasificador `NaiveBayes
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/ed730b40-1184-4004-a711-166acd2e8a08" />
 
 Imagen 4. Resultados de evaluación del modelo NaiveBayes, con 13 de 14 instancias clasificadas correctamente.
+
+### 1.4. Implementación del modelo en Python
 
 A partir de los datos obtenidos en `Classifier output`, se implementó un código en Python para reproducir el comportamiento del clasificador Naive Bayes y calcular la predicción de la variable `play`.
 
@@ -129,17 +137,21 @@ print(f"\n Predicción final: {'JUGAR' if prediccion == 'yes' else 'NO JUGAR'}")
 ```
 Tabla 1. Implementación en Python del clasificador Naive Bayes para predecir si se debe jugar según las condiciones climáticas ingresadas.
 
-Finalmente, se probó el código con distintos valores de entrada hasta obtener los dos posibles resultados: **JUGAR** y **NO JUGAR**.
+### 1.5. Ejecución del modelo en Python usando Google Colab
+
+Finalmente, se probó el modelo con distintos valores de entrada hasta obtener los dos posibles resultados: **JUGAR** y **NO JUGAR**.
 
 <img width="477" alt="image" src="https://github.com/user-attachments/assets/323a19f7-1aca-43cb-a3f0-45d442180a9e" />
 
-Imagen 5. Ejecución del código en Python con una predicción final de **JUGAR**.
+Imagen 5. Ejecución del modelo en Python con una predicción final de **JUGAR**.
 
 <img width="475" alt="image" src="https://github.com/user-attachments/assets/9077165f-babf-45d1-9cb5-b40819a75e5b" />
 
-**Imagen 6.** Ejecución del código en Python con una predicción final de **NO JUGAR**.
+**Imagen 6.** Ejecución del modelo en Python con una predicción final de **NO JUGAR**.
 
 ## 2. Predecir valores
+
+### 2.1. Creación del archivo de prueba
 
 Primero, en la pestaña `Tools`, se seleccionó la opción `ArffViewer`, con el fin de abrir y modificar el conjunto de datos que será utilizado como instancia de prueba.
 
@@ -175,17 +187,23 @@ Una vez modificado el registro, se guardó el archivo como `test.arff` en la car
 
 Imagen 12. Guardado del archivo de prueba `test.arff` en la carpeta `Downloads`.
 
+### 2.2. Carga del conjunto de entrenamiento
+
 Posteriormente, en la pestaña `Preprocess` del módulo `Explorer`, se abrió nuevamente el archivo `weather.nominal.arff`, puesto que será utilizado como conjunto de entrenamiento para construir el clasificador.
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/30f6c435-57ee-45bc-ab07-d7bc45982a10" />
 
 Imagen 13. Apertura del archivo `weather.nominal.arff` en `Weka Explorer`.
 
+### 2.3. Construcción del clasificador
+
 A continuación, en la pestaña `Classify`, se seleccionó `NaiveBayes` como clasificador y se usó la opción `Use training set` para generar el modelo con los datos de entrenamiento.
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/4d30dfdf-6338-4982-9b63-8fd31f03de29" />
 
 Imagen 14. Construcción del modelo `NaiveBayes` usando el archivo `weather.nominal.arff` como conjunto de entrenamiento.
+
+### 2.4. Carga del conjunto de prueba
 
 Después de esto, se seleccionó la opción `Supplied test set` y se cargó el archivo `test.arff` como conjunto de prueba.
 
@@ -198,6 +216,8 @@ Luego, se dio clic en `More options` y, en la ventana emergente, se seleccionó 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/b0dd353e-77d0-4d77-9faa-c3c11c4cc2fb" />
 
 Imagen 16. Configuración de `Output predictions` en formato `PlainText` para mostrar la predicción del registro de prueba en la sección `Classifier output`.
+
+### 2.5. Predicción y comparación de resultados
 
 Finalmente, se aplicó el clasificador sobre la instancia de prueba cargada. Como resultado, Weka predijo el valor `yes` para el atributo de clase `play`, con una confianza del 56,8 %.
 
@@ -220,9 +240,5 @@ Al comparar ambos modelos, se observa que, para esta instancia específica, el �
 ## 4. Declaración de porcentaje de uso de IA
 
 **ChatGPT:**
-* 
-
-* Se utilizó como apoyo en el diseño del modelo estrella, principalmente para revisar en qué tabla debían ubicarse campos como "cost_medicine", "cost_procedure" e "is_emergency", y justificar si correspondían a la tabla de hechos o a una dimensión.
-* Se utilizó como apoyo para la elaboración de sentencias SQL grandes, como la creación de la tabla `raw_salud` y de la vista materializada.
-* Se usó para analizar un error en Pentaho durante la transformación "carga_raw_salud", relacionado con el mapeo de la columna "visit_id" del archivo CSV hacia la tabla creada en PostgreSQL, debido a un carácter invisible en el encabezado.
-* Se utilizó para estructurar la consulta SQL correspondiente a la segunda pregunta analítica (**¿Qué ciudad tuvo más emergencias por mes y género?**), empleando funciones analíticas como `ROW_NUMBER()` para obtener la ciudad con el mayor número de emergencias en cada combinación de mes y género.
+* Se utilizó para identificar que el archivo de prueba `test.arff` no podía almacenarse en la carpeta `data` de Weka. Inicialmente, el archivo se guardaba en dicha ubicación y la interfaz mostraba un mensaje de éxito; sin embargo, al intentar cargarlo en la pestaña `Preprocess` del módulo `Explorer`, este no aparecía debido a que en realidad nunca se había guardado. Por esta razón, se optó por guardarlo en una carpeta accesible, como `Downloads`.
+* Se usó para resolver un inconveniente relacionado con la visualización de la predicción del registro de prueba en la sección `Classifier output`, tal como se mostraba en la guía de la práctica. Se determinó que era necesario seleccionar un formato de salida habilitar en la opción `Output predictions`. Por tal motivo, se eligió `PlainText`, lo que permitió visualizar correctamente la predicción generada por el clasificador.
