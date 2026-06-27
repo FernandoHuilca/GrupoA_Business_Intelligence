@@ -169,14 +169,6 @@ Como siguiente paso, se modificaron los valores del registro restante, asignando
 |---|---|
 | Imagen 10. Registro antes de modificar los valores para la prueba. | Imagen 11. Registro modificado con nuevos valores y atributo `play` vacío para realizar la predicción en Weka. |
 
-<img width="500" alt="image" src="https://github.com/user-attachments/assets/c94d147a-f40e-4971-8369-67e86bc0f7c5" />
-
-Imagen 10. Registro antes de modificar los valores para la prueba.
-
-<img width="500" alt="image" src="https://github.com/user-attachments/assets/008660d6-fa23-4526-9774-67cbad07bd65" />
-
-Imagen 11. Registro modificado con nuevos valores y atributo `play` vacío para realizar la predicción en Weka.
-
 Una vez modificado el registro, se guardó el archivo como `test.arff` en la carpeta `Downloads`.
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/a1a76bfd-057f-45cf-abe2-d541b0cb442c" />
