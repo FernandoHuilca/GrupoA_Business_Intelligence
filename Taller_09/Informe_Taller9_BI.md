@@ -141,8 +141,6 @@ Imagen 5. Ejecución del código en Python con una predicción final de **JUGAR*
 
 ## 2. Predecir valores
 
-
-
 Primero, en la pestaña `Tools`, se seleccionó la opción `ArffViewer`, con el fin de abrir y modificar el conjunto de datos que será utilizado como instancia de prueba.
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/1658f0a6-363e-44c7-ae8a-6ada832b12c8" />
@@ -189,24 +187,31 @@ A continuación, en la pestaña `Classify`, se seleccionó `NaiveBayes` como cla
 
 Imagen 14. Construcción del modelo `NaiveBayes` usando el archivo `weather.nominal.arff` como conjunto de entrenamiento.
 
-Seleccionar la opción Supplied test set y hacer clic en el botón Set. 
-Posteriormente, se abre el archivo con Open File → seleccionar test.arff. 
+Después de esto, se seleccionó la opción `Supplied test set` y se cargó el archivo `test.arff` como conjunto de prueba.
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/2021bce0-78ca-4892-9218-266280bbc4ac" />
 
-paso extra
+Imagen 15. Carga del archivo de prueba `test.arff` mediante la opción `Supplied test set`.
+
+Luego, se dio clic en `More options` y, en la ventana emergente, se seleccionó la opción `PlainText` en `Output predictions` para visualizar la predicción realizada sobre la instancia de prueba.
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/b0dd353e-77d0-4d77-9faa-c3c11c4cc2fb" />
 
-La predicción
+Imagen 16. Configuración de `Output predictions` en formato `PlainText` para mostrar la predicción del registro de prueba en la sección `Classifier output`.
+
+Finalmente, se aplicó el clasificador sobre la instancia de prueba cargada. Como resultado, Weka predijo el valor `yes` para el atributo de clase `play`, con una confianza del 56,8 %.
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/af948e06-86b2-48a8-9982-5bd73cb49133" />
 
-Para J48
+Imagen 17. Predicción del registro de prueba con el clasificador `NaiveBayes`.
+
+Adicionalmente, se evaluó el mismo registro de prueba con el clasificador `J48`, correspondiente al árbol de decisión. En este caso, se obtuvo el mismo resultado para el atributo `play`, pero con una confianza del 100 %.
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/b3106526-294a-4576-a61d-ec70cfcdb7f2" />
 
+Imagen 18. Predicción del registro de prueba con el clasificador `J48`.
 
+Al comparar ambos modelos, se observa que, para esta instancia específica, el árbol de decisión clasificó el registro con mayor seguridad que Naive Bayes.
 
 ## 3. Referencias bibliográficas
 
@@ -215,11 +220,9 @@ Para J48
 ## 4. Declaración de porcentaje de uso de IA
 
 **ChatGPT:**
+* 
+
 * Se utilizó como apoyo en el diseño del modelo estrella, principalmente para revisar en qué tabla debían ubicarse campos como "cost_medicine", "cost_procedure" e "is_emergency", y justificar si correspondían a la tabla de hechos o a una dimensión.
 * Se utilizó como apoyo para la elaboración de sentencias SQL grandes, como la creación de la tabla `raw_salud` y de la vista materializada.
 * Se usó para analizar un error en Pentaho durante la transformación "carga_raw_salud", relacionado con el mapeo de la columna "visit_id" del archivo CSV hacia la tabla creada en PostgreSQL, debido a un carácter invisible en el encabezado.
 * Se utilizó para estructurar la consulta SQL correspondiente a la segunda pregunta analítica (**¿Qué ciudad tuvo más emergencias por mes y género?**), empleando funciones analíticas como `ROW_NUMBER()` para obtener la ciudad con el mayor número de emergencias en cada combinación de mes y género.
-
-**Claude:**
-* Se utilizó como apoyo para revisar mejores maneras de plantear las sentencias SQL utilizadas para responder las preguntas planteadas.
-* Se utilizó para recordar el funcionamiento de algunos componentes de Pentaho, como Stream lookup.
