@@ -68,17 +68,9 @@ Imagen 2. Selección del clasificador `NaiveBayes` en la pestaña `Classify` de 
 
 Luego, se seleccionó el botón `Start` para ejecutar el clasificador. Weka construyó el modelo de Naive Bayes y mostró los siguientes resultados de la evaluación sobre el conjunto de entrenamiento.
 
-| <img width="500" alt="image" src="https://github.com/user-attachments/assets/c432628c-9bc5-46ba-b410-263ddf254476" /> | <img width="500" alt="image" src="https://github.com/user-attachments/assets/ed730b40-1184-4004-a711-166acd2e8a08" /> |
+| <img heigth="500" alt="image" src="https://github.com/user-attachments/assets/c432628c-9bc5-46ba-b410-263ddf254476" /> | <img heigth="500" alt="image" src="https://github.com/user-attachments/assets/ed730b40-1184-4004-a711-166acd2e8a08" /> |
 |---|---|
 | Imagen 3. Información general y modelo generado por el clasificador `NaiveBayes` en Weka. | Imagen 4. Resultados de evaluación del modelo NaiveBayes, con 13 de 14 instancias clasificadas correctamente. |
-
-<img width="500" alt="image" src="https://github.com/user-attachments/assets/c432628c-9bc5-46ba-b410-263ddf254476" />
-
-Imagen 3. Información general y modelo generado por el clasificador `NaiveBayes` en Weka.
-
-<img width="500" alt="image" src="https://github.com/user-attachments/assets/ed730b40-1184-4004-a711-166acd2e8a08" />
-
-Imagen 4. Resultados de evaluación del modelo NaiveBayes, con 13 de 14 instancias clasificadas correctamente.
 
 ### 1.4. Implementación del modelo en Python
 
