@@ -14,33 +14,33 @@ GR2SW
 ------------
 ## **Índice de Contenidos**
 
-[MOLAP](#molap)
+[1. Naive Bayes](#1-naive-bayes)
 
-[1. Proceso ETL](#1-proceso-etl)
-* [1.1. Creación de la tabla "raw_salud"](#11-creación-de-la-tabla-raw_salud)
-* [1.2. Transformación y carga de datos](#12-transformación-y-carga-de-datos)
-  * [1.2.1. dim_fecha](#121-dim_fecha)
-  * [1.2.2. dim_paciente](#122-dim_paciente)
-  * [1.2.3. dim_departamento_hospital](#123-dim_departamento_hospital)
-  * [1.2.4. dim_doctor](#124-dim_doctor)
-  * [1.2.5. dim_diagnostico](#125-dim_diagnostico)
-  * [1.2.6. dim_procedimiento](#126-dim_procedimiento)
-  * [1.2.7. dim_tipo_seguro](#127-dim_tipo_seguro)
-  * [1.2.8. dim_resultado](#128-dim_resultado)
-  * [1.2.9. fact_atencion_medica](#129-fact_atencion_medica)
+[1.1. Carga del conjunto de datos](#11-carga-del-conjunto-de-datos)
 
-[2. Modelo estrella](#2-modelo-estrella)
+[1.2. Configuración del clasificador](#12-configuración-del-clasificador)
 
-[3. MOLAP: vista materializada](#3-molap-vista-materializada)
+[1.3. Ejecución y resultados del modelo](#13-ejecución-y-resultados-del-modelo)
 
-[Consultas MOLAP](#consultas-molap)
-* [1. ¿Cuál es el costo total de atención por especialidad, ciudad y mes?](#1-cuál-es-el-costo-total-de-atención-por-especialidad-ciudad-y-mes)
-* [2. ¿Qué ciudad tuvo más emergencias por mes y género?](#2-qué-ciudad-tuvo-más-emergencias-por-mes-y-género)
-* [3. ¿Por diagnóstico, tipo de seguro, cuál es el costo promedio por visita y en qué ciudad es más alto?](#3-por-diagnóstico-tipo-de-seguro-cuál-es-el-costo-promedio-por-visita-y-en-qué-ciudad-es-más-alto)
+[1.4. Implementación del modelo en Python](#14-implementación-del-modelo-en-python)
 
-[Referencias bibliográficas](#referencias-bibliográficas)  
+[1.5. Ejecución del modelo en Python usando Google Colab](#15-ejecución-del-modelo-en-python-usando-google-colab)
 
-[Declaración de porcentaje de uso de IA](#declaración-de-porcentaje-de-uso-de-ia)
+[2. Predecir valores](#2-predecir-valores)
+
+[2.1. Creación del archivo de prueba](#21-creación-del-archivo-de-prueba)
+
+[2.2. Carga del conjunto de entrenamiento](#22-carga-del-conjunto-de-entrenamiento)
+
+[2.3. Construcción del clasificador](#23-construcción-del-clasificador)
+
+[2.4. Carga del conjunto de prueba](#24-carga-del-conjunto-de-prueba)
+
+[2.5. Predicción y comparación de resultados](#25-predicción-y-comparación-de-resultados)
+
+[3. Referencias bibliográficas](#3-referencias-bibliográficas)
+
+[4. Declaración de porcentaje de uso de IA](#4-declaración-de-porcentaje-de-uso-de-ia)
 
 ------------
 # <center>**Naive Bayes y Predecir valores**</center>
