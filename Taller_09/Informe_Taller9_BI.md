@@ -16,9 +16,9 @@ GR2SW
 
 [1. Naive Bayes](#1-naive-bayes)
 
-[1.1. Carga del conjunto de datos](#11-carga-del-conjunto-de-datos)
+* [1.1. Carga del conjunto de datos](#11-carga-del-conjunto-de-datos)
 
-[1.2. Configuración del clasificador](#12-configuración-del-clasificador)
+* [1.2. Configuración del clasificador](#12-configuración-del-clasificador)
 
 [1.3. Ejecución y resultados del modelo](#13-ejecución-y-resultados-del-modelo)
 
