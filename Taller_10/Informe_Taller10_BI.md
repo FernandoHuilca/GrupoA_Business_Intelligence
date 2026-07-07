@@ -52,6 +52,14 @@ GR2SW
 
 ### 3.1. Implementación paso a paso
 
+Primero, se creó el dataset en Microsoft Excel con los datos proporcionados en el ejercicio. Luego, el archivo se guardó en formato `CSV UTF-8` con el nombre `DailyItem Dataset`, para que posteriormente pueda ser cargado en Weka.
+
+<img width="965" height="451" alt="image" src="https://github.com/user-attachments/assets/d6b53feb-3f25-41af-8579-4d78d5b178d9" />
+
+**Figura 1.** Guardado del dataset `DailyItem Dataset` en formato CSV.
+
+
+
 ### 3.2. Análisis de resultados
 
 ## 4. Process of Performing Manual discretization
