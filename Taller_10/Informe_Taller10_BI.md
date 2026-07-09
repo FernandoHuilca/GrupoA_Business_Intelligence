@@ -46,7 +46,43 @@ GR2SW
 
 ### 2.1. Implementación paso a paso
 
+Para empezar con el ejercicio se creó un dataset en Microsoft Excel con los datos proporcionado en el ejercicio. Luego, el archivo se guardó en formato `CSV UTF-8` con el nombre de `DailyItem2 Dataset`.
+
+<img width="738" height="240" alt="image" src="https://github.com/user-attachments/assets/fd43f60b-34e4-4343-a4ed-ad030d73a6fd" />
+<img width="185" height="32" alt="image" src="https://github.com/user-attachments/assets/07b408bf-e262-4581-9933-d9cc23927826" />
+
+Luego se cargó el archivo `CSV` creado se debe cargar en Weka.
+<img width="1253" height="942" alt="Captura de pantalla 2026-07-08 165717" src="https://github.com/user-attachments/assets/b043e254-d6dd-4eb9-a0ba-c6ce5745f44b" />
+
+Con el archivo cargado, se debe tomar en cuenta que Weka considera todas las columnas como númericas, por lo que es necesario para la asociación utilizar una transformación que convierta los datos númericos, para esto se utiliza la transformación de `NumericToNominal` para aplicarlo en el dataset.
+
+<img width="1255" height="942" alt="image" src="https://github.com/user-attachments/assets/9006ca7e-54a1-48d2-9c89-a250138212b1" />
+
+Luego se removió el campo de `Transacción`. Continuando en la pestaña de Associate se configura el algoritmo Apriori con los siguientes parámetros:
+- LowerBoundMinSupport: 0.5
+- metricType: Confidence
+- minMetric: 0.75
+<img width="561" height="802" alt="image" src="https://github.com/user-attachments/assets/e2bf8b34-6628-496d-9ee5-7cb52bb8bd20" />
+
+Estos parámetros configurados se pueden notar al ejecutar el algoritmo:
+
+<img width="1037" height="617" alt="image" src="https://github.com/user-attachments/assets/55c28840-0f95-4972-bb8f-145ffcfd6f95" />
+
+Finalmente los resultados obtenidos son los siguientes:
+
+<img width="786" height="270" alt="image" src="https://github.com/user-attachments/assets/1d0b7408-1b83-471c-811f-07f929dab03c" />
+
 ### 2.2. Análisis de resultados
+En los resultados que se obtieron de la ejecución con Weka se tiene que Weka ordenó las 4 mejores reglas según su nivel de Confianza (conf). De la menor a la mayor regla se tienen:
+- Regla 1: Cornflake $\Rightarrow$ Jam
+  * Soporte: Ocurre en 3 transacciones (60% del total de los datos).
+  * Confianza (1): 100%. Es la regla más sólida. Cada vez que alguien compró Cornflake (3 veces), las 3     veces llevó Jam.
+- Regla 4: Jam $\Rightarrow$ Cornflake
+  * Soporte: El antecedente (Jam) aparece 4 veces, y en 3 de ellas se compró Cornflake.
+  * Confianza (0.75): 75%. Cumple exactamente con el mínimo exigido.
+- Reglas 2 y 3: La relación Jam $\Leftrightarrow$ Bread
+  * Tiene un Lift menor a 1 (0.94) indica una correlación negativa o independencia.
+  * Indica que el Pan y la Mermelada son productos tan populares individualmente que la probabilidad de que aparezcan juntos en una canasta es alta, siendo que ninguno impulsa realmente la venta del otro.
 
 ## 3. Applying the Apriori Algorithm on a Numeric Dataset
 
