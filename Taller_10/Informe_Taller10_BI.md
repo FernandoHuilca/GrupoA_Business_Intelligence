@@ -101,8 +101,46 @@ Primero, se creó el dataset en Microsoft Excel con los datos proporcionados en 
 ## 4. Process of Performing Manual discretization
 
 ### 4.1. Implementación paso a paso
+<img width="744" height="579" alt="image" src="https://github.com/user-attachments/assets/297e085c-7f9f-458d-af36-39c6f7e41a7f" />
+
+
+<img width="617" height="499" alt="image" src="https://github.com/user-attachments/assets/848e9aa0-c41c-41d0-bcd2-1478422fd799" />
+
+
+<img width="577" height="346" alt="image" src="https://github.com/user-attachments/assets/48c36277-f0d2-45d7-95f1-0d126e472c7a" />
+
+<img width="501" height="310" alt="image" src="https://github.com/user-attachments/assets/e7fd07d3-1035-4487-87c2-1ee62e1df0da" />
+
+
+<img width="508" height="292" alt="image" src="https://github.com/user-attachments/assets/bc4d199e-c954-4b74-bd0e-cab27043a21b" />
+
+<img width="579" height="379" alt="image" src="https://github.com/user-attachments/assets/778265cd-83a5-4527-bd9c-42cafa8b116e" />
+
+<img width="445" height="506" alt="image" src="https://github.com/user-attachments/assets/471779df-0e55-4cc5-aceb-b9718802dc08" />
+
+<img width="1001" height="754" alt="image" src="https://github.com/user-attachments/assets/237786e8-5a4b-4916-9ec5-b8d072acdf7a" />
+
+<img width="1005" height="866" alt="image" src="https://github.com/user-attachments/assets/14fedaa0-ad3c-4711-b312-1517d9f49206" />
+
+<img width="486" height="326" alt="image" src="https://github.com/user-attachments/assets/8ddea841-651e-40e9-9a2a-2b807c459eae" />
+
+<img width="1007" height="861" alt="image" src="https://github.com/user-attachments/assets/dab528f4-633a-43a0-8f89-8475b6069288" />
+
+<img width="626" height="484" alt="image" src="https://github.com/user-attachments/assets/77f20105-3cd4-4984-adb4-3d469bf46281" />
+
+<img width="1007" height="859" alt="image" src="https://github.com/user-attachments/assets/b1682980-aae0-4ebf-9f59-f2044191f55d" />
+
+<img width="1005" height="862" alt="image" src="https://github.com/user-attachments/assets/53c05744-283b-4672-8247-eaab5bd19bdd" />
+
+<img width="1001" height="863" alt="image" src="https://github.com/user-attachments/assets/80e06102-cefd-4f70-9f85-9ddb385aa687" />
+
 
 ### 4.2. Análisis de resultados
+En el primer experimento, utilizando las categorías H, M y L, el algoritmo generó un gran número de reglas con alta precisión. Sin embargo, muchas de ellas involucran el valor M, debido a que representa el 60 % de los registros tras la discretización. Entre las reglas más relevantes destacan aquellas que relacionan un alto desempeño en el Quiz, MST y ENDSEM con la obtención de la calificación A, mientras que un bajo desempeño en ENDSEM se asocia frecuentemente con las calificaciones D y E.
+
+Al activar la opción CAR = true, las reglas se enfocan únicamente en predecir la variable Grade, lo que facilita su interpretación. Las asociaciones más importantes indican que obtener valores altos en varias evaluaciones conduce a la calificación A, mientras que combinar valores bajos en las evaluaciones principales se relaciona con la calificación E.
+
+Finalmente, al reemplazar M por ?, Weka ignora los valores medios durante la generación de reglas. Como resultado, desaparecen muchas asociaciones poco informativas y se obtienen reglas más claras, centradas en los casos extremos (H y L). En conjunto, este último enfoque produce reglas más útiles y fáciles de interpretar para identificar patrones de alto y bajo rendimiento académico.
 
 ## 3. Referencias bibliográficas
 
