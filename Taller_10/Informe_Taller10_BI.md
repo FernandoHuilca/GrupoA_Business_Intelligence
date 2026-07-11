@@ -88,15 +88,67 @@ En los resultados que se obtieron de la ejecución con Weka se tiene que Weka or
 
 ### 3.1. Implementación paso a paso
 
-Primero, se creó el dataset en Microsoft Excel con los datos proporcionados en el ejercicio. Luego, el archivo se guardó en formato `CSV UTF-8` con el nombre `DailyItem Dataset`, para que posteriormente pueda ser cargado en Weka.
+Primero, se creó el dataset en Microsoft Excel con los 9 datos proporcionados en el ejercicio (Ignorando la columna `Name` porque la información real estaba reemplazada por asteriscos). Luego, el archivo se guardó en formato `CSV UTF-8` con el nombre `ejercicio_diez_ocho`.
 
 <img width="965" height="451" alt="image" src="https://github.com/user-attachments/assets/d6b53feb-3f25-41af-8579-4d78d5b178d9" />
 
-**Figura 1.** Guardado del dataset `DailyItem Dataset` en formato CSV.
+**Figura 1.** Guardado del dataset `ejercicio_diez_ocho` en formato CSV.
+
+En Weka, se cargó el archivo filtrando por el formato CSV (Inicialmente solo buscaba por el formato .arff y al buscar por todo tipo de extensión no sucedía nada al momento de cargar el dataset). Al seleccionar el archivo, se dejó la configuración por defecto del cargador de archivos CSV de Weka.
 
 
+
+**Figura 2.** Carga del dataset `ejercicio_diez_ocho` en Weka usando el cargador de archivos CSV.
+
+Luego, se eliminó la columna `Roll_No` que era identificador. De esta manera se mantenían solamente los atributos que sí representaban características para la minería de asociación.
+
+
+
+**Figura 3.** Eliminación de columnas `Roll_No` y `Name`.
+
+Debido a que el dataset contenía valores numéricos (Siendo el tipo de dato que Apriori no puede usar) se procedió a usar el proceso de `discretizing` o discretizar. Así, se convirtieron los valores numéricos del dataset en categorías (O valores nominales). 
+
+1. Para ello, se utilizó el filtro `Discretize` de Weka a través de la ruta weka/ -> filters/ -> unsupervised/ -> attribute/ -> Discretize/.
+
+2. Al pulsar sobre el filtro `Discretize -B 10 M -1.0 -R first-last`, se abrió una ventana de configuración donde se estableció el número de bins (categorías) en 3 (Low, Medium y High) y se aplicó uno de los tipos de discretización el cuál fue `useEqualFrequency` (Bins con igual cantidad de muestras. Se usó en lugar de Equal interval). Por último se pulsó el botón `OK` y el botón `Apply` a lado del filtro seleccionado para aplicarlo.
+
+
+
+**Figura 4.** Uso de filtro `Discretize` con 3 bins y del tipo `useEqualFrequency`.
+
+El resultado fue que cada columna numérica pasó a ser una categoría divididas en 3 bins con rangos automáticos. En MST, por ejemplo, 1 es Low con el rango de (-inf - 11.5], 2 es Medium con el rango de (-11.5 - 16.5] y 3 es High con el rango de (16.5 - inf).
+
+
+
+**Figura 5.** Comparación de los valores originales y los valores discretizados en la columna MST.
+
+Finalmente, se ejecutó la minería de asociación con el algoritmo Apriori. Para ello, en la pestaña `Associate`, en `Associator` se seleccionó Apriori en la ruta weka/ -> associations/ -> Apriori/. Luego, se pulsó en el botón `Start` para ejecutar el algoritmo y obtener las reglas de asociación.
+
+
+
+**Figura 6.** Resultados de la ejecución del algoritmo Apriori en el dataset discretizado.
 
 ### 3.2. Análisis de resultados
+
+Como el dataset usado fue de 9 registros, no fue una muestra representativa. Por tanto, los patrones obtenidos se los puede considerar como una coincidencia en lugar de un resultado real.
+
+- Las 6 primeras reglas son relativas a estudiantes con MST (Mid-Semester Test, nota parcial) bajo con confianza de 1 (100%) y lift de 3 (Muy fuerte). 
+
+  - Todas estas reglas declaran lo mismo desde distintas perspectivas por ser los mismos 3 estudiantes con Lab bajo (<=15.5), ENDSEM bajo (<=17) y total bajo (<=52).
+
+  - Por tanto, el mismo grupo de 3 estudiantes obtuvo todas sus calificaciones malas en cada una de las notas, haciendo que las reglas obtenidas sean intercambiables entre sí.
+
+
+
+**Figura 7.** Reglas 1 a 6 obtenidas del algoritmo Apriori en el dataset discretizado.
+
+- En las reglas de la 7 a la 10 sucede exactamente lo mismo, pero para estudiantes con MST medio (11.5 - 16.5) que igual tenían notas regulares en todo como Lab (15.5 - 17.5), ENDSEM (17-23) y total (52.62) con un nota B.
+
+
+
+**Figura 8.** Reglas 7 a 10 obtenidas del algoritmo Apriori en el dataset discretizado.
+
+
 
 ## 4. Process of Performing Manual discretization
 
