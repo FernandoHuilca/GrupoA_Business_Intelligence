@@ -152,39 +152,83 @@ Como el dataset usado fue de 9 registros, no fue una muestra representativa. Por
 ## 4. Process of Performing Manual discretization
 
 ### 4.1. Implementación paso a paso
+En primer lugar, se creó un archivo de Microsoft Excel denominado student_performance, el cual contiene 60 registros generados aleatoriamente.
+
 <img width="744" height="579" alt="image" src="https://github.com/user-attachments/assets/297e085c-7f9f-458d-af36-39c6f7e41a7f" />
 
+**Figura 1.** Archivo de Excel Student Performance
+
+Posteriormente, se eliminaron las columnas Roll No. y Name, ya que no aportan información relevante para el proceso de Association Mining.
 
 <img width="617" height="499" alt="image" src="https://github.com/user-attachments/assets/848e9aa0-c41c-41d0-bcd2-1478422fd799" />
 
+**Figura 2.** Student Performance sin las dos primeras columnas
 
-<img width="577" height="346" alt="image" src="https://github.com/user-attachments/assets/48c36277-f0d2-45d7-95f1-0d126e472c7a" />
+A continuación, se ordenó el atributo MST. Dado que el conjunto de datos contiene 60 registros, se seleccionaron los primeros 12 registros y se reemplazó el valor de sus calificaciones en MST por la categoría H.
 
 <img width="501" height="310" alt="image" src="https://github.com/user-attachments/assets/e7fd07d3-1035-4487-87c2-1ee62e1df0da" />
 
+**Figura 3.** Primeros 12 registros del atributo MST cambiados a H
+
+Posteriormente, se seleccionaron los registros comprendidos entre los números 49 y 60, y se reemplazó el valor del atributo MST por la categoría L.
 
 <img width="508" height="292" alt="image" src="https://github.com/user-attachments/assets/bc4d199e-c954-4b74-bd0e-cab27043a21b" />
 
+**Figura 4.** Últimos 12 registros del atributo MST cambiados a L
+
+Finalmente, los 36 registros restantes fueron etiquetados con la categoría M en el atributo MST, representando los valores intermedios del conjunto de datos.
+
 <img width="579" height="379" alt="image" src="https://github.com/user-attachments/assets/778265cd-83a5-4527-bd9c-42cafa8b116e" />
+
+**Figura 5.** Registros intermedios del atributo MST cambiados a M
+
+El proceso de discretización manual se aplicó posteriormente a cada uno de los atributos restantes, siguiendo el mismo procedimiento de clasificación en categorías. Esta transformación permitió convertir los valores numéricos en datos categóricos, dejando el conjunto de datos preparado para su procesamiento en Weka y la posterior obtención de reglas de asociación mediante técnicas de Association Mining.
 
 <img width="445" height="506" alt="image" src="https://github.com/user-attachments/assets/471779df-0e55-4cc5-aceb-b9718802dc08" />
 
+**Figura 6.** Proceso de discretización manual aplicado en todas las columnas
+
+Se guardó el archivo de Excel en formato csv y se lo cargó en Weka.
+
 <img width="1001" height="754" alt="image" src="https://github.com/user-attachments/assets/237786e8-5a4b-4916-9ec5-b8d072acdf7a" />
+
+**Figura 7.** Carga del archivo de registros en Weka
+
+A continuación, se aplicó el algoritmo Predictive Apriori desde la pestaña Associate de Weka utilizando el conjunto de datos previamente preparado. Tras la ejecución del algoritmo, se obtuvieron diversas reglas de asociación.
 
 <img width="1005" height="866" alt="image" src="https://github.com/user-attachments/assets/14fedaa0-ad3c-4711-b312-1517d9f49206" />
 
+**Figura 8.** Reglas identificadas con el algoritmo Apriori
+
+Posteriormente, se configuró el algoritmo Predictive Apriori para obtener reglas de clasificación estableciendo el parámetro CAR (Class Association Rules) en True. 
+
 <img width="486" height="326" alt="image" src="https://github.com/user-attachments/assets/8ddea841-651e-40e9-9a2a-2b807c459eae" />
+
+**Figura 9.** Configuración de car en true
+
+Con esta configuración, el algoritmo generó únicamente reglas cuyo consecuente corresponde al atributo Grade.
 
 <img width="1007" height="861" alt="image" src="https://github.com/user-attachments/assets/dab528f4-633a-43a0-8f89-8475b6069288" />
 
+**Figura 10.** Reglas identificadas con el algoritmo Apriori (car enabled)
+
+Si no se desea considerar las reglas que incluyen valores M, es posible reprocesar el conjunto de datos reemplazando dicho valor por el símbolo ? en el archivo de Excel. Posteriormente, el archivo se guarda nuevamente en formato CSV y se carga en Weka. En esta herramienta, el símbolo ? representa un valor faltante (missing value); por lo tanto, cualquier registro que contenga este símbolo será ignorado durante la generación de las reglas de asociación.
+
 <img width="626" height="484" alt="image" src="https://github.com/user-attachments/assets/77f20105-3cd4-4984-adb4-3d469bf46281" />
 
-<img width="1007" height="859" alt="image" src="https://github.com/user-attachments/assets/b1682980-aae0-4ebf-9f59-f2044191f55d" />
+**Figura 11.** M reemplazado por ? en el archivo de excel
+
+A continuación, se presentan las reglas de Association Mining obtenidas tras la ejecución del algoritmo Predictive Apriori en Weka.
 
 <img width="1005" height="862" alt="image" src="https://github.com/user-attachments/assets/53c05744-283b-4672-8247-eaab5bd19bdd" />
 
+**Figura 12.** Reglas identificadas con el algoritmo Apriori (considerando solo L y H)
+
+De igual manera se estableció el parámetro Car en True.
+
 <img width="1001" height="863" alt="image" src="https://github.com/user-attachments/assets/80e06102-cefd-4f70-9f85-9ddb385aa687" />
 
+**Figura 12.** Reglas identificadas con el algoritmo Apriori (considerando solo L y H - car enabled)
 
 ### 4.2. Análisis de resultados
 En el primer experimento, utilizando las categorías H, M y L, el algoritmo generó un gran número de reglas con alta precisión. Sin embargo, muchas de ellas involucran el valor M, debido a que representa el 60 % de los registros tras la discretización. Entre las reglas más relevantes destacan aquellas que relacionan un alto desempeño en el Quiz, MST y ENDSEM con la obtención de la calificación A, mientras que un bajo desempeño en ENDSEM se asocia frecuentemente con las calificaciones D y E.
