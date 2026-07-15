@@ -445,10 +445,6 @@ Finalmente, al reemplazar M por ?, Weka ignora los valores medios durante la gen
 
 ## 6. Declaración de porcentaje de uso de IA
 
-**ChatGPT:**
-* Se utilizó para identificar que el archivo de prueba `test.arff` no podía almacenarse en la carpeta `data` de Weka. Inicialmente, el archivo se guardaba en dicha ubicación y la interfaz mostraba un mensaje de éxito; sin embargo, al intentar cargarlo en la pestaña `Preprocess` del módulo `Explorer`, este no aparecía debido a que en realidad nunca se había guardado. Por esta razón, se optó por guardarlo en una carpeta accesible, como `Downloads`.
-* Se usó para resolver un inconveniente relacionado con la visualización de la predicción del registro de prueba en la sección `Classifier output`, tal como se mostraba en la guía de la práctica. Se determinó que era necesario seleccionar un formato de salida habilitar en la opción `Output predictions`. Por tal motivo, se eligió `PlainText`, lo que permitió visualizar correctamente la predicción generada por el clasificador.
-
 **Gemini:**
 * Se utilizó para depurar y resolver el problema de incompatibilidad de formatos al cargar los datos en Weka. Identificó que el sistema intentaba forzar la carga del archivo CSV como ARFF (debido al error del archivo guardado como `DailyItem Dataset.csv.arff`), guiando en los pasos de renombrado y reconfiguración del filtro del explorador para aceptar archivos tipo `.csv`.
 * Se empleó para automatizar el diseño y la estructuración del presente documento de reporte en formato Markdown (`.md`), realizando la estandarización simétrica de todas las figuras a un tamaño uniforme (`width="480"`), la alineación en paralelo de imágenes consecutivas usando tablas de contenido HTML y la reestructuración dinámica del Índice de Contenidos e Índice de Ilustraciones del informe.
