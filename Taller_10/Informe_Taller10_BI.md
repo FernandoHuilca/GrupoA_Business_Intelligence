@@ -14,23 +14,25 @@ GR2SW
 ------------
 ## **Índice de Contenidos**
 
-[1. Naive Bayes](#1-naive-bayes)
-* [1.1. Carga del conjunto de datos](#11-carga-del-conjunto-de-datos)
-* [1.2. Configuración del clasificador](#12-configuración-del-clasificador)
-* [1.3. Ejecución y resultados del modelo](#13-ejecución-y-resultados-del-modelo)
-* [1.4. Implementación del modelo en Python](#14-implementación-del-modelo-en-python)
-* [1.5. Ejecución del modelo en Python usando Google Colab](#15-ejecución-del-modelo-en-python-usando-google-colab)
+[1. Applying the Apriori Algorithm in Weka on a Real World Dataset](#1-applying-the-apriori-algorithm-in-weka-on-a-real-world-dataset)
+* [1.1. Implementación paso a paso](#11-implementación-paso-a-paso)
+* [1.2. Análisis de resultados](#12-análisis-de-resultados)
 
-[2. Predecir valores](#2-predecir-valores)
-* [2.1. Creación del archivo de prueba](#21-creación-del-archivo-de-prueba)
-* [2.2. Carga del conjunto de entrenamiento](#22-carga-del-conjunto-de-entrenamiento)
-* [2.3. Construcción del clasificador](#23-construcción-del-clasificador)
-* [2.4. Carga del conjunto de prueba](#24-carga-del-conjunto-de-prueba)
-* [2.5. Predicción y comparación de resultados](#25-predicción-y-comparación-de-resultados)
+[2. Applying the Apriori Algorithm in Weka on a Real World Larger Dataset](#2-applying-the-apriori-algorithm-in-weka-on-a-real-world-larger-dataset)
+* [2.1. Implementación paso a paso](#21-implementación-paso-a-paso)
+* [2.2. Análisis de resultados](#22-análisis-de-resultados)
 
-[3. Referencias bibliográficas](#3-referencias-bibliográficas)
+[3. Applying the Apriori Algorithm on a Numeric Dataset](#3-applying-the-apriori-algorithm-on-a-numeric-dataset)
+* [3.1. Implementación paso a paso](#31-implementación-paso-a-paso)
+* [3.2. Análisis de resultados](#32-análisis-de-resultados)
 
-[4. Declaración de porcentaje de uso de IA](#4-declaración-de-porcentaje-de-uso-de-ia)
+[4. Process of Performing Manual discretization](#4-process-of-performing-manual-discretization)
+* [4.1. Implementación paso a paso](#41-implementación-paso-a-paso)
+* [4.2. Análisis de resultados](#42-análisis-deresultados)
+
+[5. Referencias bibliográficas](#5-referencias-bibliográficas)
+
+[6. Declaración de porcentaje de uso de IA](#6-declaración-de-porcentaje-de-uso-de-ia)
 
 ------------
 # <center>**Association Mining in Weka**</center>
@@ -49,7 +51,6 @@ GR2SW
 Para empezar con el ejercicio se creó un dataset en Microsoft Excel con los datos proporcionado en el ejercicio. Luego, el archivo se guardó en formato `CSV UTF-8` con el nombre de `DailyItem2 Dataset`.
 
 <img width="738" height="240" alt="image" src="https://github.com/user-attachments/assets/fd43f60b-34e4-4343-a4ed-ad030d73a6fd" />
-<img width="185" height="32" alt="image" src="https://github.com/user-attachments/assets/07b408bf-e262-4581-9933-d9cc23927826" />
 
 **Figura 1.** Creación del dataset `DailyItem2 Dataset`.
 
@@ -87,7 +88,9 @@ Finalmente los resultados obtenidos son los siguientes:
 **Figura 6.** Resultados obtenidos del algoritmo Apriori en Weka.
 
 ### 2.2. Análisis de resultados
-En los resultados que se obtieron de la ejecución con Weka se tiene que Weka ordenó las 4 mejores reglas según su nivel de Confianza (conf). De la menor a la mayor regla se tienen:
+
+En los resultados que se obtuvieron de la ejecución con Weka se tiene que Weka ordenó las 4 mejores reglas según su nivel de Confianza (conf). De la menor a la mayor regla se tienen:
+
 - Regla 1: Cornflake $\Rightarrow$ Jam
   * Soporte: Ocurre en 3 transacciones (60% del total de los datos).
   * Confianza (1): 100%. Es la regla más sólida. Cada vez que alguien compró Cornflake (3 veces), las 3     veces llevó Jam.
@@ -162,10 +165,10 @@ Como el dataset usado fue de 9 registros, no fue una muestra representativa. Por
 
 **Figura 14.** Reglas 7 a 10 obtenidas del algoritmo Apriori en el dataset discretizado.
 
-
 ## 4. Process of Performing Manual discretization
 
 ### 4.1. Implementación paso a paso
+
 En primer lugar, se creó un archivo de Microsoft Excel denominado student_performance, el cual contiene 60 registros generados aleatoriamente.
 
 <img width="744" height="579" alt="image" src="https://github.com/user-attachments/assets/297e085c-7f9f-458d-af36-39c6f7e41a7f" />
@@ -245,18 +248,18 @@ De igual manera se estableció el parámetro Car en True.
 **Figura 27.** Reglas identificadas con el algoritmo Apriori (considerando solo L y H - car enabled)
 
 ### 4.2. Análisis de resultados
+
 En el primer experimento, utilizando las categorías H, M y L, el algoritmo generó un gran número de reglas con alta precisión. Sin embargo, muchas de ellas involucran el valor M, debido a que representa el 60 % de los registros tras la discretización. Entre las reglas más relevantes destacan aquellas que relacionan un alto desempeño en el Quiz, MST y ENDSEM con la obtención de la calificación A, mientras que un bajo desempeño en ENDSEM se asocia frecuentemente con las calificaciones D y E.
 
 Al activar la opción CAR = true, las reglas se enfocan únicamente en predecir la variable Grade, lo que facilita su interpretación. Las asociaciones más importantes indican que obtener valores altos en varias evaluaciones conduce a la calificación A, mientras que combinar valores bajos en las evaluaciones principales se relaciona con la calificación E.
 
 Finalmente, al reemplazar M por ?, Weka ignora los valores medios durante la generación de reglas. Como resultado, desaparecen muchas asociaciones poco informativas y se obtienen reglas más claras, centradas en los casos extremos (H y L). En conjunto, este último enfoque produce reglas más útiles y fáciles de interpretar para identificar patrones de alto y bajo rendimiento académico.
 
-## 3. Referencias bibliográficas
+## 5. Referencias bibliográficas
 
 [1] P. Bhatia, Data Mining and Data Warehousing: Principles and Practical Techniques. Cambridge, U.K.: Cambridge University Press, 2019. doi: 10.1017/9781108635592.
 
-## 4. Declaración de porcentaje de uso de IA
+## 6. Declaración de porcentaje de uso de IA
 
-**ChatGPT:**
-* Se utilizó para identificar que el archivo de prueba `test.arff` no podía almacenarse en la carpeta `data` de Weka. Inicialmente, el archivo se guardaba en dicha ubicación y la interfaz mostraba un mensaje de éxito; sin embargo, al intentar cargarlo en la pestaña `Preprocess` del módulo `Explorer`, este no aparecía debido a que en realidad nunca se había guardado. Por esta razón, se optó por guardarlo en una carpeta accesible, como `Downloads`.
-* Se usó para resolver un inconveniente relacionado con la visualización de la predicción del registro de prueba en la sección `Classifier output`, tal como se mostraba en la guía de la práctica. Se determinó que era necesario seleccionar un formato de salida habilitar en la opción `Output predictions`. Por tal motivo, se eligió `PlainText`, lo que permitió visualizar correctamente la predicción generada por el clasificador.
+**Copilot:**
+* Se utilizó para generar el índice de contenidos y para mejorar la redacción de algunas secciones del informe, así como para la revisión de la gramática y ortografía.
