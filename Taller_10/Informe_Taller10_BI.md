@@ -28,7 +28,7 @@ GR2SW
 
 [4. Process of Performing Manual discretization](#4-process-of-performing-manual-discretization)
 * [4.1. Implementación paso a paso](#41-implementación-paso-a-paso)
-* [4.2. Análisis de resultados](#42-análisis-deresultados)
+* [4.2. Análisis de resultados](#42-análisis-de-resultados)
 
 [5. Referencias bibliográficas](#5-referencias-bibliográficas)
 
